@@ -20,6 +20,7 @@ export default function Main({ children }) {
   const [currentArray, setCurrentArray] = useState([]);
   const audioRef = useRef(new Audio("/lotuswaters.mp3"));
 
+  // tabs to handle the link changes, can see further in app.jsx, better for SEO
   const tabs = [
     { name: "Home", path: "/", icon: "/icons/globe.png" },
     { name: "About", path: "/about", icon: "/icons/information.png" },
@@ -76,6 +77,7 @@ export default function Main({ children }) {
     }
   };
 
+  // this gets passed into the modal
   const subButtonClick = (item) => {
     SoundPlayer("click");
     if (item.musicFile) {

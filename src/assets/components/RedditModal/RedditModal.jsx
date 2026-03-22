@@ -28,6 +28,7 @@ const RedditModal = ({ modal, windowAnimation, toggleModal, modalTitle = "Music 
             key={button.id}
             className="selectButton"
             onClick={() => {
+              // Need to change subButtonClick so it has more relevant name
               if (type === "themeButton") {
                 switchHue(button.hue);
               } else if (type === "musicButton") {

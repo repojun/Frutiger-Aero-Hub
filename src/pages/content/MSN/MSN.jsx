@@ -19,6 +19,7 @@ export default function MSN() {
     // directly set the fade-out animation and stop float/intro
     buddyEl.style.animation = "clear-out .5s forwards";
 
+    // listen for when the animation ends, then remove the buddy element and add 1 to score
     buddyEl.addEventListener(
       "animationend",
       () => {
@@ -34,11 +35,9 @@ export default function MSN() {
 
     const randomNum = Math.floor(Math.random() * msn.length);
     const randomNumSound = Math.floor(Math.random() * msnSound.length);
-
+    // ranges copied from old site, need to fix
     const ranges = [[20, 1000]];
-
     const rangesY = [[0, 700]];
-
     const chosenRange = ranges[Math.floor(Math.random() * ranges.length)];
     const chosenRangeY = rangesY[Math.floor(Math.random() * rangesY.length)];
 

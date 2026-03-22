@@ -2,8 +2,10 @@ import "./Weather.scss";
 import { useState, useEffect } from "react";
 
 export default function Weather() {
+
   const [location, setLocation] = useState("London");
   const [weather, setWeather] = useState(null);
+  // need to handle errors!
   const [error, setError] = useState(null);
   const condition = weather?.current;
   const USE_DATA = false;

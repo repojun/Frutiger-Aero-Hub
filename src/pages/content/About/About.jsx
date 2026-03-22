@@ -4,7 +4,8 @@ import { useEffect, useState, useMemo } from "react";
 export default function About() {
   const [currentImage, setCurrentImage] = useState(0);
   const [fade, setFade] = useState("false");
-  //creates array of image with the file names and memoized so that it doesnt change on every render
+
+  // creates array of image with the file names and memoized so that it doesnt change on every render
   const images = useMemo(() => Array.from({ length: 7 }, (_, i) => `bordered${i + 1}.png`), []);
 
   useEffect(() => {
@@ -16,17 +17,16 @@ export default function About() {
       const timeout = setTimeout(() => {
         setCurrentImage((prev) => (prev + 1) % images.length);
         setFade(true);
-      }, 500); // match your CSS transition duration
+      }, 500); // match transition in css file, 500 right now
 
       // cleanup for this timeout if the interval triggers again
       return () => clearTimeout(timeout);
     }, 4000);
-
+    // another clean up for the intervals
     return () => clearInterval(interval);
   }, [images]);
   return (
     <>
-      {" "}
       <div className="main-title">
         <img src="/icons/teddyorb_noglow.png"></img>
         <span>What is Frutiger Aero?</span>
@@ -41,7 +41,7 @@ export default function About() {
                 src={`/aero-images/${images[currentImage]}`}
                 className={"bordered-image " + (fade ? "fade-in" : "fade-out")}
                 alt="carousel"
-              />{" "}
+              />
             </div>
             Frutiger Aero, also known as Web 2.0 Gloss, is an aesthetic that was very common from around 2005-2013. It was originally
             unnamed and just the trend at the time, the term "Frutiger Aero" was only established later as people looked back at the
