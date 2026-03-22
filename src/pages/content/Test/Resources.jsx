@@ -22,8 +22,6 @@ export default function Resources() {
   return (
     <>
       <div className="main-title">
-        {/* <img src="/icons/teddyorb_noglow.png"></img> */}
-        {/* <img src="https://www.freeiconspng.com/thumbs/windows-icon/windows-vista-icon-png-14.png"></img> */}
         <span>Resources</span>
       </div>
       <div className="divider"></div>

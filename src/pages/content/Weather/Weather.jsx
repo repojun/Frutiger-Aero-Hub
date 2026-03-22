@@ -44,7 +44,6 @@ export default function Weather() {
   return (
     <>
       <div className="main-title">
-        {/* <img src="https://www.freeiconspng.com/thumbs/windows-icon/windows-vista-icon-png-14.png"></img> */}
         <span>Weather Tab</span>
       </div>
       <div className="divider"></div>
