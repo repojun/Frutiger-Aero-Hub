@@ -1,0 +1,164 @@
+.weather-container {
+  display: flex;
+  width: 67rem;
+  flex-direction: column;
+  text-align: left;
+  justify-content: center;
+  row-gap: 2.5rem;
+  .weather-metrics {
+    display: flex;
+    align-items: center;
+    column-gap: 11rem;
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: auto auto auto auto;
+      gap: 2rem;
+      line-height: 1.75rem;
+      .metric-title {
+        text-shadow: 0px 0px 2px rgba(0, 0, 0, 1), 0px 0px 12px white, 0px 0px 2px rgb(255, 255, 255, 0.5);
+        font-size: 1.3rem;
+        font-weight: 500;
+      }
+      .metric-stat {
+        font-size: 1rem;
+      }
+    }
+  }
+  .weather-main {
+    align-items: flex-start;
+    justify-content: flex-start;
+    display: flex;
+    column-gap: 1rem;
+    padding-left: 0.5rem;
+    .weather-icon {
+      height: 10rem;
+    }
+  }
+  .weather-text {
+    font-size: 1.75rem;
+    text-shadow: 0px 0px 2px rgba(0, 0, 0, 1), 0px 0px 12px white, 0px 0px 2px rgb(255, 255, 255, 0.5);
+    display: flex;
+    flex-direction: column;
+    p {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    .celsius {
+      font-size: 5rem;
+      line-height: 5rem;
+    }
+    .condition {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-top: -0.5rem;
+    }
+    .feels-like {
+      font-size: 1.25rem;
+      font-weight: 300;
+      line-height: 1.25rem;
+    }
+    .location {
+      font-size: 1.25rem;
+      font-weight: 500;
+      line-height: 1.25rem;
+    }
+  }
+
+  .weather-forecast-container {
+    align-self: center;
+    display: flex;
+    justify-self: center;
+    align-items: center;
+
+    .weather-card {
+      position: relative;
+      text-shadow: 0px 0px 2px rgba(0, 0, 0, 1), 0px 0px 12px rgb(255, 255, 255, 0.5), 0px 0px 2px rgb(255, 255, 255, 0.5);
+      font-weight: 500;
+      display: flex;
+      flex-direction: column;
+      background: rgba(180, 255, 248, 0.02);
+      box-shadow: 0 0.25rem 1.875rem rgba(0, 0, 0, 0.1);
+      border: 0.0625rem solid rgb(255, 255, 255);
+      box-shadow: inset 0 0 1.25rem rgba(148, 246, 255, 0.4), 0 0.5rem 0.625rem 0 rgba(0, 0, 0, 0.2), 0 0 0.625rem 0.125rem rgba(255, 255, 255, 0.4);
+      display: flex;
+      column-gap: 0.3rem;
+      row-gap: 2.5rem;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      height: 23rem;
+      width: 12rem;
+      transition: 0.4s;
+      user-select: none;
+      -webkit-user-select: none;
+      font-size: 1.5rem;
+      overflow: hidden;
+      img {
+        height: 9rem;
+      }
+      &::after {
+        transition: 0.4s;
+        top: 0px;
+        content: "";
+        position: absolute;
+        width: calc(100%);
+        padding-top: 30px;
+        height: 40%;
+        margin-bottom: 9rem;
+        opacity: 30%;
+        border-bottom-left-radius: 20%;
+        border-bottom-right-radius: 20%;
+        background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.2));
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        top: -100%;
+        width: 100%;
+        height: 150%;
+        z-index: 10;
+        background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+        transform: rotate(40deg);
+      }
+
+      &:hover::before {
+        animation: shine2 1s linear;
+      }
+      &:hover {
+        box-shadow: inset 0 0 1.25rem rgba(148, 246, 255, 0.7), 0 0.5rem 0.625rem 0 rgba(0, 0, 0, 0.2), 0 0 0.625rem 0.125rem rgba(255, 255, 255, 0.8);
+        background: rgba(180, 255, 248, 0.3);
+
+        cursor: pointer;
+        &::after {
+          transition: 0.2s;
+          opacity: 30%;
+        }
+      }
+    }
+
+    .back {
+      @extend .weather-card;
+      width: 2rem;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 500;
+      border-radius: 25% 0% 0% 25%;
+    }
+
+    .forward {
+      border-radius: 0 25% 25% 0;
+      @extend .back;
+    }
+  }
+}
+@keyframes shine2 {
+  to {
+    left: 100%;
+    top: 100%;
+  }
+}

@@ -1,0 +1,70 @@
+.main-about-text {
+  font-size: 1.3rem;
+  line-height: 2rem;
+  text-shadow: 0px 0px 2px rgba(0, 0, 0, 1), 0px 0px 8px rgba(0, 0, 0, 0.5), 0px 0px 12px white, 0px 0px 2px rgb(255, 255, 255, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 0.9rem;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  margin-right: 1rem;
+
+  p {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+.bordered-image-container {
+  position: relative;
+  margin-left: -1rem;
+  animation: float2 4s infinite;
+  padding-right: 1rem;
+
+  .overlay {
+    position: absolute;
+    z-index: 4;
+    width: 14rem;
+    margin: -0.5rem;
+    opacity: 0.5;
+  }
+  .bordered-image {
+    width: 14rem;
+    margin: -0.5rem;
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0;
+  }
+  .fade-in {
+    opacity: 1;
+  }
+
+  .fade-out {
+    opacity: 0;
+  }
+}
+
+.examples-grid {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-content: center;
+  gap: 1rem;
+  padding-bottom: 5rem;
+  .example {
+    background: rgba(180, 255, 248, 0.05);
+    box-shadow: 0 0.25rem 1.875rem rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5rem);
+    border: 0.0625rem solid rgb(255, 255, 255);
+    box-shadow: inset 0 0 1.25rem rgba(148, 246, 255, 0.4), 0 0.5rem 0.625rem 0 rgba(0, 0, 0, 0.2), 0 0 0.625rem 0.125rem rgba(255, 255, 255, 0.4);
+    display: flex;
+    align-items: center;
+    text-align: center;
+    height: 12rem;
+    width: 20rem;
+    transition: 0.4s;
+    user-select: none;
+    -webkit-user-select: none;
+    overflow: hidden;
+  }
+}

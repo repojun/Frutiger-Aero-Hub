@@ -1,0 +1,68 @@
+export const projects = [
+  {
+    id: "portfolio1",
+    name: "Portfolio 1",
+    description: "My basic portfolio site",
+    link: "https://example.com/portfolio1",
+    image: "https://arjun.needs-to-s.top/4gSaeXF.png",
+  },
+  {
+    id: "app1",
+    name: "App 1",
+    description: "A simple app",
+    link: "https://example.com/app1",
+    image: "https://arjun.needs-to-s.top/4gSaeXF.png",
+  },
+  {
+    id: "portfolio2",
+    name: "Portfolio 2",
+    description: "Another basic portfolio",
+    link: "https://example.com/portfolio2",
+    image: "https://arjun.needs-to-s.top/4gSaeXF.png",
+  },
+  {
+    id: "app2",
+    name: "App 2",
+    description: "Another simple app",
+    link: "https://example.com/app2",
+    image: "https://arjun.needs-to-s.top/4gSaeXF.png",
+  },
+  {
+    id: "portfolio3",
+    name: "Portfolio 3",
+    description: "Yet another portfolio",
+    link: "https://example.com/portfolio3",
+    image: "https://arjun.needs-to-s.top/4gSaeXF.png",
+  },
+  {
+    id: "app3",
+    name: "App 3",
+    description: "Yet another app",
+    link: "https://example.com/app3",
+    image: "https://arjun.needs-to-s.top/4gSaeXF.png",
+  },
+  {
+    id: "app4",
+    name: "App 4",
+    description: "Simple app example",
+    link: "https://example.com/app4",
+    image: "https://arjun.needs-to-s.top/4gSaeXF.png",
+  },
+  {
+    id: "portfolio4",
+    name: "Portfolio 4",
+    description: "Simple portfolio example",
+    link: "https://example.com/portfolio4",
+    image: "https://arjun.needs-to-s.top/4gSaeXF.png",
+  },
+  {
+    id: "app5",
+    name: "App 5",
+    description: "Basic app demo",
+    link: "https://example.com/app5",
+    image: "https://arjun.needs-to-s.top/4gSaeXF.png",
+  },
+].map((project) => ({
+  ...project,
+  slug: project.name.toLowerCase().replace(/\s+/g, "-"),
+}));

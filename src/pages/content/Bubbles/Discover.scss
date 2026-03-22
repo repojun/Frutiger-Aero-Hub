@@ -1,0 +1,65 @@
+.bubble {
+  width: 20rem;
+  filter: hue-rotate(-50deg) saturate(150%);
+}
+
+.discover-scrollable {
+  overflow: auto;
+  will-change: scroll-position;
+  max-height: 30rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 10rem;
+  min-height: 0;
+}
+
+.discover-grid {
+  padding-top: 2rem;
+  min-width: 100%;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 1.5rem;
+  .discover-item {
+    background: rgba(180, 255, 248, 0.05);
+    backdrop-filter: blur(5rem);
+    border: 0.0625rem solid rgb(255, 255, 255);
+    box-shadow: inset 0 0 1.25rem rgba(148, 246, 255, 0.4), 0 0.5rem 0.625rem 0 rgba(0, 0, 0, 0.2), 0 0 0.625rem 0.125rem rgba(255, 255, 255, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    text-align: center;
+    height: 13rem;
+    width: 21rem;
+    transition: 0.4s;
+    user-select: none;
+    -webkit-user-select: none;
+    overflow: hidden;
+    position: relative;
+    &:hover {
+      cursor: pointer;
+      transition: 0.2s;
+      background: rgba(180, 255, 248, 0.5);
+      box-shadow: inset 0 0 1.25rem rgba(148, 246, 255, 0.4), 0 0.5rem 0.625rem 0 rgba(0, 0, 0, 0.2), 0 0 0.625rem 0.2rem rgba(255, 255, 255, 0.8);
+      transform: translateY(-2px);
+    }
+    img {
+      width: 75%;
+      padding-bottom: 2.5rem;
+    }
+    .discover-title {
+      position: absolute;
+      font-weight: 500;
+      text-shadow: 0px 0px 2px rgba(0, 0, 0, 1), 0px 0px 12px white, 0px 0px 2px rgb(255, 255, 255, 0.5);
+      transition: 0.3s;
+      user-select: none;
+      font-size: 1.25rem;
+      text-align: center;
+      border-top: 0.05rem solid white;
+      padding-top: 0.1rem;
+      width: 100%;
+      padding-bottom: 0.4rem;
+      background: rgba(180, 255, 248, 0.3);
+      box-shadow: inset 0 0 1.25rem rgba(148, 246, 255, 0.4), 0 0.5rem 0.625rem 0 rgba(0, 0, 0, 0.2), 0 0 0.625rem 0.125rem rgba(255, 255, 255, 0.4);
+    }
+  }
+}

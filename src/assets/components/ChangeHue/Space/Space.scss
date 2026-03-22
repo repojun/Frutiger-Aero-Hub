@@ -1,0 +1,22 @@
+.particle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: rgb(255, 255, 255, 0.8);
+  border-radius: 50%;
+  animation: pulse 3s ease-in-out infinite;
+  filter: var(--aurora-filter, hue-rotate(50deg) saturate(135%));
+  z-index: 1;
+}
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.8;
+    filter: drop-shadow(0 0 4px white);
+  }
+  50% {
+    opacity: 0.1;
+    filter: drop-shadow(0 0 4px white);
+    transform: translateY(-10px);
+  }
+}
