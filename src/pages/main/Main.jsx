@@ -66,7 +66,7 @@ export default function Main({ children }) {
     { id: 4, imageFile: "https://arjun.needs-to-s.top/7qBiaZ9.png", icon: "/icons/wallpaper.png", label: "Aurora Purple" },
     { id: 5, imageFile: "https://arjun.needs-to-s.top/8zefmsY.png", icon: "/icons/wallpaper.png", label: "Aurora Grey" },
     { id: 6, imageFile: "https://arjun.needs-to-s.top/99YQJxE.jpg", icon: "/icons/wallpaper.png", label: "Aurora Blue" },
-    { id: 7, imageFile: "https://arjun.needs-to-s.top/3bMc7L3.jpg", icon: "/icons/wallpaper.png", label: "Wheat" },
+    { id: 7, imageFile: "https://arjun.needs-to-s.top/6T22pQu.png", icon: "/icons/wallpaper.png", label: "Wheat" },
   ];
 
   const buttonSound = () => {
@@ -175,7 +175,6 @@ export default function Main({ children }) {
                     toggleModal({
                       title: "About",
                       image: "",
-
                       link: "https://www.craftedbyarjun.com/",
                       type: "Credits",
                       array: [],

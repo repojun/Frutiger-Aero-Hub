@@ -18,7 +18,7 @@ export default function Discover() {
         </div>
         <div className="resource-banner" style={{ height: "auto" }}>
           <div className="title">Teddy Says:</div>
-          <span>The Discovery Page holds a bunch of cool Frutiger Aero themed websites, apps, media and more for you to explore. There are also other aesthetics here such as Metro and DORFic, if you have any suggestions let me know!</span>
+          <span>The Discovery Page holds a bunch of cool Frutiger Aesthetic themed websites, apps, media and more for you to explore (or just cool stuff). if you have any suggestions let me know!</span>
         </div>
       </div>
       <div className="divider"></div>

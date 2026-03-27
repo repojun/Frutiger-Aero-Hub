@@ -35,8 +35,9 @@ body {
   justify-content: center;
   align-items: center;
   column-gap: 1rem;
-  text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5), 0px 0px 12px white, 0px 0px 18px white;
+  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.75), 0px 0px 12px rgb(255, 255, 255, 1);
   -webkit-box-reflect: below -1.5rem linear-gradient(transparent 60%, rgba(0, 0, 0, 0.4));
+  position: relative;
 
   span {
     font-size: 3.5rem;
@@ -325,42 +326,6 @@ body {
     background: rgba(231, 255, 253, 0.5) !important;
     box-shadow: inset 0px 0px 20px rgba(148, 246, 255, 0.5), 0px 8px 10px 0px rgba(0, 0, 0, 0.2), 0px 0px 10px 2px rgba(255, 255, 255, 0.5);
     z-index: 99;
-  }
-
-  .teddy {
-    width: 5rem;
-  }
-
-  &.bigger {
-    width: 70rem;
-    animation: bigger 0.5s forwards;
-  }
-
-  &.smaller {
-    width: 70rem;
-    animation: smaller 0.5s forwards;
-  }
-
-  @keyframes bigger {
-    0% {
-      width: 60rem;
-      opacity: 0;
-    }
-    100% {
-      width: 70rem;
-      opacity: 1;
-    }
-  }
-
-  @keyframes smaller {
-    0% {
-      width: 70rem;
-      opacity: 0;
-    }
-    100% {
-      width: 60rem;
-      opacity: 1;
-    }
   }
 }
 
