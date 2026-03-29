@@ -1,14 +1,14 @@
 export const projects = [
   {
-    id: "portfolio1",
-    name: "Portfolio 1",
+    id: "portfolio",
+    name: "My Portfolio",
     description: "My basic portfolio site",
     link: "https://example.com/portfolio1",
     image: "https://arjun.needs-to-s.top/4gSaeXF.png",
   },
   {
-    id: "app1",
-    name: "App 1",
+    id: "google",
+    name: "Aero Search Page",
     description: `Welcome to the Frutiger Aero Hub! This is a new website for Frutiger Aero fans & creators, it contains collections of mini apps to use, resources & archives which you can view in the Tabs above. It will also act as a hub for other users to share their own Frutiger Aero projects. 
       
     Teddy the Aero mascot will guide you through the page The site has been developed with my custom design style with plenty of fun features and 
@@ -18,58 +18,31 @@ export const projects = [
       
       I have opened this site very recently and plan to iteratively add more resources and tabs overtime, please contact me if you have any suggestions!`,
     link: "https://example.com/app1",
-    image: "https://arjun.needs-to-s.top/4gSaeXF.png",
+    image: "https://arjun.needs-to-s.top/6UeNuGm.png",
   },
   {
-    id: "portfolio2",
-    name: "Portfolio 2",
+    id: "reddit-design",
+    name: "Reddit Design",
     description: "Another basic portfolio",
     link: "https://example.com/portfolio2",
-    image: "https://arjun.needs-to-s.top/4gSaeXF.png",
+    image: "https://arjun.needs-to-s.top/9E1tzSG.jpg",
   },
   {
-    id: "app2",
-    name: "App 2",
+    id: "aero-archive",
+    name: "Frutiger Aero Archive",
     description: "Another simple app",
     link: "https://example.com/app2",
-    image: "https://arjun.needs-to-s.top/4gSaeXF.png",
+    image: "https://arjun.needs-to-s.top/2fM4FgH.jpg",
   },
   {
-    id: "portfolio3",
-    name: "Portfolio 3",
+    id: "voice-sync",
+    name: "VoiceSync",
     description: "Yet another portfolio",
-    link: "https://example.com/portfolio3",
-    image: "https://arjun.needs-to-s.top/4gSaeXF.png",
-  },
-  {
-    id: "app3",
-    name: "App 3",
-    description: "Yet another app",
-    link: "https://example.com/app3",
-    image: "https://arjun.needs-to-s.top/4gSaeXF.png",
-  },
-  {
-    id: "app4",
-    name: "App 4",
-    description: "Simple app example",
-    link: "https://example.com/app4",
-    image: "https://arjun.needs-to-s.top/4gSaeXF.png",
-  },
-  {
-    id: "portfolio4",
-    name: "Portfolio 4",
-    description: "Simple portfolio example",
-    link: "https://example.com/portfolio4",
-    image: "https://arjun.needs-to-s.top/4gSaeXF.png",
-  },
-  {
-    id: "app5",
-    name: "App 5",
-    description: "Basic app demo",
-    link: "https://example.com/app5",
-    image: "https://arjun.needs-to-s.top/4gSaeXF.png",
+    link: "https://voicesync.modsync.app/",
+    image: "https://arjun.needs-to-s.top/75LLvxT.png",
   },
 ].map((project) => ({
   ...project,
   slug: project.name.toLowerCase().replace(/\s+/g, "-"),
 }));
+// this slug just turns it into app5 -> app-5 for the sake of the URL

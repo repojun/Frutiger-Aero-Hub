@@ -93,7 +93,10 @@
       box-shadow: 0 0.25rem 1.875rem rgba(0, 0, 0, 0.1);
       backdrop-filter: blur(0.5rem) saturate(120%);
       border: 0.06rem solid rgb(255, 255, 255);
-      width: 25rem;
+
+      height: 15.88rem;
+      display: block;
+      z-index: 5;
     }
   }
 
