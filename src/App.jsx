@@ -1,7 +1,7 @@
 import "./App.css";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
-import Main from "./pages/main/main";
+import Main from "./pages/Main/Main";
 
 // page content
 import Resources from "./pages/content/Test/Resources";
