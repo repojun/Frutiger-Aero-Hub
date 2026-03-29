@@ -1,4 +1,4 @@
-import "./main.scss";
+import "./Main.scss";
 import { useEffect, useState, useRef, useMemo } from "react";
 import Space from "../../assets/components/ChangeHue/Space/Space";
 import RedditModal from "../../assets/components/RedditModal/RedditModal";
