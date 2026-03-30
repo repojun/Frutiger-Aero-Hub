@@ -35,6 +35,13 @@ export const projects = [
     image: "https://arjun.needs-to-s.top/2fM4FgH.jpg",
   },
   {
+    id: "lunalytics",
+    name: "Lunalytics",
+    description: "ksjaay's poopy project bruh",
+    link: "https://lunalytics.xyz/",
+    image: "https://arjun.needs-to-s.top/4rZ1ahY.png",
+  },
+  {
     id: "voice-sync",
     name: "VoiceSync",
     description: "Yet another portfolio",
