@@ -50,11 +50,10 @@ export default function MSN() {
     const Xlocation = Math.floor(Math.random() * (maxX - minX + 1)) + minX;
 
     var newElement2 = (
-      <div key={Date.now() + Xlocation} className="new-pointer" style={{ top: Ylocation, left: Xlocation + 35 }}>
+      <div key={Date.now() + Xlocation} className="msn-buddy" style={{ top: Ylocation, left: Xlocation + 35 }}>
         🌐
       </div>
     );
-
     setMsnArray([...msnArray, newElement2]);
     var randomElement = msn[randomNum];
     var randomSound = msnSound[randomNumSound];

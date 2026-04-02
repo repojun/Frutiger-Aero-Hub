@@ -27,9 +27,9 @@ export default function Main({ children }) {
     { name: "Resources", path: "/resources", icon: "/icons/globe2.png" },
     { name: "Discover", path: "/discover", icon: "/icons/search.png" },
     { name: "Weather", path: "/weather", icon: "/icons/weather.png" },
-    { name: "Chat Room", path: "/chatroom", icon: "/icons/msnGrey.webp" },
-    { name: "Guest Book", path: "/guestbook", icon: "/icons/msnGrey.webp" },
     { name: "MSN", path: "/msn", icon: "/icons/msnGrey.webp" },
+    { name: "Guest Book", path: "/guestbook", icon: "/icons/credits.png" },
+    { name: "Chat Room", path: "/chatroom", icon: "/icons/msnGrey.webp" },
   ];
 
   const musicArray = useMemo(
