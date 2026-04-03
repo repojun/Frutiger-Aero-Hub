@@ -8,6 +8,8 @@ export default function GuestBook() {
   const [country, setCountry] = useState("");
   const [name, setName] = useState("");
   const [website, setWebsite] = useState("");
+  const [sent, setSent] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   const loadMessages = async () => {
     try {
@@ -18,12 +20,21 @@ export default function GuestBook() {
       setMessages(data);
     } catch (err) {
       console.log(err);
+    } finally {
+      setLoading(false);
     }
   };
 
   const submitMessage = async () => {
     // need to add something here to show th euser that the message was created
-    await addMessage(message, website, country, name, quote);
+    try {
+      await addMessage(message, website, country, name, quote);
+    } catch (err) {
+      console.log(err);
+    } finally {
+      setSent(true);
+      loadMessages();
+    }
   };
 
   useEffect(() => {
@@ -32,9 +43,7 @@ export default function GuestBook() {
 
   return (
     <>
-      <div className="main-guest-title">
-        guest book
-      </div>
+      <div className="main-guest-title">guest book</div>
       <div className="guest-scrollable">
         <div className="guest-divider" />
         <div className="guest-header-flex">
@@ -46,7 +55,7 @@ export default function GuestBook() {
             <span>Here you can view messages left by other users by scrolling down. You can also leave a message for the page creator or just leave your mark! Fill the form below and hit submit to get your message in the book.</span>
             <div className="guest-input-container">
               <input
-                className="text-input"
+                className={sent ? "text-input disabled" : "text-input"}
                 placeholder="Name"
                 type="name"
                 name="name"
@@ -54,11 +63,12 @@ export default function GuestBook() {
                 onChange={(e) => {
                   setName(e.target.value);
                 }}
+                disabled={sent}
               />
             </div>
             <div className="guest-input-container">
               <input
-                className="text-input"
+                className={sent ? "text-input disabled" : "text-input"}
                 placeholder="Country (Optional)"
                 type="country"
                 name="country"
@@ -66,11 +76,12 @@ export default function GuestBook() {
                 onChange={(e) => {
                   setCountry(e.target.value);
                 }}
+                disabled={sent}
               />
             </div>
             <div className="guest-input-container">
               <input
-                className="text-input"
+                className={sent ? "text-input disabled" : "text-input"}
                 placeholder="Website (Optional)"
                 type="website"
                 name="website"
@@ -78,11 +89,12 @@ export default function GuestBook() {
                 onChange={(e) => {
                   setWebsite(e.target.value);
                 }}
+                disabled={sent}
               />
             </div>
             <div className="guest-input-container">
               <input
-                className="text-input"
+                className={sent ? "text-input disabled" : "text-input"}
                 placeholder="If you could give a piece of advice to everyone in the world, what would it be? (Optional)"
                 type="quote"
                 name="quote"
@@ -90,12 +102,13 @@ export default function GuestBook() {
                 onChange={(e) => {
                   setQuote(e.target.value);
                 }}
+                disabled={sent}
                 style={{ maxWidth: "97%", minWidth: "97%", height: "2rem", maxHeight: "8rem" }}
               />
             </div>
             <div className="guest-input-container">
               <textarea
-                className="text-input"
+                className={sent ? "text-input disabled" : "text-input"}
                 placeholder="Message"
                 type="message"
                 name="message"
@@ -103,39 +116,44 @@ export default function GuestBook() {
                 onChange={(e) => {
                   setMessage(e.target.value);
                 }}
+                disabled={sent}
                 style={{ maxWidth: "97%", minWidth: "97%", height: "2rem", maxHeight: "8rem" }}
               />
             </div>
 
-            <div className="submit-button" onClick={submitMessage}>
+            <div className={sent ? "submit-button disabled" : "submit-button"} onClick={submitMessage}>
               <img src="icons/forward.png" className="icon" />
               <span>Submit</span>
             </div>
           </div>
         </div>
         <div className="guest-divider" />
-        <div className="messages">
-          {[...messages].reverse().map((msg) => (
-            <div className="message">
-              <div className="timestamp">{new Date(msg.created_at).toLocaleString()}</div>
-              <div>
-                <span className="title">Name:</span> {msg.name}
+        {loading ? (
+          <div>Loading Messages...</div>
+        ) : (
+          <div className="messages">
+            {[...messages].reverse().map((msg) => (
+              <div className="message">
+                <div className="timestamp">{new Date(msg.created_at).toLocaleString()}</div>
+                <div>
+                  <span className="title">Name:</span> {msg.name}
+                </div>
+                <div>
+                  <span className="title">Website:</span> {msg.website}
+                </div>
+                <div>
+                  <span className="title">Country:</span> {msg.country}
+                </div>
+                <div>
+                  <span className="title">Advice for the world:</span> {msg.country}
+                </div>
+                <div>
+                  <span className="title">Message:</span> {msg.message}
+                </div>
               </div>
-              <div>
-                <span className="title">Website:</span> {msg.website}
-              </div>
-              <div>
-                <span className="title">Country:</span> {msg.country}
-              </div>
-              <div>
-                <span className="title">Advice for the world:</span> {msg.country}
-              </div>
-              <div>
-                <span className="title">Message:</span> {msg.message}
-              </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        )}
       </div>
     </>
   );
