@@ -15,7 +15,7 @@ export default function Weather() {
     try {
       setError(null);
       if (USE_DATA) {
-        const res = await fetch(`https://api.weatherapi.com/v1/current.json?key=${import.meta.env.REACT_APP_NOT_FOR_YOU_BRO}&q=${location}`);
+        const res = await fetch(`/api/weather?location=${location}`);
         const data = await res.json();
         setWeather(data);
       } else {

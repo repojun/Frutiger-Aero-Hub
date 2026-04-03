@@ -48,7 +48,7 @@ export default function GuestBook() {
 
   return (
     <>
-      <div className="main-guest-title">guest book</div>
+      <div className="main-guest-title">Guest Book</div>
       <div className="guest-scrollable">
         <div className="guest-divider" />
         <div className="guest-header-flex">
