@@ -32,7 +32,9 @@ export default function GuestBook() {
 
   return (
     <>
-      <div className="main-title">guest book</div>
+      <div className="main-guest-title">
+        guest book
+      </div>
       <div className="guest-scrollable">
         <div className="guest-divider" />
         <div className="guest-header-flex">
@@ -81,7 +83,7 @@ export default function GuestBook() {
             <div className="guest-input-container">
               <input
                 className="text-input"
-                placeholder="If you could give a message to everyone in the world, what would it be? (Optional)"
+                placeholder="If you could give a piece of advice to everyone in the world, what would it be? (Optional)"
                 type="quote"
                 name="quote"
                 value={quote}
@@ -112,14 +114,28 @@ export default function GuestBook() {
           </div>
         </div>
         <div className="guest-divider" />
-        {messages.map((msg) => (
-          <div>
-            <div>Name: {msg.name}</div>
-            <div>Website: {msg.website}</div>
-            <div>Country: {msg.country}</div>
-            <div>Message: {msg.message}</div>
-          </div>
-        ))}
+        <div className="messages">
+          {[...messages].reverse().map((msg) => (
+            <div className="message">
+              <div className="timestamp">{new Date(msg.created_at).toLocaleString()}</div>
+              <div>
+                <span className="title">Name:</span> {msg.name}
+              </div>
+              <div>
+                <span className="title">Website:</span> {msg.website}
+              </div>
+              <div>
+                <span className="title">Country:</span> {msg.country}
+              </div>
+              <div>
+                <span className="title">Advice for the world:</span> {msg.country}
+              </div>
+              <div>
+                <span className="title">Message:</span> {msg.message}
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </>
   );
