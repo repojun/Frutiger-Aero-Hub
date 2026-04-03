@@ -28,12 +28,13 @@ export default function GuestBook() {
   const submitMessage = async () => {
     // need to add something here to show th euser that the message was created
     try {
-      await addMessage(message, website, country, name, quote);
+      const { data, error } = await addMessage(message, website, country, name, quote);
+      if (error) throw error;
+      setMessages((prev) => [...prev, data]); // adding here isntead of reloading
     } catch (err) {
       console.log(err);
     } finally {
       setSent(true);
-      loadMessages();
     }
   };
 
