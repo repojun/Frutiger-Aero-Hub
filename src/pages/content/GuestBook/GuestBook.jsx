@@ -28,9 +28,19 @@ export default function GuestBook() {
     // need to add something here to show th euser that the message was created
     if ((message, name)) {
       try {
-        const { data, error } = await addMessage(message, website, country, name, quote);
+        const { error } = await addMessage(message, website, country, name, quote);
         if (error) throw error;
-        setMessages((prev) => [...prev, data]); // adding here isntead of reloading
+
+        const messageWithTimestamp = {
+          message,
+          website,
+          country,
+          name,
+          quote,
+          created_at: new Date().toISOString(),
+        };
+
+        setMessages((prev) => [...prev, messageWithTimestamp]); // adding here isntead of reloading
       } catch (err) {
         console.log(err);
       } finally {

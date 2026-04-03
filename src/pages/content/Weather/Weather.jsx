@@ -7,7 +7,7 @@ export default function Weather() {
   // need to handle errors!
   const [error, setError] = useState(null);
   const condition = weather?.current;
-  const USE_DATA = true;
+  const USE_DATA = false;
   useEffect(() => {
     getWeather();
   }, []);
