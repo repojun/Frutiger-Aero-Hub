@@ -1,6 +1,7 @@
 import "./GuestBook.scss";
 import { useEffect, useState } from "react";
 import { getMessages, addMessage } from "../../../api/messages";
+import { showErrorToast, showToast } from "../../../assets/components/Toast/Toast";
 export default function GuestBook() {
   const [messages, setMessages] = useState([]);
   const [quote, setQuote] = useState("");
@@ -14,9 +15,7 @@ export default function GuestBook() {
   const loadMessages = async () => {
     try {
       const { data, error } = await getMessages();
-      console.log(data);
       if (error) throw error;
-
       setMessages(data);
     } catch (err) {
       console.log(err);
@@ -27,14 +26,19 @@ export default function GuestBook() {
 
   const submitMessage = async () => {
     // need to add something here to show th euser that the message was created
-    try {
-      const { data, error } = await addMessage(message, website, country, name, quote);
-      if (error) throw error;
-      setMessages((prev) => [...prev, data]); // adding here isntead of reloading
-    } catch (err) {
-      console.log(err);
-    } finally {
-      setSent(true);
+    if ((message, name)) {
+      try {
+        const { data, error } = await addMessage(message, website, country, name, quote);
+        if (error) throw error;
+        setMessages((prev) => [...prev, data]); // adding here isntead of reloading
+      } catch (err) {
+        console.log(err);
+      } finally {
+        showToast("Message Submitted!");
+        setSent(true);
+      }
+    } else {
+      showErrorToast("Fill all required fields!");
     }
   };
 
