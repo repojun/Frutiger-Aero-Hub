@@ -46,11 +46,45 @@ export default function GuestBook() {
       } finally {
         showToast("Message Submitted!");
         setSent(true);
+        localStorage.setItem("messageSentAt", Date.now().toString());
       }
     } else {
       showErrorToast("Fill all required fields!");
     }
   };
+
+  const getCooldownRemaining = () => {
+    const sentAt = localStorage.getItem("messageSentAt");
+    if (!sentAt) return 0;
+
+    const cooldown = 5 * 60 * 1000; // 5 mins, basically 60 * 1000 (ms) is a minute, then multiply by 5
+    const now = Date.now();
+
+    const remaining = cooldown - (now - Number(sentAt));
+
+    return remaining > 0 ? remaining : 0;
+  };
+
+  const showCooldown = () => {
+    const remaining = getCooldownRemaining();
+
+    if (remaining <= 0) return;
+
+    const minutes = Math.ceil(remaining / 60000);
+
+    showErrorToast(`You can send again in ${minutes} minutes`);
+  };
+
+  useEffect(() => {
+    const remaining = getCooldownRemaining();
+
+    if (remaining > 0) {
+      setSent(true);
+    } else {
+      localStorage.removeItem("messageSentAt");
+      setSent(false);
+    }
+  }, []);
 
   useEffect(() => {
     loadMessages();
@@ -136,7 +170,7 @@ export default function GuestBook() {
               />
             </div>
 
-            <div className={sent ? "submit-button disabled" : "submit-button"} onClick={submitMessage}>
+            <div className={sent ? "submit-button disabled" : "submit-button"} onClick={sent ? () => showCooldown() : submitMessage}>
               <img src="icons/forward.png" className="icon" />
               <span>Submit</span>
             </div>
@@ -150,21 +184,41 @@ export default function GuestBook() {
             {[...messages].reverse().map((msg) => (
               <div className="message">
                 <div className="timestamp">{new Date(msg.created_at).toLocaleString()}</div>
-                <div>
-                  <span className="title">Name:</span> {msg.name}
-                </div>
-                <div>
-                  <span className="title">Website:</span> {msg.website}
-                </div>
-                <div>
-                  <span className="title">Country:</span> {msg.country}
-                </div>
-                <div>
-                  <span className="title">Advice for the world:</span> {msg.country}
-                </div>
-                <div>
-                  <span className="title">Message:</span> {msg.message}
-                </div>
+                {msg.name ? (
+                  <div>
+                    <span className="title">Name:</span> {msg.name}
+                  </div>
+                ) : (
+                  <></>
+                )}
+                {msg.country ? (
+                  <div>
+                    <span className="title">Country:</span> {msg.country}
+                  </div>
+                ) : (
+                  <></>
+                )}
+                {msg.website ? (
+                  <div>
+                    <span className="title">Website:</span> {msg.website}
+                  </div>
+                ) : (
+                  <></>
+                )}
+                {msg.quote ? (
+                  <div>
+                    <span className="title">Quote:</span> {msg.quote}
+                  </div>
+                ) : (
+                  <></>
+                )}
+                {msg.message ? (
+                  <div>
+                    <span className="title">Message:</span> {msg.message}
+                  </div>
+                ) : (
+                  <></>
+                )}
               </div>
             ))}
           </div>

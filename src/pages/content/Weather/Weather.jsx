@@ -42,6 +42,10 @@ export default function Weather() {
       setError(err.message);
     }
   };
+
+  const editLocation = () => {
+    console.log("hey");
+  };
   return (
     <>
       <div className="main-title">
@@ -54,7 +58,12 @@ export default function Weather() {
             <div className="weather-main">
               <img src="/icons/weather/Snow_Occasional.ico" className="weather-icon"></img>
               <div className="weather-text">
-                <p className="location">{weather?.location?.name ?? "London, UK"}</p>
+                <p className="location">
+                  {weather?.location?.name ?? "London, UK"}{" "}
+                  <span className="edit-button" onClick={() => editLocation()}>
+                    [x]
+                  </span>
+                </p>
                 <p className="celsius">{weather?.current?.temp_c ?? "24"}°C</p>
                 <p className="condition">Sunny</p>
                 <p className="feels-like">Feels like 19°C</p>

@@ -1,6 +1,8 @@
 import { toast, Flip } from "react-toastify";
+import { SoundPlayer } from "../SoundPlayer/SoundPlayer";
 
 export const showErrorToast = (errorMessage) => {
+  SoundPlayer("confirmation_negative", 0.15, "wav");
   toast.error(errorMessage, {
     position: "bottom-right",
     autoClose: 5000,
@@ -14,6 +16,7 @@ export const showErrorToast = (errorMessage) => {
 };
 
 export const showToast = (message) => {
+  SoundPlayer("confirmation_positive", 0.15, "wav");
   toast.success(message, {
     position: "bottom-right",
     autoClose: 5000,
