@@ -151,6 +151,7 @@ export default function GuestBook() {
                 onChange={(e) => {
                   setQuote(e.target.value);
                 }}
+                maxLength={200}
                 disabled={sent}
                 style={{ maxWidth: "97%", minWidth: "97%", height: "2rem", maxHeight: "8rem" }}
               />
@@ -166,6 +167,7 @@ export default function GuestBook() {
                   setMessage(e.target.value);
                 }}
                 disabled={sent}
+                maxLength={300}
                 style={{ maxWidth: "97%", minWidth: "97%", height: "2rem", maxHeight: "8rem" }}
               />
             </div>
