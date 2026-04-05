@@ -3,7 +3,7 @@ import "./Space.scss";
 
 export default function Space() {
   const stars = useMemo(() => {
-    return [...Array(200)].map((_, i) => (
+    return [...Array(0)].map((_, i) => (
       <div
         key={i}
         className="particle"
