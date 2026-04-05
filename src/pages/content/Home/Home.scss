@@ -1,7 +1,6 @@
 .large-button {
   position: relative;
   background: rgba(0, 221, 255, 0.4);
-  box-shadow: 0 0.25rem 1.875rem rgba(0, 0, 0, 0.1);
   border: 0.0625rem solid rgb(255, 255, 255);
   box-shadow: inset 0 0 1.25rem rgba(148, 246, 255, 0.4), 0 0.5rem 0.625rem 0 rgba(0, 0, 0, 0.2), 0 0 0.625rem 0.125rem rgba(255, 255, 255, 0.4);
   display: flex;
@@ -174,7 +173,6 @@
       height: 100%;
       background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
       background-size: 100% 0.15vw;
-      animation: scan-lines 0.1s linear infinite;
       opacity: 1;
       z-index: 999;
     }
@@ -205,7 +203,7 @@
   background-clip: text;
   -webkit-background-clip: text;
   text-shadow: none;
-  color: transparent; // 👈 use this instead of relying only on webkit
+  color: transparent;
   font-weight: 500;
   animation: wave 5s ease-in-out infinite;
 }
@@ -218,13 +216,5 @@
   }
   100% {
     background-position: 0% center;
-  }
-}
-@keyframes scan-lines {
-  0% {
-    background-position: 0 0;
-  }
-  100% {
-    background-position: 0 100%;
   }
 }
