@@ -67,3 +67,21 @@
     overflow: hidden;
   }
 }
+
+.markdown {
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    margin-top: -3rem;
+    text-align: left;
+  }
+  h2 {
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    text-align: left;
+  }
+  p {
+    text-align: left;
+    margin-bottom: 1.5rem;
+  }
+}
