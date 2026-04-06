@@ -209,7 +209,7 @@ export default function GuestBook() {
                 )}
                 {msg.quote ? (
                   <div>
-                    <span className="title">Quote:</span> {msg.quote}
+                    <span className="title">Advice/Quote:</span> {msg.quote}
                   </div>
                 ) : (
                   <></>

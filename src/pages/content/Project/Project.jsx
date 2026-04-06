@@ -54,9 +54,11 @@ export default function Project() {
           </div>
         </div>
         <div className="project-description" style={{ whiteSpace: "pre-line" }}>
-          <div style={{ fontWeight: "500", fontSize: "1.5rem", marginBottom: "0.5rem" }}>{project.creator ? `Message From ${project.author}:` : "Project Description:"}</div>
-          <div className="scrollable" style={{ paddingTop: "1.5rem", paddingLeft: "0.5rem", marginRight: "0rem" }}>
-            <ReactMarkdown>{project.description}</ReactMarkdown>
+          <div style={{ fontWeight: "500", fontSize: "1.5rem", paddingBottom: "2rem" }}>{project.creator ? `Message From ${project.author}:` : "Project Description:"}</div>
+          <div className="scrollable" style={{ paddingTop: "0rem", paddingLeft: "0.5rem", marginRight: "0rem" }}>
+            <div className="markdown">
+              <ReactMarkdown>{project.description}</ReactMarkdown>
+            </div>
           </div>
         </div>
       </div>
