@@ -2,6 +2,7 @@ import "./Project.scss";
 import { projects } from "../../../assets/components/Projects/Projects";
 import { useParams, useLocation, Link } from "react-router-dom";
 import { SoundPlayer } from "../../../assets/components/SoundPlayer/SoundPlayer";
+import ReactMarkdown from "react-markdown";
 
 export default function Project() {
   const { slug } = useParams();
@@ -36,24 +37,27 @@ export default function Project() {
           <div className="meta-data">
             <div>
               <div style={{ fontWeight: "500" }}>Title:</div>
-              <div>The Portfolio</div>
+              <div>{project.name}</div>
             </div>
             <div>
               <div style={{ fontWeight: "500" }}>Author:</div>
-              <div>Poopy</div>
+              <div>{project.author}</div>
             </div>
             <div>
               <div style={{ fontWeight: "500" }}>Category:</div>
-              <div>Testing</div>
+              <div>{project.category}</div>
             </div>
             <div>
               <div style={{ fontWeight: "500" }}>Date Created:</div>
-              <div>18/09/26</div>
+              <div>{project.date}</div>
             </div>
           </div>
         </div>
         <div className="project-description" style={{ whiteSpace: "pre-line" }}>
-          {project.description}
+          <div style={{ fontWeight: "500", fontSize: "1.5rem", marginBottom: "0.5rem" }}>{project.creator ? `Message From ${project.author}:` : "Project Description:"}</div>
+          <div className="scrollable" style={{ paddingTop: "1.5rem", paddingLeft: "0.5rem", marginRight: "0rem" }}>
+            <ReactMarkdown>{project.description}</ReactMarkdown>
+          </div>
         </div>
       </div>
     </>

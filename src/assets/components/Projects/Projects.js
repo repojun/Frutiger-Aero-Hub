@@ -9,14 +9,7 @@ export const projects = [
   {
     id: "google",
     name: "Aero Search Page",
-    description: `Welcome to the Frutiger Aero Hub! This is a new website for Frutiger Aero fans & creators, it contains collections of mini apps to use, resources & archives which you can view in the Tabs above. It will also act as a hub for other users to share their own Frutiger Aero projects. 
-      
-    Teddy the Aero mascot will guide you through the page The site has been developed with my custom design style with plenty of fun features and 
-      easter eggs (you can view some on the side bar buttons). 
-      
-      It's going to act as my final tribute to the aesthetic and my FA inspired design style.
-      
-      I have opened this site very recently and plan to iteratively add more resources and tabs overtime, please contact me if you have any suggestions!`,
+    description: `s`,
     link: "https://example.com/app1",
     image: "https://arjun.needs-to-s.top/6UeNuGm.png",
   },
@@ -37,9 +30,28 @@ export const projects = [
   {
     id: "lunalytics",
     name: "Lunalytics",
-    description: "ksjaay's poopy project bruh",
+    category: "Software",
+    date: "18/09/26",
+    author: "KSJaay",
+    description: `
+When I first started self hosting, I wanted to be able to monitor all my applications and servers.
+
+So, I spent a while testing various different paid and self hosted monitoring services, but always felt like something was missing.
+
+The application that came closest to all my requirements was **Uptime-Kuma**, but it still lacked a lot of things I wanted:
+
+- UI felt cluttered (especially on mobile)
+- Customisation at the time was pretty much none existent for status pages
+- I wanted an application that would support multiple users with custom permissions.
+
+So, I thought why not spend a little bit of time to create my own application. Initially I wanted to spend around a month, but some how 2+ years later I'm still here developing new features. 
+
+I spent countless hours adding various features, that have gone way above the original plan because I wanted to create something that's actually useful for users and not just a half baked application.
+
+`,
     link: "https://lunalytics.xyz/",
     image: "https://arjun.needs-to-s.top/4rZ1ahY.png",
+    creator: true,
   },
   {
     id: "voice-sync",

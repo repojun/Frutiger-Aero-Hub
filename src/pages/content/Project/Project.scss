@@ -171,7 +171,7 @@
   }
   .project-description {
     position: relative;
-    text-shadow: 0px 1px 2px rgba(0, 0, 0, 1), 0px 1px 4px rgba(0, 0, 0, 0.6);
+    text-shadow: 0px 1px 3px rgba(0, 0, 0, 1), 0px 1px 3px rgba(0, 0, 0, 0.4), 0px 0px 12px rgb(255, 255, 255, 0.5);
     background: rgba(180, 255, 248, 0.1);
     box-shadow: 0 0.25rem 1.875rem rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(0.5rem) saturate(120%);
@@ -191,12 +191,26 @@
     width: 28rem;
     transition: 0.3s;
     user-select: none;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     overflow: hidden;
     -webkit-user-select: none;
     display: flex;
     flex-direction: column;
+    white-space: normal !important;
+    p {
+      margin: 0 0 0.5rem;
+      line-height: 1.5;
+    }
+    ul {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      padding-left: 1rem;
+    }
 
+    li {
+      margin-top: 0rem;
+      margin-bottom: 0.5rem;
+    }
     .title {
       font-weight: 500;
       margin-bottom: 0.25rem;
