@@ -1,6 +1,7 @@
 import { useMemo } from "react";
 import "./Space.scss";
 
+
 export default function Space() {
   const stars = useMemo(() => {
     return [...Array(0)].map((_, i) => (
