@@ -6,10 +6,10 @@ import rehypeRaw from "rehype-raw";
 export default function About() {
   const [currentImage, setCurrentImage] = useState(0);
   const [fade, setFade] = useState("false");
-  const aeroImages = ["/aero-images/aero_1.png", "/aero-images/aero_17.png", "/aero-images/aero_3.jpg", "/aero-images/aero_4.jpg", "/aero-images/aero_5.jpg", "/aero-images/aero_6.jpg"];
+  const aeroImages = ["/aero-images/ios.jpg", "/aero-images/vista2.png", "/aero-images/vista.webp", "/aero-images/aero_1.png", "/aero-images/aero_17.png", "/aero-images/aero_3.jpg", "/aero-images/aero_4.jpg", "/aero-images/aero_5.jpg", "/aero-images/aero_6.jpg"];
   const content = `
 
-It is based on the clean, glossy, futuristic designs, it was commonly used in early tech, advertisements, operating systems and more. It mixed nature with digital optimism, often depicting the future as a peaceful, fresh, sustainable & eco-friendly utopia.
+It is based on the clean, glossy, futuristic designs of ~2007-2012. It was commonly used in early tech, advertisements, operating systems and more. It mixed nature with digital optimism, often depicting the future as a peaceful, fresh, sustainable & eco-friendly utopia.
 Windows Vista, Windows 7 & the old glossy design of iOS 6 are great examples of this.
 
 This also spawned many sub aesthetics while users looked at this era such as Frutiger Aurora (Based on Windows aurora backgrounds), Frutiger Eco (Focussing on greens, renewable energy, nature), Frutiger Dorfic (Futuristic, techy, orange designs), Technozen (mid-late 2000s Japanese tech aesthetic).
@@ -18,7 +18,7 @@ The aesthetic can also be seen across many platforms, including the PS Vita, Nin
 
 Fun Fact: One interesting and common misconception is the Frutiger font family being used in Windows, it was actually NEVER used with any Windows Aero era interface and the operating system never came with this font. Microsoft actually opted to create their own Segoe UI font which resembled a similar appearance and was inspired by Adrian Frutiger's work.
 
-Below you can see many examples of Frutiger Aero and more. As well as this, you can see more content on the tabs above.
+Below you can see many examples of Frutiger Aero tech, artwork, advertisements and more. As well as this, you can see more content on the tabs above.
 `;
 
   const content2 = `# History Of Frutiger Aero
@@ -27,34 +27,53 @@ Below you can see many examples of Frutiger Aero and more. As well as this, you 
    
    Microsoft later began developing an unreleased operating system called Windows Longhorn, which later became Windows Vista. 
    <div className="images-grid">
-    <img src="/aero-images/aero_1.png" />
-    <img src="/aero-images/aero_3.jpg" />
-    <img src="/aero-images/aero_4.jpg" />
+    <img src="/aero-images/bliss.jpg" />
+    <img src="/aero-images/windowsxp.jpg" />
+    <img src="/aero-images/longhorn.png" />
    </div>
 
-  ## The Rise of Windows Aero
+  ## The Rise of Windows Aero (Longhorn, 2001-2004)
    Longhorn was the real start of Microsoft's design transition, it leaned heavily into glossy, transparent glow effects with smooth animations and transitions. It aimed to completely rework how 
-   Windows worked, the goal was to make computers feel fluid, modern and futuristic. Unfortunately, while many of Longhorn's concept videos looked incredible, features were unstable, performance was poor 
-   and the OS was far too complex to ship for the average consumer's PC. 
+   Windows worked, the goal was to make computers feel fluid, modern and futuristic. 
+   
+   It featured some very ambitious ideas such as "Indigo" which would have served as a unified communication framework for apps and combine messaging, networking, 
+   web services into one system. In addition to this, a new sidebar with chat features and even a context-aware searching which would have been able to identify people, projects, relationships between files when searching for images (essentially like what AI does today). 
+   
+   Unfortunately, while many of Longhorn's concept videos looked incredible, features were unstable, performance was poor and the OS was far too complex to ship for the average consumer's PC. They were trying to create certain features that we have only
+   began to master today.
+
+   Although Longhorn never released, it's legacy definitely did not disappear. In the background, it ended up shaping the foundation for modern Windows systems and was the start of the Aero design style.
 
    <div className="images-grid">
-    <img src="/aero-images/aero_1.png" />
-    <img src="/aero-images/aero_3.jpg" />
-    <img src="/aero-images/aero_4.jpg" />
+    <img src="/aero-images/longhorndemo3.jpg" />
+    <img src="/aero-images/longhorndemo.png" />
+    <img src="/aero-images/longhorndemo2.jpg" />
    </div>
-   
-   Longhorn was then scaled back a lot and became what we know today as Windows Vista, released in 2007. Vista still featured the aero glass windows, glow effects, animated UI elements etc but from the early concept videos its 
+
+  ## Windows Vista (2007)
+
+   Due to the previously mentioned ambitious features, Longhorn was scaled back a lot and became what we know today as Windows Vista, released in 2007. Vista still featured the aero glass windows, glow effects, animated UI elements etc but from the early concept videos its 
    clear to see that it definitely lacked the peaks of Longhorn's ambition. 
    
    Windows Vista overall is looked back at as a poor operating system, it ran sluggishly compared to XP and required above average components at the time.
    However, visually it was wonderfully made, there was a strong sense of depth with the transparent glassy UIs, 3D smooth animations, high quality reflective icon and overall appearance design, lighting was used very intelligently (i.e using light to give visual feedback to the user) and much more.
    It felt like a premium, futuristic operating system in that regard.
 
+   Similar to Longhorn in a way, Vista struggled with performance, compatability and much more at launch yet it helped to build further upon the foundation that Longhorn made and certainly had many overlooked features that seperated it from Windows XP. 
+   Microsoft learnt from these mistakes and went on to create what arguably was the best operating system they ever released.
+
+   Outisde of Microsoft, the new glossy, futuristic look that Windows was taking on had a much larger influence on the industry as a whole.
+
   <div className="images-grid">
-    <img src="/aero-images/aero_1.png" />
-    <img src="/aero-images/aero_3.jpg" />
-    <img src="/aero-images/aero_4.jpg" />
+    <img src="/aero-images/vista_os5.jpg" />
+    <img src="/aero-images/vista_os4.jpg" />
+    <img src="/aero-images/vista_os2.webp" />
+    <img src="/aero-images/vista_os3.jpg" />
+    <img src="/aero-images/vista_os.jpg" />
+    <img src="/aero-images/defendyourwow.jpg" />
    </div>
+
+  ## Industry design shift (Frutiger Aero's Peak)
 
    By 2007, the style had spread across a wide range of technology, software, and media. In addition to this, the years ~2007-2012 were when the aesthetic experienced it's peak. The first iPhone released with it's glossy design with realistic textures, almost making the icons seem like real physical elements. Video games/consoles also utilised the aesthetic, with consoles such as the Xbox 360, Nintendo Wii/Wii U, PlayStation 3, PSVita 
    all entering the market with glowy, glassy, reflective and glossy user interfaces. Many advertising companies were also leaning heavily into the aesthetic to show sustainability, global connectivity and innovation among their products. 
@@ -63,15 +82,16 @@ Below you can see many examples of Frutiger Aero and more. As well as this, you 
    coin the phrase "The promised future" which is heavily associated with the aesthetic as the world has generally shifted to a much more bleak, hopeless state. 
 
   <div className="images-grid">
-    <img src="/aero-images/aero_1.png" />
-    <img src="/aero-images/aero_3.jpg" />
-    <img src="/aero-images/aero_4.jpg" />
-   </div>  <div className="images-grid">
-    <img src="/aero-images/aero_1.png" />
-    <img src="/aero-images/aero_3.jpg" />
-    <img src="/aero-images/aero_4.jpg" />
-   </div>
+    <img src="/aero-images/asadal1.jpg" />
+    <img src="/aero-images/asadal3.jpg" />
+    <img src="/aero-images/asadal2.jpg" />
+    <img src="/aero-images/wii.webp" />
+    <img src="/aero-images/xbox360.jpg" />
+    <img src="/aero-images/psvita.webp" />
+   </div>  
 
+
+ ## Windows 7 (2009)
    Later in 2009, Windows 7 was released. It aimed to refine Vista's Glassy Aero appearance, deliver performance, efficiency, great usability and more. It succeeded massively in most areas, many consider Windows 7 to be the operating system
    that just worked perfectly. It ran smoothly, was very stable & optimised and utilised the Aero design aesthetic perfectly. In addition to this, unlike Vista, it had a very positive reception from reviewers due to it being a direct improvement from
    Vista and a step in the right direction.
@@ -82,9 +102,12 @@ Below you can see many examples of Frutiger Aero and more. As well as this, you 
    It was unfortunately the last operating system that Microsoft would release before switching to their flat, boring, tile-based design.
   
    <div className="images-grid">
-    <img src="/aero-images/aero_1.png" />
-    <img src="/aero-images/aero_3.jpg" />
-    <img src="/aero-images/aero_4.jpg" />
+    <img src="/aero-images/windows7.webp" />
+    <img src="/aero-images/windows7_2.png" />
+    <img src="/aero-images/windows7_3.png" />
+    <img src="/aero-images/windows7_4.png" />
+    <img src="/aero-images/windows7_5.jpg" />
+    <img src="/aero-images/windows7_6.webp" />
    </div>
 
   ## The Fall of Windows Aero (Flat, minimalist designs)
@@ -98,22 +121,37 @@ Below you can see many examples of Frutiger Aero and more. As well as this, you 
    Unfortunately, the personality of designs during this era was largely sacrificed and replaced with the more dull, flat, coporate designs. This effect is still seen massively today with nearly all designs still feeling lifeless and simple.
   
    <div className="images-grid">
-    <img src="/aero-images/aero_1.png" />
-    <img src="/aero-images/aero_3.jpg" />
-    <img src="/aero-images/aero_4.jpg" />
+    <img src="/aero-images/ios7.webp" />
+    <img src="/aero-images/windows8.jpg" />
+    <img src="/aero-images/windows10.png" />
    </div>
 
   ## The Resurgence of Aero (Frutiger Aero)
+  Following the death of what was a beloved era in technology and general creativity, the term "Frutiger Aero" was finally coined by **Sofi Xian**, Co-Founder of **CARI (Consumer Aesthetics Research Institute)**, to describe "the corporate tech aesthetic popular approximately 2005-2013".
+
    In recent years, Frutiger Aero has experienced a resurgence online driven by nostalgia and a general dislike for today's boring, flat, coporate looking designs. People revisiting their early 2000s childhood not only enjoy the more hopeful, detailed designs, but also get a huge
-   sense of nostalgia from this era, making the optimistic nature of Frutiger Aero hit even harder as the perception of the future back then was unfortunatley very different to what we have today in reality.
+   sense of nostalgia from this era, making the optimistic nature of Frutiger Aero hit even harder as the perception of the future back then was unfortunatley very different to what we have today in reality. 
    
-   This website is an example of that, I love combining modern UI design with Frutiger Aero's glossy, glassy aesthetic and this 
-   page was made to help push the aesthetic and serves as a fun, informative site to explore.
-   
+   Many creators have spent lots of time producing pieces of media, music, software and even video games all based around the vibes of Frutiger Aero as it continues to gain popularity mainly thanks to social media platforms.
+
+   This website is an example of that, I love combining modern UI design with Frutiger Aero's glossy, glassy aesthetic. I made this page to help push the aesthetic, eventually get some attention for my personal store and also serves as a fun, informative site to explore. In addition, it acts as a personal tribute to the aesthetic that I have been inspired to create so much with and hold so many fond memories of. 
+
+   Below, you can see some final examples of Frutiger Aero, DORFic, Aurora, Metro and more. Thank you for reading.
+
   <div className="images-grid">
     <img src="/aero-images/aero_1.png" />
     <img src="/aero-images/aero_3.jpg" />
     <img src="/aero-images/aero_4.jpg" />
+    <img src="/aero-images/aero_7.jpg" />
+    <img src="/aero-images/aero_8.jpg" />
+    <img src="/aero-images/aero_9.png" />
+    <img src="/aero-images/aero_12.jpg" />
+    <img src="/aero-images/aero_13.jpg" />
+    <img src="/aero-images/aero_14.jpeg" />
+    <img src="/aero-images/aero_16.jpg" />
+    <img src="/aero-images/aero_17.png" />
+    <img src="/aero-images/aero_18.jpg" />
+
    </div>
 
 `;
