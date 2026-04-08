@@ -8,9 +8,24 @@ export default function Weather() {
   const [error, setError] = useState(null);
   const condition = weather?.current;
   const USE_DATA = true;
+
+  const weatherIconMap = {
+    Sunny: "sunny.ico",
+    Clear: "sunny.ico",
+    "Partly cloudy": "Ico.ico",
+    Cloudy: "Overcast.ico",
+    Overcast: "Overcast.ico",
+    Mist: "Ico.ico",
+    "Patchy rain possible": "Night_rain.ico",
+  };
+
+  const getWeatherIcon = (conditionText) => {
+    return weatherIconMap[conditionText] || "Sunny.ico";
+  };
+
   useEffect(() => {
     getWeather();
-  }, []);
+  }, [location]);
   const getWeather = async () => {
     try {
       setError(null);
@@ -21,7 +36,7 @@ export default function Weather() {
       } else {
         const fakeData = {
           location: {
-            name: "London, UK",
+            name: location,
           },
           current: {
             temp_c: 24,
@@ -45,7 +60,6 @@ export default function Weather() {
 
   const editLocation = () => {
     setLocation("New York");
-    getWeather();
   };
   return (
     <>
@@ -57,7 +71,7 @@ export default function Weather() {
         <div className="weather-metrics">
           {weather && (
             <div className="weather-main">
-              <img src="/icons/weather/Snow_Occasional.ico" className="weather-icon"></img>
+              <img src={`/icons/weather/${getWeatherIcon(weather?.current?.condition?.text)}`} alt={weather?.current?.condition?.text || "Weather icon"} className="weather-icon" />{" "}
               <div className="weather-text">
                 <p className="location">
                   {weather?.location?.name ?? "London, UK"}{" "}
