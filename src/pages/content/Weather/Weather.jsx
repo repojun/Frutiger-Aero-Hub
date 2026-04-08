@@ -66,8 +66,8 @@ export default function Weather() {
                   </span>
                 </p>
                 <p className="celsius">{weather?.current?.temp_c ?? "24"}°C</p>
-                <p className="condition">Sunny</p>
-                <p className="feels-like">Feels like 19°C</p>
+                <p className="condition">{weather?.current?.condition?.text ?? "Sunny"}</p>
+                <p className="feels-like">Feels like {weather?.current?.feelslike_c ?? "19"}°C</p>
               </div>
             </div>
           )}
