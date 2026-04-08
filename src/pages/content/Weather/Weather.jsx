@@ -62,6 +62,7 @@ export default function Weather() {
     setLocation("Thailand");
   };
 
+  
   const [page, setPage] = useState(0);
   const itemsPerPage = 5;
 
