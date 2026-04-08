@@ -1,3 +1,4 @@
+import { time } from "framer-motion";
 import "./Weather.scss";
 import { useState, useEffect } from "react";
 
@@ -9,20 +10,28 @@ export default function Weather() {
   const condition = weather?.current;
   const USE_DATA = true;
 
-  const weatherIconMap = {
-    Sunny: "Sunny.ico",
-    Clear: "Sunny.ico",
-    "Partly cloudy": "Snow_Occasional.ico",
-    Cloudy: "Overcast.ico",
-    Overcast: "Overcast.ico",
-    Mist: "Moon_Phase_full.ico",
-    "Patchy rain possible": "Night_rain.ico",
-  };
+  // use this to get the weather icon, checks if the condition text matches whatever weatherapi throws back & also changes the icon to a moon depending on the time
+  const getWeatherIcon = (conditionText, timeString) => {
+    const text = (conditionText || "").toLowerCase();
+    const time = timeString?.split(" ")[1] || "12:00"; // gets the time n date (like 2026-02-03 12:00) then splits it by space, then gets the time only
+    const hour = parseInt(time.slice(0, 2), 10); // convert time to numbers by taking the first two
+    const isNight = hour < 6 || hour >= 20; // check if its night, if its night/dark roughly then use a moon icon instead
 
-  const getWeatherIcon = (conditionText) => {
-    return weatherIconMap[conditionText] || "Sunny.ico";
+    switch (true) {
+      case text.includes("sunny") || text.includes("clear"):
+        return isNight ? "Moon_Phase_Full.ico" : "Sunny.ico";
+      case text.includes("partly cloudy"):
+        return isNight ? "Moon_Phase_Full.ico" : "Snow_Occasional.ico";
+      case text.includes("cloudy") || text.includes("overcast"):
+        return isNight ? "Moon_Phase_Full.ico" : "Overcast.ico";
+      case text.includes("mist"):
+        return "Moon_Phase_Full.ico";
+      case text.includes("rain"):
+        return isNight ? "Night_Rain.ico" : "Rain.ico";
+      default:
+        return isNight ? "Moon_Phase_Full.ico" : "default.ico";
+    }
   };
-
   useEffect(() => {
     getWeather();
   }, [location]);
@@ -62,8 +71,7 @@ export default function Weather() {
     setLocation("Thailand");
   };
 
-  
-  const [page, setPage] = useState(0);
+  const [page, setPage] = useState(1);
   const itemsPerPage = 5;
 
   const hours = weather?.forecast?.forecastday?.[0]?.hour || [];
@@ -146,7 +154,7 @@ export default function Weather() {
           {currentHours.map((hour) => (
             <div key={hour.time_epoch} className="weather-card">
               <div>{Math.round(hour.temp_c)}°C</div>
-              <img src={`/icons/weather/${getWeatherIcon(hour.condition.text)}`} alt={hour.condition.text} className="forecast-icon" />
+              <img src={`/icons/weather/${getWeatherIcon(hour?.condition?.text, hour?.time)}`} alt={hour?.condition?.text} className="forecast-icon" />
               <div>{hour.time.split(" ")[1]}</div>
             </div>
           ))}
