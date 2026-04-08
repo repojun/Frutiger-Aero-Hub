@@ -60,6 +60,11 @@ body {
 }
 
 .side-bar {
+  user-select: none;
+  user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-drag: none;
   position: relative;
   overflow: hidden;
   row-gap: 0.75rem;

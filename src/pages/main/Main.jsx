@@ -145,23 +145,22 @@ export default function Main({ children }) {
             <div className="side-bar-welcome">FrutigerOS v1.06b</div>
             <div className="side-divider"></div>
             <div className="button-container">
-              <div className="skeuButton" onClick={() => switchPage("Shop")}>
+              <Link className="skeuButton" to={"/"}>
                 <img className="icon" src="/icons/login.png" />
                 <div className="skeuButtonBody">Home</div>
-              </div>
-              <div className="skeuButton" onClick={() => switchPage("Profile")}>
+              </Link>
+              <a className="skeuButton" href="https://www.craftedbyarjun.com/" target="_blank" rel="noopener noreferrer">
                 <img className="icon" src="/icons/profile.png" />
                 <div className="skeuButtonBody">My Portfolio</div>
-              </div>
-              <div className="skeuButton" onClick={() => switchPage("Wishlist")}>
+              </a>
+              <a className="skeuButton" href="https://www.craftedbyarjun.com/reddit" target="_blank" rel="noopener noreferrer">
                 <img className="icon" src="/icons/aeroorbNakedAsf.png" />
                 <div className="skeuButtonBody">Reddit Design</div>
-              </div>
-
-              <div className="skeuButton" onClick={() => switchPage("Cart")}>
+              </a>
+              <Link className="skeuButton" to={"/"}>
                 <img className="icon" src="/icons/cartIcon.png" />
                 <div className="skeuButtonBody">Shop</div>
-              </div>
+              </Link>
             </div>
             <div className="side-divider"></div>
 

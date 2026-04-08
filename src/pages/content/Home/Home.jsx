@@ -21,7 +21,7 @@ export default function Home() {
         SoundPlayer("balloon", 0.4, "mp3");
       }, 1000);
     }, 5000);
-    
+
     return () => clearTimeout(timer);
   }, []);
   return (
@@ -50,41 +50,41 @@ export default function Home() {
       </div>
       <div className="divider"></div>
       <div className="button-grid">
-        <div className="large-button">
+        <a className="large-button" href="https://www.reddit.com/r/FrutigerAero/" target="_blank" rel="noopener noreferrer">
           <img src="/icons/aeroorbNakedAsf.png" className="icon"></img>
           <div className="text">
             <div>r/FrutigerAero Subreddit</div>
-            <div className="metric">800k+ Members</div>
+            <div className="metric">150k+ Members</div>
           </div>
-        </div>
-        <div className="large-button">
+        </a>
+        <a className="large-button" href="https://frutigeraeroarchive.org/" target="_blank" rel="noopener noreferrer">
           <img src="/icons/frutigerAeroArchive.png" className="icon" style={{ width: "3rem", paddingRight: "1rem", paddingLeft: ".75rem" }}></img>
           <div className="text">
             <div>Frutiger Aero Archive</div>
             <div className="metric">An amazing Aero archive site</div>
           </div>
-        </div>
-        <div className="large-button">
+        </a>
+        <a className="large-button" href="https://www.github.com/" target="_blank" rel="noopener noreferrer">
           <img src="/icons/github.png" className="icon"></img>
           <div className="text">
             <div>Github Repo</div>
             <div className="metric">Please Favourite It!</div>
           </div>
-        </div>
-        <div className="large-button">
+        </a>
+        <a className="large-button" href="https://www.craftedbyarjun.com/" target="_blank" rel="noopener noreferrer">
           <img src="/icons/user.png" className="icon" style={{ width: "3.5rem", paddingRight: ".75rem", paddingLeft: ".75rem" }}></img>
           <div className="text">
             <div>My Portfolio</div>
             <div className="metric">200k+ Views</div>
           </div>
-        </div>
-        <div className="large-button">
+        </a>
+        <a className="large-button" href="https://www.craftedbyarjun.com/home" target="_blank" rel="noopener noreferrer">
           <img src="/icons/login.png" className="icon" style={{ width: "3.5rem", paddingRight: ".75rem", paddingLeft: ".75rem" }}></img>
           <div className="text">
             <div>Aero Google Search</div>
             <div className="metric">A cool aero browser</div>
           </div>
-        </div>
+        </a>
         <div className="large-button">
           <img src="/icons/cartIcon.png" className="icon"></img>
           <div className="text">

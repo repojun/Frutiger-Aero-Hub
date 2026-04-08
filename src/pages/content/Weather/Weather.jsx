@@ -7,7 +7,7 @@ export default function Weather() {
   // need to handle errors!
   const [error, setError] = useState(null);
   const condition = weather?.current;
-  const USE_DATA = false;
+  const USE_DATA = true;
   useEffect(() => {
     getWeather();
   }, []);
@@ -44,7 +44,7 @@ export default function Weather() {
   };
 
   const editLocation = () => {
-    console.log("hey");
+    setLocation("New York");
   };
   return (
     <>
