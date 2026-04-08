@@ -45,6 +45,7 @@ export default function Weather() {
 
   const editLocation = () => {
     setLocation("New York");
+    getWeather();
   };
   return (
     <>
