@@ -10,12 +10,12 @@ export default function Weather() {
   const USE_DATA = true;
 
   const weatherIconMap = {
-    Sunny: "sunny.ico",
-    Clear: "sunny.ico",
-    "Partly cloudy": "Ico.ico",
-    Cloudy: "Overcast.ico",
-    Overcast: "Overcast.ico",
-    Mist: "Ico.ico",
+    "Sunny": "Sunny.ico",
+    "Clear": "Sunny.ico",
+    "Partly cloudy": "Snow_Occasional.ico",     
+    "Cloudy": "Overcast.ico",
+    "Overcast": "Overcast.ico",
+    "Mist": "Moon_Phase_full.ico",            
     "Patchy rain possible": "Night_rain.ico",
   };
 
