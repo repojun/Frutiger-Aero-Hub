@@ -57,8 +57,13 @@ export default function Weather() {
       setError(err.message);
     }
   };
+
+  const editLocation = () => {
+    setLocation("Thailand");
+  };
+
   const [page, setPage] = useState(0);
-  const itemsPerPage = 5; 
+  const itemsPerPage = 5;
 
   const hours = weather?.forecast?.forecastday?.[0]?.hour || [];
   const totalPages = Math.ceil(hours.length / itemsPerPage);
@@ -67,10 +72,7 @@ export default function Weather() {
 
   const handlePrev = () => setPage((prev) => Math.max(prev - 1, 0));
   const handleNext = () => setPage((prev) => Math.min(prev + 1, totalPages - 1));
-  
-  const editLocation = () => {
-    setLocation("New York");
-  };
+
   return (
     <>
       <div className="main-title">
@@ -143,7 +145,7 @@ export default function Weather() {
           {currentHours.map((hour) => (
             <div key={hour.time_epoch} className="weather-card">
               <div>{Math.round(hour.temp_c)}°C</div>
-              <img src={`/icons/weather/${getWeatherIcon(hour.condition.text.trim())}`} alt={hour.condition.text} className="forecast-icon" />
+              <img src={`/icons/weather/${getWeatherIcon(hour.condition.text)}`} alt={hour.condition.text} className="forecast-icon" />
               <div>{hour.time.split(" ")[1]}</div>
             </div>
           ))}
