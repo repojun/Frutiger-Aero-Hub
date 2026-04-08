@@ -10,12 +10,12 @@ export default function Weather() {
   const USE_DATA = true;
 
   const weatherIconMap = {
-    "Sunny": "Sunny.ico",
-    "Clear": "Sunny.ico",
-    "Partly cloudy": "Snow_Occasional.ico",     
-    "Cloudy": "Overcast.ico",
-    "Overcast": "Overcast.ico",
-    "Mist": "Moon_Phase_full.ico",            
+    Sunny: "Sunny.ico",
+    Clear: "Sunny.ico",
+    "Partly cloudy": "Snow_Occasional.ico",
+    Cloudy: "Overcast.ico",
+    Overcast: "Overcast.ico",
+    Mist: "Moon_Phase_full.ico",
     "Patchy rain possible": "Night_rain.ico",
   };
 
@@ -57,7 +57,17 @@ export default function Weather() {
       setError(err.message);
     }
   };
+  const [page, setPage] = useState(0);
+  const itemsPerPage = 5; 
 
+  const hours = weather?.forecast?.forecastday?.[0]?.hour || [];
+  const totalPages = Math.ceil(hours.length / itemsPerPage);
+  const startIndex = page * itemsPerPage;
+  const currentHours = hours.slice(startIndex, startIndex + itemsPerPage);
+
+  const handlePrev = () => setPage((prev) => Math.max(prev - 1, 0));
+  const handleNext = () => setPage((prev) => Math.min(prev + 1, totalPages - 1));
+  
   const editLocation = () => {
     setLocation("New York");
   };
@@ -126,28 +136,21 @@ export default function Weather() {
           )}
         </div>
         <div className="weather-forecast-container">
-          <div className="back">{"<"}</div>
-          <div className="weather-card">
-            <div>21°C</div> <img src="/icons/weather/Sunny.ico"></img>
-            <div>16:00</div>
+          <div className="back" onClick={handlePrev}>
+            {"<"}
           </div>
-          <div className="weather-card">
-            <div>24°C</div> <img src="/icons/weather/Sunny.ico"></img>
-            <div>17:00</div>
+
+          {currentHours.map((hour) => (
+            <div key={hour.time_epoch} className="weather-card">
+              <div>{Math.round(hour.temp_c)}°C</div>
+              <img src={`/icons/weather/${getWeatherIcon(hour.condition.text.trim())}`} alt={hour.condition.text} className="forecast-icon" />
+              <div>{hour.time.split(" ")[1]}</div>
+            </div>
+          ))}
+
+          <div className="forward" onClick={handleNext}>
+            {">"}
           </div>
-          <div className="weather-card">
-            <div>18°C</div> <img src="/icons/weather/Snow_Occasional.ico"></img>
-            <div>18:00</div>
-          </div>
-          <div className="weather-card">
-            <div>13°C</div> <img src="/icons/weather/Overcast.ico"></img>
-            <div>19:00</div>
-          </div>
-          <div className="weather-card">
-            <div>10°C</div> <img src="/icons/weather/Night_Rain.ico"></img>
-            <div>20:00</div>
-          </div>
-          <div className="forward">{">"}</div>
         </div>
       </div>
     </>
