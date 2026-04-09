@@ -12,6 +12,7 @@ export default function Weather() {
 
   // use this to get the weather icon, checks if the condition text matches whatever weatherapi throws back & also changes the icon to a moon depending on the time
   const getWeatherIcon = (conditionText, timeString) => {
+    console.log(conditionText)
     const text = (conditionText || "").toLowerCase();
     const time = timeString?.split(" ")[1] || "12:00"; // gets the time n date (like 2026-02-03 12:00) then splits it by space, then gets the time only
     const hour = parseInt(time.slice(0, 2), 10); // convert time to numbers by taking the first two
@@ -81,6 +82,17 @@ export default function Weather() {
 
   const handlePrev = () => setPage((prev) => Math.max(prev - 1, 0));
   const handleNext = () => setPage((prev) => Math.min(prev + 1, totalPages - 1));
+  
+  if (!weather)
+    return (
+      <>
+        <div className="main-title">
+          <span>Weather Tab</span>
+        </div>
+        <div className="divider"></div>
+        <div className="loading-text">Loading weather...</div>
+      </>
+    );
 
   return (
     <>
