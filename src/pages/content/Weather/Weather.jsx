@@ -1,6 +1,7 @@
 import { time } from "framer-motion";
 import "./Weather.scss";
 import { useState, useEffect } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 
 export default function Weather() {
   const [location, setLocation] = useState("London");
@@ -12,7 +13,7 @@ export default function Weather() {
 
   // use this to get the weather icon, checks if the condition text matches whatever weatherapi throws back & also changes the icon to a moon depending on the time
   const getWeatherIcon = (conditionText, timeString) => {
-    console.log(conditionText)
+    console.log(conditionText);
     const text = (conditionText || "").toLowerCase();
     const time = timeString?.split(" ")[1] || "12:00"; // gets the time n date (like 2026-02-03 12:00) then splits it by space, then gets the time only
     const hour = parseInt(time.slice(0, 2), 10); // convert time to numbers by taking the first two
@@ -82,7 +83,7 @@ export default function Weather() {
 
   const handlePrev = () => setPage((prev) => Math.max(prev - 1, 0));
   const handleNext = () => setPage((prev) => Math.min(prev + 1, totalPages - 1));
-  
+
   if (!weather)
     return (
       <>
@@ -100,82 +101,84 @@ export default function Weather() {
         <span>Weather Tab</span>
       </div>
       <div className="divider"></div>
-      <div className="weather-container">
-        <div className="weather-metrics">
-          {weather && (
-            <div className="weather-main">
-              <img src={`/icons/weather/${getWeatherIcon(weather?.current?.condition?.text)}`} alt={weather?.current?.condition?.text || "Weather icon"} className="weather-icon" />{" "}
-              <div className="weather-text">
-                <p className="location">
-                  {weather?.location?.name ?? "London, UK"}{" "}
-                  <span className="edit-button" onClick={() => editLocation()}>
-                    [x]
-                  </span>
-                </p>
-                <p className="celsius">{weather?.current?.temp_c ?? "24"}°C</p>
-                <p className="condition">{weather?.current?.condition?.text ?? "Sunny"}</p>
-                <p className="feels-like">Feels like {weather?.current?.feelslike_c ?? "19"}°C</p>
+      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.2 }} style={{ position: "relative" }}>
+        <div className="weather-container">
+          <div className="weather-metrics">
+            {weather && (
+              <div className="weather-main">
+                <img src={`/icons/weather/${getWeatherIcon(weather?.current?.condition?.text)}`} alt={weather?.current?.condition?.text || "Weather icon"} className="weather-icon" />{" "}
+                <div className="weather-text">
+                  <p className="location">
+                    {weather?.location?.name ?? "London, UK"}{" "}
+                    <span className="edit-button" onClick={() => editLocation()}>
+                      [x]
+                    </span>
+                  </p>
+                  <p className="celsius">{weather?.current?.temp_c ?? "24"}°C</p>
+                  <p className="condition">{weather?.current?.condition?.text ?? "Sunny"}</p>
+                  <p className="feels-like">Feels like {weather?.current?.feelslike_c ?? "19"}°C</p>
+                </div>
               </div>
-            </div>
-          )}
-          {weather && (
-            <div className="metrics-grid">
-              <div>
-                <div className="metric-title">Wind</div>
-                <div className="metric-stat">{condition?.wind_mph}mp/h</div>
-              </div>
+            )}
+            {weather && (
+              <div className="metrics-grid">
+                <div>
+                  <div className="metric-title">Wind</div>
+                  <div className="metric-stat">{condition?.wind_mph}mp/h</div>
+                </div>
 
-              <div>
-                <div className="metric-title">Humidity</div>
-                <div className="metric-stat">{condition?.humidity}%</div>
-              </div>
-              <div>
-                <div className="metric-title">Heat Index</div>
-                <div className="metric-stat">{condition?.heatindex_c}°C</div>
-              </div>
-              <div>
-                <div className="metric-title">Cloud Cover</div>
-                <div className="metric-stat">{condition?.cloud}%</div>
-              </div>
-              <div>
-                <div className="metric-title">Gust</div>
-                <div className="metric-stat">{condition?.gust_mph}mp/h</div>
-              </div>
+                <div>
+                  <div className="metric-title">Humidity</div>
+                  <div className="metric-stat">{condition?.humidity}%</div>
+                </div>
+                <div>
+                  <div className="metric-title">Heat Index</div>
+                  <div className="metric-stat">{condition?.heatindex_c}°C</div>
+                </div>
+                <div>
+                  <div className="metric-title">Cloud Cover</div>
+                  <div className="metric-stat">{condition?.cloud}%</div>
+                </div>
+                <div>
+                  <div className="metric-title">Gust</div>
+                  <div className="metric-stat">{condition?.gust_mph}mp/h</div>
+                </div>
 
-              <div>
-                <div className="metric-title">Visibility</div>
-                <div className="metric-stat">{condition?.vis_km}km</div>
-              </div>
+                <div>
+                  <div className="metric-title">Visibility</div>
+                  <div className="metric-stat">{condition?.vis_km}km</div>
+                </div>
 
-              <div>
-                <div className="metric-title">UV Index</div>
-                <div className="metric-stat">{condition?.uv}mp/h</div>
+                <div>
+                  <div className="metric-title">UV Index</div>
+                  <div className="metric-stat">{condition?.uv}mp/h</div>
+                </div>
+                <div>
+                  <div className="metric-title">Precipitation</div>
+                  <div className="metric-stat">{condition?.precip_mm}mm</div>
+                </div>
               </div>
-              <div>
-                <div className="metric-title">Precipitation</div>
-                <div className="metric-stat">{condition?.precip_mm}mm</div>
-              </div>
-            </div>
-          )}
-        </div>
-        <div className="weather-forecast-container">
-          <div className="back" onClick={handlePrev}>
-            {"<"}
+            )}
           </div>
-
-          {currentHours.map((hour) => (
-            <div key={hour.time_epoch} className="weather-card">
-              <div>{Math.round(hour.temp_c)}°C</div>
-              <img src={`/icons/weather/${getWeatherIcon(hour?.condition?.text, hour?.time)}`} alt={hour?.condition?.text} className="forecast-icon" />
-              <div>{hour.time.split(" ")[1]}</div>
+          <div className="weather-forecast-container">
+            <div className="back" onClick={handlePrev}>
+              {"<"}
             </div>
-          ))}
 
-          <div className="forward" onClick={handleNext}>
-            {">"}
+            {currentHours.map((hour) => (
+              <div key={hour.time_epoch} className="weather-card">
+                <div>{Math.round(hour.temp_c)}°C</div>
+                <img src={`/icons/weather/${getWeatherIcon(hour?.condition?.text, hour?.time)}`} alt={hour?.condition?.text} className="forecast-icon" />
+                <div>{hour.time.split(" ")[1]}</div>
+              </div>
+            ))}
+
+            <div className="forward" onClick={handleNext}>
+              {">"}
+            </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 }
