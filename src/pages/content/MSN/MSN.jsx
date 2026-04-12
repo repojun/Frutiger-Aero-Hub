@@ -63,6 +63,11 @@ export default function MSN() {
     var newElement = <img id={`buddy-${Date.now()}`} key={Date.now() + Xlocation} draggable="false" src={randomElement} className="msn-buddy" style={{ top: Ylocation, left: Xlocation }} onClick={deleteItem} />;
     setMsnArray([...msnArray, newElement]);
   };
+
+  const settingsModal = () => {
+    console.log("hey");
+  };
+  
   return (
     <>
       <div style={{ top: 0, left: 0, position: "absolute" }}>{msnArray}</div>
@@ -70,6 +75,9 @@ export default function MSN() {
         <div onClick={handleBuddyClick} className="msn-button">
           <img src="icons/information.png"></img>
           <div>Spawn a Friend!</div>
+        </div>
+        <div onClick={settingsModal} className="msn-settings">
+          <img src="icons/settings.png"></img>
         </div>
       </div>
     </>

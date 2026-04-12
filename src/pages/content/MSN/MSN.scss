@@ -34,6 +34,7 @@
   min-height: 40rem;
   justify-content: center;
   align-items: center;
+  column-gap: 0.7rem;
 }
 .msn-button {
   position: relative;
@@ -100,6 +101,22 @@
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.6) 20%, rgba(255, 255, 255, 0.4) 60%, rgba(255, 255, 255, 0.1) 100%);
     opacity: 1;
     pointer-events: none;
+  }
+}
+
+.msn-settings {
+  @extend .msn-button;
+  width: 2rem;
+  img {
+    width: 3rem;
+    padding-top: 0.25rem;
+  }
+  &:hover::before {
+    animation: none;
+  }
+
+  &:hover {
+    transform: translateY(-0px);
   }
 }
 

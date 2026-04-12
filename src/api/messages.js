@@ -15,3 +15,7 @@ export const addMessage = async (message, website, country, name, quote) => {
     },
   ]);
 };
+
+export const addWaitlist = async (email) => {
+  return await supabase.from("waitlist").insert([{ email }]);
+};

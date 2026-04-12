@@ -374,7 +374,7 @@ body {
   }
 }
 .circle {
-  filter: var(--aurora-filter, blur(6rem));
+  filter: blur(6rem);
   height: 40rem;
   width: 40rem;
   background-color: rgb(0, 251, 255, 0.4);
@@ -386,7 +386,7 @@ body {
 }
 
 .circle2 {
-  filter: var(--aurora-filter, blur(5rem));
+  filter: blur(5rem);
   height: 37rem;
   width: 37rem;
   background-color: rgba(30, 128, 255, 0.4);
