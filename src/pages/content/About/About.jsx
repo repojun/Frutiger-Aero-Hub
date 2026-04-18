@@ -8,17 +8,17 @@ export default function About() {
   const [fade, setFade] = useState("false");
   const aeroImages = ["/aero-images/ios.jpg", "/aero-images/vista2.png", "/aero-images/vista.webp", "/aero-images/aero_1.png", "/aero-images/aero_17.png", "/aero-images/aero_3.jpg", "/aero-images/aero_4.jpg", "/aero-images/aero_5.jpg", "/aero-images/aero_6.jpg"];
   const contentSep = `
-  **Frutiger Aero**, also known as Web 2.0 Gloss, is an aesthetic that was very common from around 2005-2013. It was originally unnamed and just the trend at the time, the term "Frutiger Aero" was only established later as people looked back at the designs from this time period. 
-  It was named after a combination **Adrian Frutiger**, a Swiss designer who created the **Frutiger font family** and **Windows Aero**, 
-  which was the design style used by **Microsoft** when developing their iconic glossy, glassy user interfaces for Windows Vista/7.`;
+  <a href="https://aesthetics.fandom.com/wiki/Frutiger_Aero" target="_blank"><ins>**Frutiger Aero**</ins></a>, also known as Web 2.0 Gloss, is an aesthetic that was very common from around 2005-2013. It was originally unnamed and just the trend at the time, the term "Frutiger Aero" was only established later as people looked back at the designs from this time period. 
+  It was named after a combination <a href="https://en.wikipedia.org/wiki/Adrian_Frutiger" target="_blank"><ins>**Adrian Frutiger**</ins></a>, a Swiss designer who created the <a href="https://en.wikipedia.org/wiki/Frutiger_(typeface)" target="_blank"><ins>**Frutiger Font Family**</ins></a> and <a href="https://en.wikipedia.org/wiki/Windows_Aero" target="_blank"><ins>**Windows Aero**</ins></a>, 
+  which was the design style used by <a href="https://en.wikipedia.org/wiki/Microsoft" target="_blank"><ins>**Microsoft**</ins></a> when developing their iconic glossy, glassy user interfaces for Windows Vista/7.`;
   const content = `
 
   It is based on the clean, glossy, futuristic designs of ~2007-2012. It was commonly used in early tech, advertisements, operating systems and more. It mixed nature with digital optimism, often depicting the future as a peaceful, fresh, sustainable & eco-friendly utopia.
-  **Windows Vista**, **Windows 7** & the old glossy design of **iOS 6** are great examples of this.
+  <a href="https://en.wikipedia.org/wiki/Windows_Vista" target="_blank"><ins>**Windows Vista**</ins></a>, <a href="https://en.wikipedia.org/wiki/Windows_7" target="_blank"><ins>**Windows 7**</ins></a> & the old glossy design of <a href="https://en.wikipedia.org/wiki/IOS_6" target="_blank"><ins>**iOS 6**</ins></a> are great examples of this. 
   
-  This also spawned many sub aesthetics while users looked at this era such as **Frutiger Aurora** (Based on Windows aurora backgrounds), **Frutiger Eco** (Focussing on greens, renewable energy, nature), **Frutiger Dorfic** (Futuristic, techy, orange designs), **Technozen** (mid-late 2000s Japanese tech aesthetic).
+  This also spawned many sub aesthetics while users looked at this era such as <a href="https://aesthetics.fandom.com/wiki/Frutiger_Aero#Frutiger_Aurora" target="_blank"><ins>**Frutiger Aurora**</ins></a> (Based on Windows aurora backgrounds), <a href="href=https://aesthetics.fandom.com/wiki/Frutiger_Eco" target="_blank"><ins>**Frutiger Eco**</ins></a> (Focussing on greens, renewable energy, nature), <a href="https://aesthetics.fandom.com/wiki/DORFic" target="_blank"><ins>**Frutiger DORFic**</ins></a> (Futuristic, techy, orange designs), <a href="https://aesthetics.fandom.com/wiki/Vectordelia" target="_blank"><ins>**Frutiger Metro**</ins></a> (Abstract flourishes, music/tech focused, vibrant colours). 
   
-  The aesthetic can also be seen across many platforms, including the **PS Vita**, **Nintendo Wii**, old versions of **iOS**, and more. 
+  The aesthetic can also be seen across many platforms, including the <a href="https://en.wikipedia.org/wiki/PlayStation_Vita" target="_blank"><ins>**PSVita**</ins></a>, <a href="https://en.wikipedia.org/wiki/Wii" target="_blank"><ins>**Nintendo Wii**</ins></a>, <a href="https://en.wikipedia.org/wiki/Xbox_360" target="_blank"><ins>**Xbox 360**</ins></a> and more. 
   
   Fun Fact: One interesting and common misconception is the Frutiger font family being used in Windows, it was actually **NEVER used** with any Windows Aero era interface and the operating system never came with this font. Microsoft actually opted to create their own **Segoe UI font** which resembled a similar appearance and was inspired by Adrian Frutiger's work.
   
@@ -37,7 +37,7 @@ export default function About() {
    </div>
 
   ## The Rise of Windows Aero (Longhorn, 2001-2004)
-   **Longhorn** was the real start of Microsoft's design transition, it leaned heavily into glossy, transparent glow effects with smooth animations and transitions. It aimed to completely rework how 
+   <a href="https://en.wikipedia.org/wiki/Development_of_Windows_Vista" target="_blank"><ins><strong>Longhorn</strong></ins></a> was the real start of Microsoft's design transition, it leaned heavily into glossy, transparent glow effects with smooth animations and transitions. It aimed to completely rework how 
    Windows worked, the goal was to make computers feel fluid, modern and futuristic. 
    
    It featured some very ambitious ideas such as **"Indigo"** which would have served as a unified communication framework for apps and combine messaging, networking, 
@@ -46,7 +46,7 @@ export default function About() {
    Unfortunately, while many of Longhorn's concept videos looked incredible, features were unstable, performance was poor and the OS was far too complex to ship for the average consumer's PC. They were trying to create certain features that we have only
    began to master today.
 
-  Here is an AMAZING <a href="https://youtu.be/bytS_WVIH8w" target="_blank"><ins><strong>Longhorn Concept video</strong></ins></a> to give you an idea of the vision they had.
+  Here is an AMAZING <a href="https://www.youtube.com/watch?v=bytS_WVIH8w" target="_blank"><ins><strong>Longhorn Concept video</strong></ins></a> to give you an idea of the vision they had.
 
    Although Longhorn never released, it's legacy definitely did not disappear. In the background, it ended up shaping the foundation for modern Windows systems and was the start of the Aero design style.
 
@@ -85,7 +85,7 @@ export default function About() {
    all entering the market with glowy, glassy, reflective and glossy user interfaces. Many advertising companies were also leaning heavily into the aesthetic to show sustainability, global connectivity and innovation among their products. 
    
    Overall, it made the world feel very hopeful and fresh with the idea that technology was advancing our lives into a future of an eco-friendly, sustainable, peaceful utopia. This led people to
-   coin the phrase **"The promised future"** which is heavily associated with the aesthetic as the world has generally shifted to a much more bleak, hopeless state. 
+   coin the phrase **"The promised future"** which is heavily associated with the aesthetic, as people believe that we are living in a very different future compared to the one depicted by these designs back then.
 
   <div className="images-grid">
     <img src="/aero-images/asadal1.jpg" />
@@ -133,16 +133,18 @@ export default function About() {
    </div>
 
   ## The Resurgence of Aero (Frutiger Aero)
-  Following the death of what was a beloved era in technology and general creativity, the term "Frutiger Aero" was finally coined by **Sofi Xian**, Co-Founder of **CARI (Consumer Aesthetics Research Institute)**, to describe "the corporate tech aesthetic popular approximately 2005-2013".
+  Following the death of what was a beloved era in technology and general creativity, the term "Frutiger Aero" was finally coined by  <a href="https://sofixian.com/" target="_blank"><ins><strong>Sofi Xian</strong></ins></a> , Co-Founder of <a href="https://cari.institute/" target="_blank"><ins><strong>**CARI (Consumer Aesthetics Research Institute)**</strong></ins></a>, to describe "the corporate tech aesthetic popular approximately 2005-2013".
 
    In recent years, **Frutiger Aero** has experienced a resurgence online driven by nostalgia and a general dislike for today's boring, flat, coporate looking designs. People revisiting their early 2000s childhood not only enjoy the more hopeful, detailed designs, but also get a huge
    sense of nostalgia from this era, making the optimistic nature of Frutiger Aero hit even harder as the perception of the future back then was unfortunatley very different to what we have today in reality. 
-   
+  
    Many creators have spent lots of time producing pieces of media, music, software and even video games all based around the vibes of **Frutiger Aero** as it continues to gain popularity mainly thanks to social media platforms.
 
-   This website is an example of that, I love combining modern UI design with Frutiger Aero's glossy, glassy aesthetic. I made this page to help push the aesthetic, eventually get some attention for my personal store and also serves as a fun, informative site to explore. In addition, it acts as a personal tribute to the aesthetic that I have been inspired to create so much with and hold so many fond memories of. 
+   This website is an example of that, I love combining modern UI design with Frutiger Aero's glossy, glassy aesthetic. I made this page to not only help push the aesthetic, but eventually get some attention for my other work & personal store while also serving as a fun, informative website to explore. In addition, it acts as a personal tribute to the aesthetic that I have been inspired to create so much with and hold so many fond memories of. 
 
-   Below, you can see some final examples of **Frutiger Aero**, **DORFic**, **Aurora**, **Metro** and more. Thank you for reading.
+   I'm not sure we will ever see Frutiger Aero in the mainstream again, while we can never actually relive those years we can continue to create pieces such as this website to keep it and it's history alive.
+
+   Below, you can see some final examples of **Frutiger Aero**, **DORFic**, **Aurora**, **Metro** and more. Thank you for reading and thank you so much for checking out my work on this website.
 
   <div className="images-grid">
     <img src="/aero-images/aero_1.png" />
@@ -150,14 +152,34 @@ export default function About() {
     <img src="/aero-images/aero_4.jpg" />
     <img src="/aero-images/aero_7.jpg" />
     <img src="/aero-images/aero_8.jpg" />
-    <img src="/aero-images/aero_9.png" />
     <img src="/aero-images/aero_12.jpg" />
+    <img src="/aero-images/aurora3.png" />
     <img src="/aero-images/aero_13.jpg" />
-    <img src="/aero-images/aero_14.jpeg" />
-    <img src="/aero-images/aero_16.jpg" />
     <img src="/aero-images/aero_17.png" />
+    <img src="/aero-images/aero_16.jpg" />
+    <img src="/aero-images/asadal2.jpg" />
+    <img src="/aero-images/aero_14.jpeg" />
+    <img src="/aero-images/vista_os4.jpg" />
+    <img src="/aero-images/vista_os2.webp" />
+    <img src="/aero-images/vista_os3.jpg" />
+    <img src="/aero-images/vista_os.jpg" />
+    <img src="/aero-images/windows7.webp" />
+    <img src="/aero-images/windows7_2.png" />
+    <img src="/aero-images/windows7_3.png" />
+    <img src="/aero-images/windows7_4.png" />
+    <img src="/aero-images/windows7_5.jpg" />
+    <img src="/aero-images/asadal1.jpg" />
+    <img src="/aero-images/aurora6.png" />
+    <img src="/aero-images/aurora2.png" />
+    <img src="/aero-images/aero_9.png" />
+    <img src="/aero-images/aurora5.png" />
+    <img src="/aero-images/aurora4.png" />
     <img src="/aero-images/aero_18.jpg" />
-
+    <img src="/aero-images/dorfic1.jpg" />
+    <img src="/aero-images/dorfic2.png" />
+    <img src="/aero-images/dorfic3.webp" />
+    <img src="/aero-images/frutigermetro3.jpg" />
+    <img src="/aero-images/metro.png" />
    </div>
 
 `;
@@ -196,9 +218,13 @@ export default function About() {
               <img src={"/aero-images/bordered.png"} className={"overlay"} alt="carousel" />
               <img src={`/aero-images/${images[currentImage]}`} className={"bordered-image " + (fade ? "fade-in" : "fade-out")} alt="carousel" />
             </div>
-            <ReactMarkdown rehypePlugins={[rehypeRaw]}>{contentSep}</ReactMarkdown>
+            <div className="markdown">
+              <ReactMarkdown rehypePlugins={[rehypeRaw]}>{contentSep}</ReactMarkdown>
+            </div>
           </p>
-          <ReactMarkdown>{content}</ReactMarkdown>
+          <div className="markdown">
+            <ReactMarkdown rehypePlugins={[rehypeRaw]}>{content}</ReactMarkdown>
+          </div>
         </div>
         <div className="examples-grid">
           {aeroImages.map((img, index) => (

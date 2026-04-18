@@ -17,6 +17,7 @@ export default function Resources() {
     { name: "Revert8Plus", description: "Allows you to convert Windows 10 to Windows 7 in under 60 seconds (CAUTION: Ensure your Windows version is compatible)", link: "https://teknixstuff.com/Libraries/Projects/Revert8Plus/", icon: "/icons/settings.png" },
     { name: "OpenShell", description: "Classic Aero Start Menu for Windows 7, 8, 8.1, 10, 11 (Allows you to get Windows 7 start menu/taskbar even on Win11!) (GitHub)", link: "https://github.com/Open-Shell/Open-Shell-Menu", icon: "/icons/settings.png" },
     { name: "Windhawk", description: "Allows for great, fast Aero customisation with Windows 11 (I use this for Windows 7 Taskbar)", link: "https://windhawk.net/", icon: "/icons/settings.png" },
+    { name: "Frutiger Aero Website Design Commission & More!", description: "Shoot me an email if you're looking for a website commission, video editing, graphic design etc", link: "https://www.craftedbyarjun.com/", icon: "/icons/user.png" },
     { name: "Frutiger Aero Archive", description: "An incredibly huge collection of resources by Daniele (much more resources than I have here!)", link: "https://frutigeraeroarchive.org/", icon: "/icons/frutigerAeroArchive.png" },
   ];
   return (
