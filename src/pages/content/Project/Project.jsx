@@ -30,10 +30,10 @@ export default function Project() {
       <div className="project-flex">
         <div className="project-image">
           <img src={project.image} className="project-image-src"></img>
-          <div className="enter-button">
+          <a className="enter-button" href="https://www.craftedbyarjun.com/home" target="_blank" rel="noopener noreferrer">
             <img className="enter-icon" src="/icons/forward.png"></img>
             <div>Open Website</div>
-          </div>
+          </a>
           <div className="meta-data">
             <div>
               <div style={{ fontWeight: "500" }}>Title:</div>

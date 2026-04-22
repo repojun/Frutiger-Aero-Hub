@@ -6,7 +6,7 @@ import rehypeRaw from "rehype-raw";
 export default function About() {
   const [currentImage, setCurrentImage] = useState(0);
   const [fade, setFade] = useState("false");
-  const aeroImages = ["/aero-images/ios.jpg", "/aero-images/vista2.png", "/aero-images/vista.webp", "/aero-images/aero_1.png", "/aero-images/aero_17.png", "/aero-images/aero_3.jpg", "/aero-images/aero_4.jpg", "/aero-images/aero_5.jpg", "/aero-images/aero_6.jpg"];
+  const aeroImages = ["/aero-images/ios.webp", "/aero-images/vista2.webp", "/aero-images/vista.webp", "/aero-images/aero_1.webp", "/aero-images/aero_17.webp", "/aero-images/aero_3.webp", "/aero-images/aero_4.webp", "/aero-images/aero_5.webp", "/aero-images/aero_6.webp"];
   const contentSep = `
   <a href="https://aesthetics.fandom.com/wiki/Frutiger_Aero" target="_blank"><ins>**Frutiger Aero**</ins></a>, also known as Web 2.0 Gloss, is an aesthetic that was very common from around 2005-2013. It was originally unnamed and just the trend at the time, the term "Frutiger Aero" was only established later as people looked back at the designs from this time period. 
   It was named after a combination <a href="https://en.wikipedia.org/wiki/Adrian_Frutiger" target="_blank"><ins>**Adrian Frutiger**</ins></a>, a Swiss designer who created the <a href="https://en.wikipedia.org/wiki/Frutiger_(typeface)" target="_blank"><ins>**Frutiger Font Family**</ins></a> and <a href="https://en.wikipedia.org/wiki/Windows_Aero" target="_blank"><ins>**Windows Aero**</ins></a>, 
@@ -31,9 +31,9 @@ export default function About() {
    
    Microsoft later began developing an unreleased operating system called **Windows Longhorn**, which later became Windows Vista. 
    <div className="images-grid">
-    <img src="/aero-images/bliss.jpg" />
-    <img src="/aero-images/windowsxp.jpg" />
-    <img src="/aero-images/longhorn.png" />
+    <img src="/aero-images/bliss.webp" />
+    <img src="/aero-images/windowsxp.webp" />
+    <img src="/aero-images/longhorn.webp" />
    </div>
 
   ## The Rise of Windows Aero (Longhorn, 2001-2004)
@@ -51,9 +51,9 @@ export default function About() {
    Although Longhorn never released, it's legacy definitely did not disappear. In the background, it ended up shaping the foundation for modern Windows systems and was the start of the Aero design style.
 
    <div className="images-grid">
-    <img src="/aero-images/longhorndemo3.png" />
-    <img src="/aero-images/longhorndemo.png" />
-    <img src="/aero-images/longhorndemo2.jpg" />
+    <img src="/aero-images/longhorndemo3.webp" />
+    <img src="/aero-images/longhorndemo.webp" />
+    <img src="/aero-images/longhorndemo2.webp" />
    </div>
 
   ## Windows Vista (2007)
@@ -71,12 +71,12 @@ export default function About() {
    Outisde of **Microsoft**, the new glossy, futuristic look that Windows was taking on had a much larger influence on the industry as a whole.
 
   <div className="images-grid">
-    <img src="/aero-images/vista_os5.jpg" />
-    <img src="/aero-images/vista_os4.jpg" />
+    <img src="/aero-images/vista_os5.webp" />
+    <img src="/aero-images/vista_os4.webp" />
     <img src="/aero-images/vista_os2.webp" />
-    <img src="/aero-images/vista_os3.jpg" />
-    <img src="/aero-images/vista_os.jpg" />
-    <img src="/aero-images/defendyourwow.jpg" />
+    <img src="/aero-images/vista_os3.webp" />
+    <img src="/aero-images/vista_os.webp" />
+    <img src="/aero-images/defendyourwow.webp" />
    </div>
 
   ## Industry design shift (Frutiger Aero's Peak)
@@ -88,11 +88,11 @@ export default function About() {
    coin the phrase **"The promised future"** which is heavily associated with the aesthetic, as people believe that we are living in a very different future compared to the one depicted by these designs back then.
 
   <div className="images-grid">
-    <img src="/aero-images/asadal1.jpg" />
-    <img src="/aero-images/asadal3.jpg" />
-    <img src="/aero-images/asadal2.jpg" />
+    <img src="/aero-images/asadal1.webp" />
+    <img src="/aero-images/asadal3.webp" />
+    <img src="/aero-images/asadal2.webp" />
     <img src="/aero-images/wii.webp" />
-    <img src="/aero-images/xbox360.jpg" />
+    <img src="/aero-images/xbox360.webp" />
     <img src="/aero-images/psvita.webp" />
    </div>  
 
@@ -109,10 +109,10 @@ export default function About() {
   
    <div className="images-grid">
     <img src="/aero-images/windows7.webp" />
-    <img src="/aero-images/windows7_2.png" />
-    <img src="/aero-images/windows7_3.png" />
-    <img src="/aero-images/windows7_4.png" />
-    <img src="/aero-images/windows7_5.jpg" />
+    <img src="/aero-images/windows7_2.webp" />
+    <img src="/aero-images/windows7_3.webp" />
+    <img src="/aero-images/windows7_4.webp" />
+    <img src="/aero-images/windows7_5.webp" />
     <img src="/aero-images/windows7_6.webp" />
    </div>
 
@@ -128,8 +128,8 @@ export default function About() {
   
    <div className="images-grid">
     <img src="/aero-images/ios7.webp" />
-    <img src="/aero-images/windows8.jpg" />
-    <img src="/aero-images/windows10.png" />
+    <img src="/aero-images/windows8.webp" />
+    <img src="/aero-images/windows10.webp" />
    </div>
 
   ## The Resurgence of Aero (Frutiger Aero)
@@ -147,45 +147,45 @@ export default function About() {
    Below, you can see some final examples of **Frutiger Aero**, **DORFic**, **Aurora**, **Metro** and more. Thank you for reading and thank you so much for checking out my work on this website.
 
   <div className="images-grid">
-    <img src="/aero-images/aero_1.png" />
-    <img src="/aero-images/aero_3.jpg" />
-    <img src="/aero-images/aero_4.jpg" />
-    <img src="/aero-images/aero_7.jpg" />
-    <img src="/aero-images/aero_8.jpg" />
-    <img src="/aero-images/aero_12.jpg" />
-    <img src="/aero-images/aurora3.png" />
-    <img src="/aero-images/aero_13.jpg" />
-    <img src="/aero-images/aero_17.png" />
-    <img src="/aero-images/aero_16.jpg" />
-    <img src="/aero-images/asadal2.jpg" />
-    <img src="/aero-images/aero_14.jpeg" />
-    <img src="/aero-images/vista_os4.jpg" />
+    <img src="/aero-images/aero_1.webp" />
+    <img src="/aero-images/aero_3.webp" />
+    <img src="/aero-images/aero_4.webp" />
+    <img src="/aero-images/aero_7.webp" />
+    <img src="/aero-images/aero_8.webp" />
+    <img src="/aero-images/aero_12.webp" />
+    <img src="/aero-images/aurora3.webp" />
+    <img src="/aero-images/aero_13.webp" />
+    <img src="/aero-images/aero_17.webp" />
+    <img src="/aero-images/aero_16.webp" />
+    <img src="/aero-images/asadal2.webp" />
+    <img src="/aero-images/aero_14.webp" />
+    <img src="/aero-images/vista_os4.webp" />
     <img src="/aero-images/vista_os2.webp" />
-    <img src="/aero-images/vista_os3.jpg" />
-    <img src="/aero-images/vista_os.jpg" />
+    <img src="/aero-images/vista_os3.webp" />
+    <img src="/aero-images/vista_os.webp" />
     <img src="/aero-images/windows7.webp" />
-    <img src="/aero-images/windows7_2.png" />
-    <img src="/aero-images/windows7_3.png" />
-    <img src="/aero-images/windows7_4.png" />
-    <img src="/aero-images/windows7_5.jpg" />
-    <img src="/aero-images/asadal1.jpg" />
-    <img src="/aero-images/aurora6.png" />
-    <img src="/aero-images/aurora2.png" />
-    <img src="/aero-images/aero_9.png" />
-    <img src="/aero-images/aurora5.png" />
-    <img src="/aero-images/aurora4.png" />
-    <img src="/aero-images/aero_18.jpg" />
-    <img src="/aero-images/dorfic1.jpg" />
-    <img src="/aero-images/dorfic2.png" />
+    <img src="/aero-images/windows7_2.webp" />
+    <img src="/aero-images/windows7_3.webp" />
+    <img src="/aero-images/windows7_4.webp" />
+    <img src="/aero-images/windows7_5.webp" />
+    <img src="/aero-images/asadal1.webp" />
+    <img src="/aero-images/aurora6.webp" />
+    <img src="/aero-images/aurora2.webp" />
+    <img src="/aero-images/aero_9.webp" />
+    <img src="/aero-images/aurora5.webp" />
+    <img src="/aero-images/aurora4.webp" />
+    <img src="/aero-images/aero_18.webp" />
+    <img src="/aero-images/dorfic1.webp" />
+    <img src="/aero-images/dorfic2.webp" />
     <img src="/aero-images/dorfic3.webp" />
-    <img src="/aero-images/frutigermetro3.jpg" />
-    <img src="/aero-images/metro.png" />
+    <img src="/aero-images/frutigermetro3.webp" />
+    <img src="/aero-images/metro.webp" />
    </div>
 
 `;
 
   // creates array of image with the file names and memoized so that it doesnt change on every render
-  const images = useMemo(() => Array.from({ length: 7 }, (_, i) => `bordered${i + 1}.png`), []);
+  const images = useMemo(() => Array.from({ length: 7 }, (_, i) => `bordered${i + 1}.webp`), []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -215,7 +215,7 @@ export default function About() {
         <div className="main-about-text">
           <p style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
             <div className="bordered-image-container">
-              <img src={"/aero-images/bordered.png"} className={"overlay"} alt="carousel" />
+              <img src={"/aero-images/bordered.webp"} className={"overlay"} alt="carousel" />
               <img src={`/aero-images/${images[currentImage]}`} className={"bordered-image " + (fade ? "fade-in" : "fade-out")} alt="carousel" />
             </div>
             <div className="markdown">
