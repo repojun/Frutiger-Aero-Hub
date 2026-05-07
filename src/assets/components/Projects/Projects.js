@@ -2,6 +2,7 @@ export const projects = [
   {
     id: "portfolio",
     name: "My Portfolio",
+    author: "Bahpu",
     description: `
 Here's my original website portfolio, it was my first ever Frutiger Aero website. 
 
@@ -12,10 +13,12 @@ Also, try figure out how to get your score up!
 `,
     link: "https://www.craftedbyarjun.com/",
     image: "https://arjun.needs-to-s.top/4gSaeXF.png",
+    creator: true,
   },
   {
     id: "google",
     name: "Aero Search Page",
+    author: "Bahpu",
     description: `
 This is my Aero Search Page, its just a nice theme to browse with and use as a homescreen for your browser. 
 
@@ -24,10 +27,12 @@ It just acts as a wrapper (even tho its not really a wrapper) for google, brave 
 `,
     link: "https://www.craftedbyarjun.com/home",
     image: "https://arjun.needs-to-s.top/6UeNuGm.png",
+    creator: true,
   },
   {
     id: "reddit-design",
     name: "Reddit Design",
+    author: "Bahpu",
     description: `
 This was my take on turning the Frutiger Aero Reddit page into an actual Frutiger Aero theme. 
 

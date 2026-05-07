@@ -67,6 +67,7 @@ export default function Main({ children }) {
     { id: 5, imageFile: "https://arjun.needs-to-s.top/8zefmsY.png", icon: "/icons/wallpaper.png", label: "Aurora Grey" },
     { id: 6, imageFile: "https://arjun.needs-to-s.top/99YQJxE.jpg", icon: "/icons/wallpaper.png", label: "Aurora Blue" },
     { id: 7, imageFile: "https://arjun.needs-to-s.top/6T22pQu.png", icon: "/icons/wallpaper.png", label: "Wheat" },
+    { id: 8, imageFile: "https://www.craftedbyarjun.com/bg3.webp", icon: "/icons/wallpaper.png", label: "Vista Blue" },
   ];
 
   const buttonSound = () => {
