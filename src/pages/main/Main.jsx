@@ -209,19 +209,17 @@ export default function Main({ children }) {
                 <img className="icon" src="/icons/pallette.png" style={{ width: "3.5rem" }} />
               </div>
 
-              <div className="button" onClick={() => {}}>
-                <img
-                  className="icon"
-                  style={{ width: "3.7rem" }}
-                  src="/icons/wallpaper.png"
-                  onClick={() => {
-                    if (modal) {
-                      console.log("nothing to see here.");
-                    } else {
-                      toggleModal({ title: "Backgrounds", type: "backgroundButton", array: backgroundArray });
-                    }
-                  }}
-                />
+              <div
+                className="button"
+                onClick={() => {
+                  if (modal) {
+                    console.log("nothing to see here.");
+                  } else {
+                    toggleModal({ title: "Backgrounds", type: "backgroundButton", array: backgroundArray });
+                  }
+                }}
+              >
+                <img className="icon" style={{ width: "3.7rem" }} src="/icons/wallpaper.png" />
               </div>
             </div>
             <div className="side-divider"></div>
