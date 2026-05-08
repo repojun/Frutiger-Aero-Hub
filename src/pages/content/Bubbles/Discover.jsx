@@ -14,7 +14,7 @@ export default function Discover() {
           <div className="speech-bubble-container">
             <div className={"speech-bubble"}>i'm teddy! i can guide you through this page.</div>
           </div>
-          <img src="/aero-images/teddy_guide.png" className={"mascot-bordered-image"} />
+          <img src="/aero-images/teddy_guide.webp" className={"mascot-bordered-image"} />
         </div>
         <div className="resource-banner" style={{ height: "auto" }}>
           <div className="title">Teddy Says:</div>

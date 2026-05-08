@@ -97,7 +97,7 @@ export default function GuestBook() {
         <div className="guest-divider" />
         <div className="guest-header-flex">
           <div className="mascot-image-container">
-            <img src="/aero-images/teddy_guide.png" className={"mascot-bordered-image"} />
+            <img src="/aero-images/teddy_guide.webp" className={"mascot-bordered-image"} />
           </div>
           <div className="guest-banner" style={{ height: "auto" }}>
             <div className="title">Teddy Says:</div>

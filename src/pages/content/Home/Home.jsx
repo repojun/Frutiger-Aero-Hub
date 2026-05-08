@@ -12,7 +12,7 @@ export default function Home() {
       setFade(false);
 
       setTimeout(() => {
-        setCurrentImage("/aero-images/teddy_guide.png");
+        setCurrentImage("/aero-images/teddy_guide.webp");
         setFade(true);
       }, 500);
 

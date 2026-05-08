@@ -12,7 +12,7 @@ here and here. It captures a time where I was just starting out with the design 
 Also, try figure out how to get your score up!
 `,
     link: "https://www.craftedbyarjun.com/",
-    image: "https://arjun.needs-to-s.top/4gSaeXF.png",
+    image: "/projects/portfolio.webp",
     creator: true,
   },
   {
@@ -26,7 +26,7 @@ It just acts as a wrapper (even tho its not really a wrapper) for google, brave 
 
 `,
     link: "https://www.craftedbyarjun.com/home",
-    image: "https://arjun.needs-to-s.top/6UeNuGm.png",
+    image: "/projects/homepage.webp",
     creator: true,
   },
   {
@@ -42,7 +42,7 @@ I decided to make it interactable so its more entertaining to use, I was hoping 
 
 `,
     link: "https://www.craftedbyarjun.com/reddit",
-    image: "https://arjun.needs-to-s.top/9E1tzSG.jpg",
+    image: "/projects/reddit.webp",
   },
   {
     id: "aero-archive",
@@ -64,7 +64,7 @@ I spent countless hours adding various features, that have gone way above the or
 
 `,
     link: "https://example.com/app2",
-    image: "https://arjun.needs-to-s.top/2fM4FgH.jpg",
+    image: "/projects/aeroarchive.webp",
   },
   {
     id: "lunalytics",
@@ -89,7 +89,7 @@ I spent countless hours adding various features, that have gone way above the or
 
 `,
     link: "https://lunalytics.xyz/",
-    image: "https://arjun.needs-to-s.top/4rZ1ahY.png",
+    image: "/projects/lunalytics.webp",
     creator: true,
   },
   {
@@ -112,7 +112,7 @@ I spent countless hours adding various features, that have gone way above the or
 
 `,
     link: "https://voicesync.modsync.app/",
-    image: "https://arjun.needs-to-s.top/75LLvxT.png",
+    image: "/projects/voicesync.webp",
   },
 ].map((project) => ({
   ...project,
