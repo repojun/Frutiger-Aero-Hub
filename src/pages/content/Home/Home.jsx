@@ -85,7 +85,7 @@ export default function Home() {
             <div className="metric">A cool aero browser</div>
           </div>
         </a>
-        <div className="large-button">
+        <div className="large-button disable">
           <img src="/icons/cartIcon.png" className="icon"></img>
           <div className="text">
             <div>Frutiger Shop</div>

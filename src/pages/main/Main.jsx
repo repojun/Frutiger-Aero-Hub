@@ -5,6 +5,7 @@ import RedditModal from "../../assets/components/RedditModal/RedditModal";
 import { SoundPlayer } from "../../assets/components/SoundPlayer/SoundPlayer";
 import { changeHue } from "../../assets/components/ChangeHue/ChangeHue";
 import { Link, useLocation } from "react-router";
+import { shopContent } from "../../assets/components/Content/Shop";
 
 export default function Main({ children }) {
   const location = useLocation();
@@ -158,10 +159,25 @@ export default function Main({ children }) {
                 <img className="icon" src="/icons/aeroorbNakedAsf.png" />
                 <div className="skeuButtonBody">Reddit Design</div>
               </a>
-              <Link className="skeuButton" to={"/"}>
+              <div
+                className="skeuButton"
+                onClick={() => {
+                  if (modal) {
+                    console.log("nothing to see here.");
+                  } else {
+                    toggleModal({
+                      title: "Frutiger Shop - Coming Soon!",
+                      image: "",
+                      type: "Credits",
+                      description: shopContent,
+                      array: [],
+                    });
+                  }
+                }}
+              >
                 <img className="icon" src="/icons/cartIcon.png" />
                 <div className="skeuButtonBody">Shop</div>
-              </Link>
+              </div>
             </div>
             <div className="side-divider"></div>
 
