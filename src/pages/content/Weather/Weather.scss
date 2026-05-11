@@ -1,6 +1,98 @@
 .loading-text {
   text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.75), 0px 0px 12px rgb(255, 255, 255, 1);
 }
+
+.weather-modal-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 7;
+  .weather-modal-body {
+    background: rgba(180, 255, 248, 0.15);
+    border: 1px solid white;
+    backdrop-filter: blur(10px);
+    border-radius: 1rem;
+    border: 0.0625rem solid rgb(255, 255, 255);
+    box-shadow: inset 0 0 1.25rem rgba(148, 246, 255, 0.4), 0 0.5rem 0.625rem 0 rgba(0, 0, 0, 0.2), 0 0 0.625rem 0.125rem rgba(255, 255, 255, 0.4);
+    width: 30rem;
+    height: 10rem;
+    .weather-input-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1rem;
+      .weather-input {
+        background: rgb(255, 255, 255, 0.1);
+        box-shadow: inset 0px 0px 12px rgba(255, 255, 255, 0.2), 0px 0px 10px 0px rgba(0, 0, 0, 0.05), 0px 0px 10px 0px rgba(255, 255, 255, 1);
+        border: 1px solid rgb(255, 255, 255);
+        border-radius: 0.5rem;
+        color: white;
+        transition: 0.4s;
+        padding: 0.5rem;
+        align-self: flex-start;
+        &.disabled {
+          opacity: 0.7;
+          &:hover {
+            cursor: not-allowed;
+          }
+        }
+
+        &::placeholder {
+          color: rgba(255, 255, 255, 0.6);
+          font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+          text-shadow: 0 2px 2px rgba(255, 255, 255, 0.1);
+        }
+
+        &:hover,
+        &:focus-visible,
+        &:focus {
+          transition: 0.2s;
+          box-shadow: inset 0px 0px 20px rgba(148, 246, 255, 0.7), 0px 8px 10px 0px rgba(0, 0, 0, 0.05), 0px 0px 10px 2px rgba(255, 255, 255, 0.7);
+          border: 1px solid rgb(255, 255, 255);
+          outline: none;
+        }
+      }
+    }
+    .close-button {
+      border-top-right-radius: 1rem;
+      user-select: none;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      font-size: 2rem;
+      min-height: 100%;
+      background: rgba(231, 255, 253, 0) !important;
+      border-left: 1px solid rgba(231, 255, 253, 0.7) !important;
+      transition: 0.2s;
+
+      &:hover {
+        background: rgba(231, 255, 253, 0.5) !important;
+        transition: 0.2s;
+        cursor: pointer;
+      }
+    }
+    .title-bar {
+      background-color: rgb(125, 225, 255);
+      border-top-left-radius: 1rem;
+      border-top-right-radius: 1rem;
+      font-size: 2rem;
+      padding-left: 0.75rem;
+      text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.75), 0px 0px 12px rgb(255, 255, 255, 1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+      border-bottom: 1px solid rgba(231, 255, 253, 0.7) !important;
+    }
+  }
+}
 .weather-container {
   display: flex;
   width: 67rem;

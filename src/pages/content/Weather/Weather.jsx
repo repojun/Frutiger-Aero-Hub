@@ -13,7 +13,6 @@ export default function Weather() {
 
   // use this to get the weather icon, checks if the condition text matches whatever weatherapi throws back & also changes the icon to a moon depending on the time
   const getWeatherIcon = (conditionText, timeString) => {
-    console.log(conditionText);
     const text = (conditionText || "").toLowerCase();
     const time = timeString?.split(" ")[1] || "12:00"; // gets the time n date (like 2026-02-03 12:00) then splits it by space, then gets the time only
     const hour = parseInt(time.slice(0, 2), 10); // convert time to numbers by taking the first two
@@ -97,6 +96,19 @@ export default function Weather() {
 
   return (
     <>
+      {/* <div className="weather-modal-container">
+        <div className="weather-modal-body">
+          <div className="title-bar">
+            <div>Enter a new location</div>
+            <div className="close-button">
+              <div>X</div>
+            </div>
+          </div>
+          <div className="weather-input-container">
+            <input className={"weather-input"} placeholder="Location" type="location" name="location" maxLength={300} style={{ height: "1.5rem", maxHeight: "8rem", alignSelf: "center" }} />
+          </div>
+        </div>
+      </div> */}
       <div className="main-title">
         <span>Weather Tab</span>
       </div>
