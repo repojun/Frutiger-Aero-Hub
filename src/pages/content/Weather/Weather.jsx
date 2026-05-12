@@ -2,10 +2,13 @@ import { time } from "framer-motion";
 import "./Weather.scss";
 import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { SoundPlayer } from "../../../assets/components/SoundPlayer/SoundPlayer";
 
 export default function Weather() {
   const [location, setLocation] = useState("London");
+  const [pendingLocation, setPendingLocation] = useState(location);
   const [weather, setWeather] = useState(null);
+  const [modal, setModal] = useState(false);
   // need to handle errors!
   const [error, setError] = useState(null);
   const condition = weather?.current;
@@ -39,9 +42,16 @@ export default function Weather() {
   const getWeather = async () => {
     try {
       setError(null);
+
       if (USE_DATA) {
         const res = await fetch(`/api/weather?location=${location}`);
         const data = await res.json();
+
+        // check API error response
+        if (data.error) {
+          throw new Error(data.error.message);
+        }
+
         setWeather(data);
       } else {
         const fakeData = {
@@ -61,15 +71,18 @@ export default function Weather() {
             humidity: 66,
           },
         };
+
         setWeather(fakeData);
       }
     } catch (err) {
+      setWeather(null); // optional
       setError(err.message);
     }
   };
 
   const editLocation = () => {
-    setLocation("Thailand");
+    SoundPlayer("clickxp_r", 0.6, "mp3");
+    setModal(!modal);
   };
 
   const [page, setPage] = useState(1);
@@ -83,7 +96,7 @@ export default function Weather() {
   const handlePrev = () => setPage((prev) => Math.max(prev - 1, 0));
   const handleNext = () => setPage((prev) => Math.min(prev + 1, totalPages - 1));
 
-  if (!weather)
+  if (!weather && !error)
     return (
       <>
         <div className="main-title">
@@ -96,43 +109,96 @@ export default function Weather() {
 
   return (
     <>
-      {/* <div className="weather-modal-container">
-        <div className="weather-modal-body">
-          <div className="title-bar">
-            <div>Enter a new location</div>
-            <div className="close-button">
-              <div>X</div>
-            </div>
-          </div>
-          <div className="weather-input-container">
-            <input className={"weather-input"} placeholder="Location" type="location" name="location" maxLength={300} style={{ height: "1.5rem", maxHeight: "8rem", alignSelf: "center" }} />
-          </div>
-        </div>
-      </div> */}
+      <AnimatePresence>
+        {modal && (
+          <motion.div className="weather-modal-container" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.15 }}>
+            <motion.div
+              className="weather-modal-body"
+              initial={{ scale: 0.2, opacity: 0 }}
+              animate={{ scale: [0.2, 1.1, 1], opacity: 1 }}
+              exit={{ scale: 0.95, opacity: 0 }}
+              transition={{
+                duration: 0.35,
+                ease: "easeOut",
+              }}
+            >
+              {" "}
+              <div className="title-bar">
+                <div>Enter a new location</div>
+
+                <div className="close-button" onClick={() => editLocation()}>
+                  <div>X</div>
+                </div>
+              </div>
+              <div className="weather-input-container">
+                <input
+                  className="weather-input"
+                  value={pendingLocation}
+                  onChange={(e) => {
+                    setPendingLocation(e.target.value);
+                  }}
+                  placeholder="Location"
+                  type="location"
+                  name="location"
+                  maxLength={300}
+                  style={{
+                    height: "1.5rem",
+                    maxHeight: "8rem",
+                    alignSelf: "center",
+                  }}
+                />
+
+                <div
+                  className="submit-button"
+                  style={{ height: "3rem", width: "8rem" }}
+                  onClick={() => {
+                    setLocation(pendingLocation);
+                    editLocation();
+                  }}
+                >
+                  <img src="icons/forward.png" className="icon" />
+                  Confirm
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       <div className="main-title">
         <span>Weather Tab</span>
       </div>
+
       <div className="divider"></div>
-      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.2 }} style={{ position: "relative" }}>
+
+      <motion.div key={weather?.location?.name} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.2 }} style={{ position: "relative" }}>
+        {" "}
         <div className="weather-container">
           <div className="weather-metrics">
-            {weather && (
-              <div className="weather-main">
-                <img src={`/icons/weather/${getWeatherIcon(weather?.current?.condition?.text)}`} alt={weather?.current?.condition?.text || "Weather icon"} className="weather-icon" />{" "}
-                <div className="weather-text">
-                  <p className="location">
-                    {weather?.location?.name ?? "London, UK"}{" "}
-                    <span className="edit-button" onClick={() => editLocation()}>
-                      [x]
-                    </span>
-                  </p>
-                  <p className="celsius">{weather?.current?.temp_c ?? "24"}°C</p>
-                  <p className="condition">{weather?.current?.condition?.text ?? "Sunny"}</p>
-                  <p className="feels-like">Feels like {weather?.current?.feelslike_c ?? "19"}°C</p>
-                </div>
+            <div className="weather-main">
+              {!error && weather?.current?.temp_c && <img src={`/icons/weather/${getWeatherIcon(weather?.current?.condition?.text)}`} alt={weather?.current?.condition?.text || ""} className="weather-icon" />}
+
+              <div className="weather-text">
+                <p className="location">
+                  {error ? `Unable to find "${location}", please enter a new location.` : weather?.location?.name}{" "}
+                  <span className="edit-button" onClick={() => editLocation()}>
+                    [Edit]
+                  </span>
+                </p>
+
+                {!error && weather?.current?.temp_c && (
+                  <>
+                    <p className="celsius">{weather?.current?.temp_c}°C</p>
+
+                    <p className="condition">{weather?.current?.condition?.text}</p>
+
+                    <p className="feels-like">Feels like {weather?.current?.feelslike_c}°C</p>
+                  </>
+                )}
               </div>
-            )}
-            {weather && (
+            </div>
+
+            {!error && weather?.current?.temp_c && (
               <div className="metrics-grid">
                 <div>
                   <div className="metric-title">Wind</div>
@@ -143,14 +209,17 @@ export default function Weather() {
                   <div className="metric-title">Humidity</div>
                   <div className="metric-stat">{condition?.humidity}%</div>
                 </div>
+
                 <div>
                   <div className="metric-title">Heat Index</div>
                   <div className="metric-stat">{condition?.heatindex_c}°C</div>
                 </div>
+
                 <div>
                   <div className="metric-title">Cloud Cover</div>
                   <div className="metric-stat">{condition?.cloud}%</div>
                 </div>
+
                 <div>
                   <div className="metric-title">Gust</div>
                   <div className="metric-stat">{condition?.gust_mph}mp/h</div>
@@ -163,8 +232,9 @@ export default function Weather() {
 
                 <div>
                   <div className="metric-title">UV Index</div>
-                  <div className="metric-stat">{condition?.uv}mp/h</div>
+                  <div className="metric-stat">{condition?.uv}</div>
                 </div>
+
                 <div>
                   <div className="metric-title">Precipitation</div>
                   <div className="metric-stat">{condition?.precip_mm}mm</div>
@@ -172,23 +242,28 @@ export default function Weather() {
               </div>
             )}
           </div>
-          <div className="weather-forecast-container">
-            <div className="back" onClick={handlePrev}>
-              {"<"}
-            </div>
 
-            {currentHours.map((hour) => (
-              <div key={hour.time_epoch} className="weather-card">
-                <div>{Math.round(hour.temp_c)}°C</div>
-                <img src={`/icons/weather/${getWeatherIcon(hour?.condition?.text, hour?.time)}`} alt={hour?.condition?.text} className="forecast-icon" />
-                <div>{hour.time.split(" ")[1]}</div>
+          {!error && weather?.current?.temp_c && (
+            <div className="weather-forecast-container">
+              <div className="back" onClick={handlePrev}>
+                {"<"}
               </div>
-            ))}
 
-            <div className="forward" onClick={handleNext}>
-              {">"}
+              {currentHours.map((hour) => (
+                <div key={hour.time_epoch} className="weather-card">
+                  <div>{Math.round(hour.temp_c)}°C</div>
+
+                  <img src={`/icons/weather/${getWeatherIcon(hour?.condition?.text, hour?.time)}`} alt={hour?.condition?.text} className="forecast-icon" />
+
+                  <div>{hour.time.split(" ")[1]}</div>
+                </div>
+              ))}
+
+              <div className="forward" onClick={handleNext}>
+                {">"}
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </motion.div>
     </>
