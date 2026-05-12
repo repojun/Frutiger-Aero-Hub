@@ -97,14 +97,14 @@ export default function Weather() {
   const handlePrev = () => setPage((prev) => Math.max(prev - 1, 0));
   const handleNext = () => setPage((prev) => Math.min(prev + 1, totalPages - 1));
 
-  if (!weather)
+  if (!weather & !error)
     return (
       <>
         <div className="main-title">
           <span>Weather Tab</span>
         </div>
         <div className="divider"></div>
-        {/* I got this cool loading bar here: https://codepen.io/valentin98/pen/pbLaBZ */}
+        {/* i got this cool loading bar here: https://codepen.io/valentin98/pen/pbLaBZ */}
         <div style={{ display: "flex", flexDirection: "column", rowGap: "1rem", justifyContent: "center", alignItems: "center" }}>
           <div className="loading-text">Loading weather...</div>
           <div className="loading">
