@@ -6,6 +6,7 @@ import rehypeRaw from "rehype-raw";
 export default function About() {
   const [currentImage, setCurrentImage] = useState(0);
   const [fade, setFade] = useState("false");
+  // need to move this to seperate content file
   const aeroImages = ["/aero-images/ios.webp", "/aero-images/vista2.webp", "/aero-images/vista.webp", "/aero-images/aero_1.webp", "/aero-images/aero_17.webp", "/aero-images/aero_3.webp", "/aero-images/aero_4.webp", "/aero-images/aero_5.webp", "/aero-images/aero_6.webp"];
   const contentSep = `
   <a href="https://aesthetics.fandom.com/wiki/Frutiger_Aero" target="_blank"><ins>**Frutiger Aero**</ins></a>, also known as Web 2.0 Gloss, is an aesthetic that was very common from around 2005-2013. It was originally unnamed and just the trend at the time, the term "Frutiger Aero" was only established later as people looked back at the designs from this time period. 

@@ -218,7 +218,7 @@ export default function Main({ children }) {
                   if (modal) {
                     console.log("nothing to see here.");
                   } else {
-                    toggleModal({ title: "Themes", type: "themeButton", array: themeArray });
+                    toggleModal({ title: "Themes (EXPERIMENTAL HUE CHANGER) ", type: "themeButton", array: themeArray });
                   }
                 }}
               >

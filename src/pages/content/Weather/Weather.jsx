@@ -21,6 +21,7 @@ export default function Weather() {
     const hour = parseInt(time.slice(0, 2), 10); // convert time to numbers by taking the first two
     const isNight = hour < 6 || hour >= 20; // check if its night, if its night/dark roughly then use a moon icon instead
 
+    // must figure out why the patial rain arent working
     switch (true) {
       case text.includes("sunny") || text.includes("clear"):
         return isNight ? "Moon_Phase_Full.ico" : "Sunny.ico";
@@ -47,7 +48,7 @@ export default function Weather() {
         const res = await fetch(`/api/weather?location=${location}`);
         const data = await res.json();
 
-        // check API error response
+        // check API error response, weather api sends this error code backs
         if (data.error) {
           throw new Error(data.error.message);
         }
@@ -75,7 +76,7 @@ export default function Weather() {
         setWeather(fakeData);
       }
     } catch (err) {
-      setWeather(null); // optional
+      setWeather(null); // optional -- i cant remember why i added this oops
       setError(err.message);
     }
   };
@@ -96,14 +97,22 @@ export default function Weather() {
   const handlePrev = () => setPage((prev) => Math.max(prev - 1, 0));
   const handleNext = () => setPage((prev) => Math.min(prev + 1, totalPages - 1));
 
-  if (!weather && !error)
+  if (!weather)
     return (
       <>
         <div className="main-title">
           <span>Weather Tab</span>
         </div>
         <div className="divider"></div>
-        <div className="loading-text">Loading weather...</div>
+        {/* I got this cool loading bar here: https://codepen.io/valentin98/pen/pbLaBZ */}
+        <div style={{ display: "flex", flexDirection: "column", rowGap: "1rem", justifyContent: "center", alignItems: "center" }}>
+          <div className="loading-text">Loading weather...</div>
+          <div className="loading">
+            <div className="bar">
+              <div id="light"></div>
+            </div>
+          </div>
+        </div>
       </>
     );
 

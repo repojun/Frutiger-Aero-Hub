@@ -269,9 +269,65 @@
     }
   }
 }
+
 @keyframes shine2 {
   to {
     left: 100%;
     top: 100%;
+  }
+}
+
+// I DID NOT MAKE THIS LOADING BAR MYSELF
+// i got this cool loading bar here: https://codepen.io/valentin98/pen/pbLaBZ
+.loading {
+  width: 400px;
+  height: 30px;
+  overflow: hidden;
+  border-radius: 2.5px;
+  border: 1px solid #8d8d8d;
+
+  background: linear-gradient(to top, #d8d8d8 10%, #d8d8d8 20%, #cecece 30%, #cbcbcb 40%, #cbcbcb 50%, #d5d5d5 60%, #d4d4d4 70%, #e9e9e9 80%, #e9e9e9 90%, #f2f2f2 100%);
+
+  .bar {
+    width: 400px;
+    height: 30px;
+    border-radius: 2px;
+
+    background: linear-gradient(to top, #5dcf78 10%, #21de46 20%, #19da31 30%, #08d226 40%, #08d226 50%, #8af99d 60%, #a3f1b3 70%, #bffec9 80%, #ccffc7 90%, #d7fbcf 100%);
+
+    box-shadow: inset 6px 0px 6px 0px rgba(0, 0, 0, 0.13), inset -6px 0px 6px 0px rgba(0, 0, 0, 0.13), 3px 0px 15px 0px rgba(25, 218, 47, 0.55);
+
+    animation: loading 5s cubic-bezier(0.93, 0.71, 0.39, 0.04);
+    animation-fill-mode: forwards;
+
+    #light {
+      width: 15px;
+      height: 32px;
+      background: rgba(255, 255, 255, 0.6);
+
+      box-shadow: 0px 0px 50px 18px rgba(255, 255, 255, 0.55);
+
+      animation: move 5s cubic-bezier(0.93, 0.71, 0.39, 0.04) infinite;
+    }
+  }
+}
+
+@keyframes loading {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes move {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(400px);
   }
 }
