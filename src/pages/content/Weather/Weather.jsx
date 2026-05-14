@@ -32,7 +32,7 @@ export default function Weather() {
       case text.includes("mist"):
         return "Moon_Phase_Full.ico";
       case text.includes("rain"):
-        return isNight ? "Night_Rain.ico" : "Rain.ico";
+        return isNight ? "Night_Rain.ico" : "rain.png";
       default:
         return isNight ? "Moon_Phase_Full.ico" : "default.ico";
     }
@@ -181,7 +181,6 @@ export default function Weather() {
       <div className="divider"></div>
 
       <motion.div key={weather?.location?.name} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.2 }} style={{ position: "relative" }}>
-        {" "}
         <div className="weather-container">
           <div className="weather-metrics">
             <div className="weather-main">
@@ -189,7 +188,7 @@ export default function Weather() {
 
               <div className="weather-text">
                 <p className="location">
-                  {error ? `Unable to find "${location}", please enter a new location.` : weather?.location?.name}{" "}
+                  {error ? (error.toLowerCase().includes("unexpected token") ? "ERROR: Weather API is unavailable." : `Unable to find "${location}", please enter a new location.`) : weather?.location?.name}{" "}
                   <span className="edit-button" onClick={() => editLocation()}>
                     [Edit]
                   </span>
