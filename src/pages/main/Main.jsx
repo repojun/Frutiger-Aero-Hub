@@ -202,7 +202,7 @@ export default function Main({ children }) {
                       title: "About",
                       image: "",
                       link: "https://www.craftedbyarjun.com/",
-                      type: "Credits",
+                      type: "",
                       array: [],
                     });
                   }
