@@ -11,6 +11,16 @@ export default function Main({ children }) {
   const location = useLocation();
   const divRef = useRef(null);
 
+  // setting id up
+  useEffect(() => {
+    let anonId = localStorage.getItem("temp_id");
+
+    if (!anonId) {
+      anonId = crypto.randomUUID();
+      localStorage.setItem("temp_id", anonId);
+    }
+  }, []);
+
   // Modal Stuff
   const [modal, setModal] = useState(false);
   const [windowAnimation, setWindowAnimation] = useState(false);
@@ -29,8 +39,8 @@ export default function Main({ children }) {
     { name: "Discover", path: "/discover", icon: "/icons/search.png" },
     { name: "Weather", path: "/weather", icon: "/icons/weather.png" },
     { name: "MSN", path: "/msn", icon: "/icons/msnGrey.webp" },
+    { name: "Mini Apps", path: "/apps", icon: "/icons/msnGrey.webp" },
     { name: "Guest Book", path: "/guestbook", icon: "/icons/credits.png" },
-    { name: "Chat Room", path: "/chatroom", icon: "/icons/msnGrey.webp" },
   ];
 
   const musicArray = useMemo(
@@ -67,7 +77,7 @@ export default function Main({ children }) {
     { id: 4, imageFile: "https://arjun.needs-to-s.top/7qBiaZ9.png", icon: "/icons/wallpaper.png", label: "Aurora Purple" },
     { id: 5, imageFile: "https://arjun.needs-to-s.top/8zefmsY.png", icon: "/icons/wallpaper.png", label: "Aurora Grey" },
     { id: 6, imageFile: "https://arjun.needs-to-s.top/99YQJxE.jpg", icon: "/icons/wallpaper.png", label: "Aurora Blue" },
-    { id: 7, imageFile: "https://arjun.needs-to-s.top/6T22pQu.png", icon: "/icons/wallpaper.png", label: "Wheat" },
+    { id: 7, imageFile: "https://arjun.needs-to-s.top/6T22pQu.png", icon: "/icons/wallpaper.png", label: "Windows 7" },
     { id: 8, imageFile: "https://www.craftedbyarjun.com/bg3.webp", icon: "/icons/wallpaper.png", label: "Vista Blue" },
   ];
 

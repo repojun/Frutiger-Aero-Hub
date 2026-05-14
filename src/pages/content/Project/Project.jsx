@@ -1,8 +1,8 @@
 import "./Project.scss";
-import { projects } from "../../../assets/components/Projects/Projects";
 import { useParams, useLocation, Link } from "react-router-dom";
 import { SoundPlayer } from "../../../assets/components/SoundPlayer/SoundPlayer";
 import ReactMarkdown from "react-markdown";
+import { projects } from "../../../assets/components/Content/Projects";
 
 export default function Project() {
   const { slug } = useParams();

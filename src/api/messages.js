@@ -5,6 +5,7 @@ export const getMessages = async () => {
 };
 
 export const addMessage = async (message, website, country, name, quote) => {
+  const anonId = localStorage.getItem("temp_id");
   return await supabase.from("guestbook").insert([
     {
       message,
@@ -12,7 +13,7 @@ export const addMessage = async (message, website, country, name, quote) => {
       website: website ?? null,
       country: country ?? null,
       quote: quote ?? null,
+      anon_id: anonId,
     },
   ]);
 };
-

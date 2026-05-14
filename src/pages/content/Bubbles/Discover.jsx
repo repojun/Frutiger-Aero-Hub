@@ -1,5 +1,5 @@
 import "./Discover.scss";
-import { projects } from "../../../assets/components/Projects/Projects";
+import { projects } from "../../../assets/components/Content/Projects";
 import { SoundPlayer } from "../../../assets/components/SoundPlayer/SoundPlayer";
 import { Link } from "react-router";
 export default function Discover() {

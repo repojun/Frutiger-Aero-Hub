@@ -13,8 +13,9 @@ import About from "./pages/content/About/About";
 import MSN from "./pages/content/MSN/MSN";
 import Discover from "./pages/content/Bubbles/Discover";
 import GuestBook from "./pages/content/GuestBook/GuestBook";
-import Chat from "./pages/content/Chat/Chat";
+import Apps from "./pages/content/Apps/Apps";
 import Project from "./pages/content/Project/Project";
+import MiniApp from "./pages/content/MiniApp/MiniApp";
 
 const PageFade = ({ children }) => (
   <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.2 }} style={{ position: "relative" }}>
@@ -81,10 +82,10 @@ function App() {
               }
             />
             <Route
-              path="/chatroom"
+              path="/apps"
               element={
                 <PageFade>
-                  <Chat />
+                  <Apps />
                 </PageFade>
               }
             />
@@ -96,12 +97,22 @@ function App() {
                 </PageFade>
               }
             />
+            <Route
+              path="/apps/:slug"
+              element={
+                <PageFade>
+                  <MiniApp />
+                </PageFade>
+              }
+            />
             <Route path="/msn" element={<MSN />} />
           </Routes>
         </AnimatePresence>
       </Main>
     </>
   );
+}
+{
 }
 
 export default App;
