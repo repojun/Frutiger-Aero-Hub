@@ -30,7 +30,7 @@ export default function Project() {
       <div className="project-flex">
         <div className="project-image">
           <img src={project.image} className="project-image-src"></img>
-          <a className="enter-button" href="https://www.craftedbyarjun.com/home" target="_blank" rel="noopener noreferrer">
+          <a className="enter-button" href={project.link} target="_blank" rel="noopener noreferrer">
             <img className="enter-icon" src="/icons/forward.png"></img>
             <div>Open Website</div>
           </a>
