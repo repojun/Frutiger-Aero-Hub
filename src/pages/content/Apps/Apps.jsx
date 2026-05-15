@@ -16,7 +16,7 @@ export default function Apps() {
         <div className="resource-banner" style={{ height: "auto" }}>
           <div className="title">Teddy Says:</div>
           <span>
-            This page contains a bunch of apps that you can mess around with on the site! Just random cool things that work natively within the Frutiger Aero Hub. Most of these we have not made ourselves, I have included links to the sources on each app. We're looking to constantly
+            This page contains a bunch of apps that you can mess around with on the site! Just random cool things that work natively within the Frutiger Aero Hub. Most of these we have not made, if they no longer work or have issues let us know and we can delete them. I have included links to the sources on each app. We're looking to constantly
             update it so let us know if you have any suggestions!
           </span>
         </div>
