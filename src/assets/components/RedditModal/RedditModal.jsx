@@ -66,8 +66,7 @@ const RedditModal = ({ modal, windowAnimation, toggleModal, modalTitle = "Music 
         <div
           className="credits"
           style={{
-            fontSize: "1.5rem",
-            textShadow: "0px 1px 3px rgba(0, 0, 0, 1), 0px 0px 12px rgba(255, 255, 255, 0.5)",
+            fontSize: "2rem",
           }}
         >
           <ReactMarkdown>{description}</ReactMarkdown>

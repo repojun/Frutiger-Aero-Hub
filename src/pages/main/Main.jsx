@@ -74,12 +74,16 @@ export default function Main({ children }) {
   const backgroundArray = [
     { id: 1, imageFile: "https://arjun.needs-to-s.top/4AV1Lfb.jpg", icon: "/icons/wallpaper.png", label: "Hills" },
     { id: 2, imageFile: "https://arjun.needs-to-s.top/9MEzzz8.png", icon: "/icons/wallpaper.png", label: "Aurora" },
+    { id: 12, imageFile: "https://external-preview.redd.it/uhq5zTcMPM3tOW_fbUz4PayDt_5pkEXdyXXoRWs3XOg.jpg?auto=webp&s=e06461124c1ccfdba7e9ece763b644ff68eeb06b", icon: "/icons/wallpaper.png", label: "Bliss" },
     { id: 3, imageFile: "https://arjun.needs-to-s.top/UsraC4C.jpg", icon: "/icons/wallpaper.png", label: "Vista" },
+    { id: 8, imageFile: "https://www.craftedbyarjun.com/bg3.webp", icon: "/icons/wallpaper.png", label: "Vista Blue" },
+    { id: 7, imageFile: "https://arjun.needs-to-s.top/6T22pQu.png", icon: "/icons/wallpaper.png", label: "Windows 7" },
     { id: 4, imageFile: "https://arjun.needs-to-s.top/7qBiaZ9.png", icon: "/icons/wallpaper.png", label: "Aurora Purple" },
     { id: 5, imageFile: "https://arjun.needs-to-s.top/8zefmsY.png", icon: "/icons/wallpaper.png", label: "Aurora Grey" },
     { id: 6, imageFile: "https://arjun.needs-to-s.top/99YQJxE.jpg", icon: "/icons/wallpaper.png", label: "Aurora Blue" },
-    { id: 7, imageFile: "https://arjun.needs-to-s.top/6T22pQu.png", icon: "/icons/wallpaper.png", label: "Windows 7" },
-    { id: 8, imageFile: "https://www.craftedbyarjun.com/bg3.webp", icon: "/icons/wallpaper.png", label: "Vista Blue" },
+    { id: 9, imageFile: "/aero-images/globe.jpg", icon: "/icons/wallpaper.png", label: "Globe Field" },
+    { id: 10, imageFile: "/aero-images/leaf_sky.jpg", icon: "/icons/wallpaper.png", label: "Leaf Sky" },
+    { id: 11, imageFile: "/aero-images/fish.jpg", icon: "/icons/wallpaper.png", label: "Fish" },
   ];
 
   const buttonSound = () => {

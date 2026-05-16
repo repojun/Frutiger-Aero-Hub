@@ -20,7 +20,7 @@
   }
 
   &.close {
-    animation: close 0.5s ease-in-out;
+    animation: close 0.5s ease-in-out forwards;
   }
 }
 
