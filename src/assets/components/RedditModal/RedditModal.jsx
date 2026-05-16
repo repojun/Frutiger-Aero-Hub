@@ -61,9 +61,25 @@ const RedditModal = ({ modal, windowAnimation, toggleModal, modalTitle = "Music 
         </div>
       </div>
       <div></div>
+
+      {type === "About" ? (
+        <div
+          className="credits"
+          style={{
+            fontSize: "1.5rem",
+            textShadow: "0px 1px 3px rgba(0, 0, 0, 1), 0px 0px 12px rgba(255, 255, 255, 0.5)",
+          }}
+        >
+          <ReactMarkdown>{description}</ReactMarkdown>
+        </div>
+      ) : (
+        <></>
+      )}
       {type === "Credits" ? (
         <div>
-          <div className="credits">{type === "Credits" ? <ReactMarkdown>{description}</ReactMarkdown> : <div></div>}</div>
+          <div className="credits">
+            <ReactMarkdown>{description}</ReactMarkdown>
+          </div>
           <div className="modal-input-container">
             <div className="shop-input-container">
               <input

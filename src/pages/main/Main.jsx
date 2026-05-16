@@ -5,6 +5,7 @@ import RedditModal from "../../assets/components/RedditModal/RedditModal";
 import { SoundPlayer } from "../../assets/components/SoundPlayer/SoundPlayer";
 import { changeHue } from "../../assets/components/ChangeHue/ChangeHue";
 import { Link, useLocation } from "react-router";
+import { about } from "../../assets/components/Content/About";
 import { shopContent } from "../../assets/components/Content/Shop";
 
 export default function Main({ children }) {
@@ -201,8 +202,9 @@ export default function Main({ children }) {
                     toggleModal({
                       title: "About",
                       image: "",
+                      description: about,
                       link: "https://www.craftedbyarjun.com/",
-                      type: "",
+                      type: "About",
                       array: [],
                     });
                   }

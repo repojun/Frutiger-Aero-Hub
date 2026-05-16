@@ -13,6 +13,7 @@
   z-index: 10;
   border-top-right-radius: 1.5rem;
   will-change: transform, opacity, filter;
+  text-shadow: 0px 1px 3px rgba(0, 0, 0, 1), 0px 0px 12px rgb(255, 255, 255, 0.5);
 
   &.open {
     animation: open 0.5s ease-in-out forwards;
@@ -124,7 +125,6 @@
   flex-direction: column;
   position: relative;
   font-weight: 400;
-  text-shadow: 0px 1px 3px rgba(0, 0, 0, 1), 0px 0px 12px rgb(255, 255, 255, 0.5);
   font-size: 2rem;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
