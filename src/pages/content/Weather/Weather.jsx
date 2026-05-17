@@ -5,7 +5,14 @@ import { AnimatePresence, motion } from "framer-motion";
 import { SoundPlayer } from "../../../assets/components/SoundPlayer/SoundPlayer";
 
 export default function Weather() {
-  const [location, setLocation] = useState("London");
+  const [location, setLocation] = useState(() => {
+    try {
+      return JSON.parse(localStorage.getItem(WEATHER_CACHE_KEY))?.location || "London";
+    } catch {
+      return "London";
+    }
+  });
+
   const [pendingLocation, setPendingLocation] = useState(location);
   const [weather, setWeather] = useState(null);
   const [modal, setModal] = useState(false);
