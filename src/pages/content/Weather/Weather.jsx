@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { SoundPlayer } from "../../../assets/components/SoundPlayer/SoundPlayer";
 
 export default function Weather() {
+  const WEATHER_CACHE_KEY = "weather_cache";
   const [location, setLocation] = useState(() => {
     try {
       return JSON.parse(localStorage.getItem(WEATHER_CACHE_KEY))?.location || "London";
@@ -47,7 +48,6 @@ export default function Weather() {
   useEffect(() => {
     getWeather();
   }, [location]);
-  const WEATHER_CACHE_KEY = "weather_cache";
 
   const getWeather = async () => {
     try {
