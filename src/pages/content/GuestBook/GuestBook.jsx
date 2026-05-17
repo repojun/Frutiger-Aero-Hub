@@ -12,11 +12,35 @@ export default function GuestBook() {
   const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(true);
 
+  const CACHE_KEY = "messages_cache";
+
   const loadMessages = async () => {
     try {
+      // see if the messages exist already
+      const cachedMessages = localStorage.getItem(CACHE_KEY);
+      if (cachedMessages) {
+        const parsed = JSON.parse(cachedMessages);
+
+        // see if cache cooldown is still within 5 minutes
+        if (Date.now() - parsed.timestamp < 5 * 60 * 1000) {
+          setMessages(parsed.data);
+          return; // this return breaks the loop and uses cache instead of wasting API calls
+        } else {
+          localStorage.removeItem(CACHE_KEY);
+        }
+      }
+
       const { data, error } = await getMessages();
       if (error) throw error;
       setMessages(data);
+      // save to cache
+      localStorage.setItem(
+        CACHE_KEY,
+        JSON.stringify({
+          data,
+          timestamp: Date.now(),
+        })
+      );
     } catch (err) {
       console.log(err);
     } finally {

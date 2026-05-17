@@ -40,20 +40,47 @@ export default function Weather() {
   useEffect(() => {
     getWeather();
   }, [location]);
+  const WEATHER_CACHE_KEY = "weather_cache";
+
   const getWeather = async () => {
     try {
       setError(null);
+
+      // check cache first
+      const cachedWeather = localStorage.getItem(WEATHER_CACHE_KEY);
+
+      if (cachedWeather) {
+        const parsed = JSON.parse(cachedWeather);
+
+        // make sure cache is for same location + within 5 mins
+        if (parsed.location === location && Date.now() - parsed.timestamp < 5 * 60 * 1000) {
+          setWeather(parsed.data);
+          return;
+        } else {
+          localStorage.removeItem(WEATHER_CACHE_KEY);
+        }
+      }
 
       if (USE_DATA) {
         const res = await fetch(`/api/weather?location=${location}`);
         const data = await res.json();
 
-        // check API error response, weather api sends this error code backs
+        // weather api error handling
         if (data.error) {
           throw new Error(data.error.message);
         }
 
         setWeather(data);
+
+        // cache real API data only
+        localStorage.setItem(
+          WEATHER_CACHE_KEY,
+          JSON.stringify({
+            data,
+            location,
+            timestamp: Date.now(),
+          })
+        );
       } else {
         const fakeData = {
           location: {
@@ -76,7 +103,7 @@ export default function Weather() {
         setWeather(fakeData);
       }
     } catch (err) {
-      setWeather(null); // optional -- i cant remember why i added this oops
+      setWeather(null);
       setError(err.message);
     }
   };
