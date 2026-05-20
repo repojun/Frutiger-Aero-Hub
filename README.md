@@ -1,6 +1,8 @@
-# 🌍 The Frutiger Aero Hub ✨
+# 🌍 The Frutiger Aero Hub ✨ (https://www.frutiger-aero.online/)
 
 > *A glossy little corner of the internet inspired by the Frutiger Aero era.*
+
+This site is in beta right now, there will be many issues, unfinished features, and a lack of resources etc.
 
 🫧 The Frutiger Aero Hub is a new website for FA fans, creators and people who like cool websites. It contains collections of mini apps to use, resources, apps and archives. It will also act as a hub for other users to share their own Frutiger Aero projects.
 
