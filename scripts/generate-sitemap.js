@@ -1,14 +1,37 @@
 import fs from "fs";
 import { miniApps } from "../src/assets/components/Content/MiniApps.js";
 import { projects } from "../src/assets/components/Content/Projects.js";
+
 const DOMAIN = "https://frutiger-aero.online";
 
-const staticRoutes = ["/", "/about", "/resources", "/discover", "/apps", "/weather", "/guestbook", "/msn"];
+const staticRoutes = [
+  "/",
+  "/about",
+  "/resources",
+  "/discover",
+  "/apps",
+  "/weather",
+  "/guestbook",
+  "/msn"
+];
+
+function escapeXml(str) {
+  return str
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&apos;");
+}
 
 function url(loc) {
+  const fullUrl = escapeXml(`${DOMAIN}${loc}`);
+  const today = new Date().toISOString().split("T")[0];
+
   return `
   <url>
-    <loc>${DOMAIN}${loc}</loc>
+    <loc>${fullUrl}</loc>
+    <lastmod>${today}</lastmod>
   </url>`;
 }
 
