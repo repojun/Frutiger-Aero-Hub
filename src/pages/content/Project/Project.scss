@@ -5,7 +5,12 @@
   column-gap: 1rem;
   text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.75), 0px 0px 12px rgb(255, 255, 255, 1);
   position: relative;
-
+  @media (max-width: 768px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+  }
   span {
     font-size: 3.5rem;
   }
@@ -24,6 +29,15 @@
   font-weight: 500;
   transition: 0.3s;
   -webkit-box-reflect: none;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    font-size: 1rem;
+    left: 2rem;
+    top: 1%;
+    justify-content: center;
+    align-items: center;
+  }
   img {
     padding-top: 0.35rem;
     width: 1.8rem;
@@ -40,7 +54,12 @@
   display: flex;
   column-gap: 1rem;
   margin-top: 3rem;
-
+  @media (max-width: 768px) {
+    flex-direction: column;
+    row-gap: 2.5rem;
+    justify-content: center;
+    align-items: center;
+  }
   .project-image {
     display: flex;
     flex-direction: column;
@@ -48,7 +67,11 @@
     padding-left: 1rem;
     padding-right: 1rem;
     margin-top: -1.25rem;
-
+    @media (max-width: 768px) {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
     .meta-data {
       position: relative;
       text-shadow: 0px 1px 3px rgba(0, 0, 0, 1), 0px 0px 12px rgb(255, 255, 255, 0.5);
@@ -195,6 +218,18 @@
     display: flex;
     flex-direction: column;
     white-space: normal !important;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 18.5rem;
+      height: auto;
+      margin-bottom: 1rem;
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+      padding-top: 0.5rem;
+    }
     p {
       margin: 0 0 0.5rem;
       line-height: 1.5;
@@ -248,6 +283,6 @@
 
 .markdown {
   strong {
-    font-weight: 500; 
+    font-weight: 500;
   }
 }
