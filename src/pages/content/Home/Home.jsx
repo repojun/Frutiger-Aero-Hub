@@ -67,7 +67,7 @@ export default function Home() {
       </Helmet>
 
       <header className="main-title">
-        <h1>Welcome to The Frutiger Aero Hub™</h1>
+        <h1>Welcome to The Frutiger Aero Hub™ </h1>
       </header>
 
       <div className="divider"></div>
@@ -92,7 +92,8 @@ export default function Home() {
         </div>
 
         <p>
-          <span className="welcome-span">Welcome to the Frutiger Aero Hub! </span>
+        <span className="welcome-span">Welcome to the Frutiger Aero Hub! </span>
+        {" "}
           This is a new website for Frutiger Aero fans & creators, it contains collections of mini apps to use, resources & archives which you can view in the <span className="tab-span">Tabs</span> above. It will also act as a hub for other users to share their own Frutiger Aero
           projects. Teddy the Aero mascot will guide you through the page {"<3"}
         </p>
