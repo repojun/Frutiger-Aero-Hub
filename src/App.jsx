@@ -22,10 +22,30 @@ const PageFade = ({ children }) => (
     {children}
   </motion.div>
 );
+import { useEffect } from "react";
 
 function App() {
   const location = useLocation();
-
+  useEffect(() => {
+    const isMobile = () => window.innerWidth <= 768;
+  
+    const updateScale = () => {
+      if (isMobile()) return;
+  
+      const scale = Math.min(
+        window.innerWidth / 1440,
+        window.innerHeight / 900,
+        1
+      );
+  
+      document.documentElement.style.setProperty("--app-scale", scale);
+    };
+  
+    updateScale();
+    window.addEventListener("resize", updateScale);
+  
+    return () => window.removeEventListener("resize", updateScale);
+  }, []);
   return (
     <>
       <ToastContainer position="bottom-right" autoClose={5000} hideProgressBar={false} newestOnTop={false} closeOnClick={false} rtl={false} pauseOnFocusLoss draggable pauseOnHover theme="light" transition={Flip} />

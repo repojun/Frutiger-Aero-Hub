@@ -2,9 +2,47 @@ import "./Discover.scss";
 import { projects } from "../../../assets/components/Content/Projects";
 import { SoundPlayer } from "../../../assets/components/SoundPlayer/SoundPlayer";
 import { Link } from "react-router";
+import { Helmet } from "react-helmet-async";
 export default function Discover() {
   return (
     <>
+      <Helmet>
+        <title>Discover Aero Content | Frutiger Aero Hub</title>
+
+        <meta name="description" content="Discover Frutiger Aero inspired websites, apps, media, and aesthetic content curated inside the Frutiger Aero Hub." />
+
+        <link rel="canonical" href="https://frutiger-aero.online/discover" />
+
+        {/* og stuff */}
+        <meta property="og:title" content="Discover Aero Content" />
+        <meta property="og:description" content="A curated collection of Frutiger Aero inspired content, tools, and creative digital projects." />
+        <meta property="og:image" content="https://frutiger-aero.online/og/OpenGraph.jpg" />
+        <meta property="og:url" content="https://frutiger-aero.online/discover" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Frutiger Aero Hub" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Discover Aero Content" />
+        <meta name="twitter:description" content="A curated collection of Frutiger Aero inspired content, tools, and creative digital projects." />
+        <meta name="twitter:image" content="https://frutiger-aero.online/og/OpenGraph.jpg" />
+
+        <meta name="robots" content="index, follow" />
+        <meta name="theme-color" content="#7fd1ff" />
+
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "CollectionPage",
+            name: "Discover Aero Content",
+            description: "A curated collection of Frutiger Aero inspired content, tools, and creative digital projects.",
+            url: "https://frutiger-aero.online/discover",
+            publisher: {
+              "@type": "Organization",
+              name: "Frutiger Aero Hub",
+            },
+          })}
+        </script>
+      </Helmet>
       <div className="main-title">
         <span>Discover Aero Content</span>
       </div>

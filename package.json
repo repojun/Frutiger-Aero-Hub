@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "sitemap": "node scripts/generate-sitemap.js",
+    "build:all": "npm run sitemap && npm run build"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.101.1",
@@ -15,12 +17,14 @@
     "framer-motion": "^12.38.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
+    "react-helmet-async": "^3.0.0",
     "react-markdown": "^10.1.0",
     "react-router": "^7.13.1",
     "react-router-dom": "^7.13.1",
     "react-snowfall": "^2.4.0",
     "react-toastify": "^11.0.5",
-    "rehype-raw": "^7.0.0"
+    "rehype-raw": "^7.0.0",
+    "vite-plugin-prerender": "^1.0.8"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",

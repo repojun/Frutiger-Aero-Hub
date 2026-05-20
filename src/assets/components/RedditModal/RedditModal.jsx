@@ -43,88 +43,90 @@ const RedditModal = ({ modal, windowAnimation, toggleModal, modalTitle = "Music 
   };
 
   return (
-    <div className={windowAnimation ? "mainWindow open" : "mainWindow close"} style={{ width, height }}>
-      <div className="flexTitleBar">
-        <div className="windowTitle">{modalTitle}</div>
-        <div
-          className="closeButton"
-          onClick={() =>
-            toggleModal({
-              title: modalTitle,
-              type: type,
-              array: buttonArray,
-              description: description,
-            })
-          }
-        >
-          <div>X</div>
-        </div>
-      </div>
-      <div></div>
-
-      {type === "About" ? (
-        <div
-          className="credits"
-          style={{
-            fontSize: "2rem",
-          }}
-        >
-          <ReactMarkdown>{description}</ReactMarkdown>
-        </div>
-      ) : (
-        <></>
-      )}
-      {type === "Credits" ? (
-        <div>
-          <div className="credits">
-            <ReactMarkdown>{description}</ReactMarkdown>
-          </div>
-          <div className="modal-input-container">
-            <div className="shop-input-container">
-              <input
-                className={disabled ? "shop-input disabled" : "shop-input"}
-                placeholder="Email"
-                type="email"
-                name="email"
-                value={email}
-                onChange={(e) => {
-                  setEmail(e.target.value);
-                }}
-                disabled={disabled}
-                maxLength={300}
-                style={{ maxWidth: "97%", minWidth: "97%", width: "16rem", height: "1.5rem", maxHeight: "8rem", alignSelf: "center" }}
-              />
-            </div>
-            <div className={disabled ? "submit-button disabled" : "submit-button"} onClick={disabled ? () => showCooldown() : submitWaitlist} style={{ width: "8rem" }}>
-              <img src="icons/forward.png" className="icon" />
-              <span>Sign up!</span>
-            </div>
-          </div>
-        </div>
-      ) : (
-        <></>
-      )}
-
-      <div className="arrayButtons">
-        {buttonArray?.map((button) => (
+    <div className="modal-wrapper">
+      <div className={windowAnimation ? "mainWindow open" : "mainWindow close"} style={{ width, height }}>
+        <div className="flexTitleBar">
+          <div className="windowTitle">{modalTitle}</div>
           <div
-            key={button.id}
-            className="selectButton"
-            onClick={() => {
-              // Need to change subButtonClick so it has more relevant name
-              if (type === "themeButton") {
-                switchHue(button.hue);
-              } else if (type === "musicButton") {
-                subButtonClick(button);
-              } else if (type === "backgroundButton") {
-                subButtonClick(button);
-              }
+            className="closeButton"
+            onClick={() =>
+              toggleModal({
+                title: modalTitle,
+                type: type,
+                array: buttonArray,
+                description: description,
+              })
+            }
+          >
+            <div>X</div>
+          </div>
+        </div>
+        <div></div>
+
+        {type === "About" ? (
+          <div
+            className="credits"
+            style={{
+              fontSize: "2rem",
             }}
           >
-            {button.icon && <img src={button.icon} alt={button.label} />}
-            <div>{button.label}</div>
+            <ReactMarkdown>{description}</ReactMarkdown>
           </div>
-        ))}
+        ) : (
+          <></>
+        )}
+        {type === "Credits" ? (
+          <div>
+            <div className="credits">
+              <ReactMarkdown>{description}</ReactMarkdown>
+            </div>
+            <div className="modal-input-container">
+              <div className="shop-input-container">
+                <input
+                  className={disabled ? "shop-input disabled" : "shop-input"}
+                  placeholder="Email"
+                  type="email"
+                  name="email"
+                  value={email}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                  }}
+                  disabled={disabled}
+                  maxLength={300}
+                  style={{ maxWidth: "97%", minWidth: "97%", width: "16rem", height: "1.5rem", maxHeight: "8rem", alignSelf: "center" }}
+                />
+              </div>
+              <div className={disabled ? "submit-button disabled" : "submit-button"} onClick={disabled ? () => showCooldown() : submitWaitlist} style={{ width: "8rem" }}>
+                <img src="icons/forward.webp" className="icon" />
+                <span>Sign up!</span>
+              </div>
+            </div>
+          </div>
+        ) : (
+          <></>
+        )}
+
+        <div className="arrayButtons">
+          {buttonArray?.map((button) => (
+            <div
+              key={button.id}
+              className="selectButton"
+              onClick={() => {
+                // Need to change subButtonClick so it has more relevant name
+                if (type === "themeButton") {
+                  switchHue(button.hue);
+                } else if (type === "musicButton") {
+                  subButtonClick(button);
+                } else if (type === "backgroundButton") {
+                  subButtonClick(button);
+                }
+              }}
+            >
+              {button.icon && <img src={button.icon} alt={button.label} />}
+              <div>{button.label}</div>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

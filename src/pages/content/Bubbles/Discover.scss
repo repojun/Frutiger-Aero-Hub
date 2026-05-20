@@ -18,6 +18,9 @@
   min-width: 100%;
   display: grid;
   grid-template-columns: auto auto auto;
+  @media (max-width: 768px) {
+    grid-template-columns: auto;
+  }
   gap: 1.5rem;
   .discover-item {
     background: rgba(0, 221, 255, 0.3);
@@ -34,6 +37,9 @@
     -webkit-user-select: none;
     overflow: hidden;
     position: relative;
+    @media (max-width: 768px) {
+      width: 18rem;
+    }
     &::after {
       content: "";
       position: absolute;

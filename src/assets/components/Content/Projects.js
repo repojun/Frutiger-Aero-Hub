@@ -96,26 +96,24 @@ I spent countless hours adding various features, that have gone way above the or
     id: "voice-sync",
     name: "VoiceSync",
     description: `
-When I first started self hosting, I wanted to be able to monitor all my applications and servers.
+I always had issues with Discord VC bots. Most of them felt generic, locked simple features behind voting or payments, and never really solved the problems I actually dealt with. Trolls blasting loud sounds through their mic, people joining just to annoy others, or having no real control over who could come back into my voice channels always frustrated me.
 
-So, I spent a while testing various different paid and self hosted monitoring services, but always felt like something was missing.
+A lot of the features came from things I personally wished existed. Permanent autobans for trolls, temporary moderation so friends could help manage a VC, following people between channels instead of scrolling through hundreds of voice calls trying to find them, all of it was built from experiences I had myself.
 
-The application that came closest to all my requirements was **Uptime-Kuma**, but it still lacked a lot of things I wanted:
+A huge inspiration for me was the old internet and classic PC games. I've always loved the Frutiger Aero aesthetic and games like Heavy Weapon Deluxe and Plants vs. Zombies. Everything felt colorful, smooth, expressive, and actually fun to use. Software back then had personality, and I wanted to bring some of that feeling into what I was making instead of creating another boring bot.
 
-- UI felt cluttered (especially on mobile)
-- Customisation at the time was pretty much none existent for status pages
-- I wanted an application that would support multiple users with custom permissions.
-
-So, I thought why not spend a little bit of time to create my own application. Initially I wanted to spend around a month, but some how 2+ years later I'm still here developing new features. 
-
-I spent countless hours adding various features, that have gone way above the original plan because I wanted to create something that's actually useful for users and not just a half baked application.
+More than anything, I just wanted voice channels to feel smoother, private and easier to control.
 
 `,
-    link: "https://voicesync.modsync.app/",
+    link: "https://modsync.app/",
     image: "/projects/voicesync.webp",
+    author: "Cxla",
+    category: "Discord Bot",
+    date: "15/01/26",
+    creator: true,
   },
 ].map((project) => ({
   ...project,
-  slug: project.name.toLowerCase().replace(/\s+/g, "-"),
+  slug: project.id,
 }));
 // this slug just turns it into app5 -> app-5 for the sake of the URL

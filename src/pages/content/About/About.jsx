@@ -2,6 +2,7 @@ import "./About.scss";
 import { useEffect, useState, useMemo } from "react";
 import ReactMarkdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
+import { Helmet } from "react-helmet-async";
 
 export default function About() {
   const [currentImage, setCurrentImage] = useState(0);
@@ -207,14 +208,53 @@ export default function About() {
   }, [images]);
   return (
     <>
+      <Helmet>
+        <title>What is Frutiger Aero? | Frutiger Aero Hub</title>
+
+        <meta name="description" content="Learn what the Frutiger Aero aesthetic is, including its visual style, examples, and influence on nostalgic UI and internet design culture." />
+
+        <link rel="canonical" href="https://frutiger-aero.online/about" />
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="Frutiger Aero Hub" />
+        <meta name="theme-color" content="#7fd1ff" />
+
+        <meta name="keywords" content="frutiger aero, frutiger aero aesthetic, web design history, ui design, skeuomorphism, 2000s internet, glass design, aqua ui, nostalgic ui design" />
+
+        {/* open graph */}
+        <meta property="og:title" content="What is Frutiger Aero?" />
+        <meta property="og:description" content="An explanation of the Frutiger Aero aesthetic, its visuals, and its influence on UI and internet design culture." />
+        <meta property="og:image" content="https://frutiger-aero.online/og/OpenGraph.jpg" />
+        <meta property="og:url" content="https://frutiger-aero.online/about" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Frutiger Aero Hub" />
+
+        {/* twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="What is Frutiger Aero?" />
+        <meta name="twitter:description" content="An explanation of the Frutiger Aero aesthetic, its visuals, and its influence on UI and internet design culture." />
+        <meta name="twitter:image" content="https://frutiger-aero.online/og/OpenGraph.jpg" />
+
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            name: "What is Frutiger Aero?",
+            description: "Learn what the Frutiger Aero aesthetic is, including its visual style, examples, and influence on nostalgic UI and internet design culture.",
+            url: "https://frutiger-aero.online/about",
+            publisher: {
+              "@type": "Organization",
+              name: "Frutiger Aero Hub",
+            },
+          })}
+        </script>
+      </Helmet>
       <div className="main-title">
-        <img src="/icons/teddyorb_noglow.png"></img>
         <span>What is Frutiger Aero?</span>
       </div>
       <div className="divider"></div>
       <div className="scrollable">
         <div className="main-about-text">
-          <p style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+          <p className="initial-banner">
             <div className="bordered-image-container">
               <img src={"/aero-images/bordered.webp"} className={"overlay"} alt="carousel" />
               <img src={`/aero-images/${images[currentImage]}`} className={"bordered-image " + (fade ? "fade-in" : "fade-out")} alt="carousel" />

@@ -2,6 +2,7 @@ import "./GuestBook.scss";
 import { useEffect, useState } from "react";
 import { getMessages, addMessage } from "../../../api/messages";
 import { showErrorToast, showToast } from "../../../assets/components/Toast/Toast";
+import { Helmet } from "react-helmet-async";
 export default function GuestBook() {
   const [messages, setMessages] = useState([]);
   const [quote, setQuote] = useState("");
@@ -116,139 +117,154 @@ export default function GuestBook() {
 
   return (
     <>
-      <div className="main-guest-title">Guest Book</div>
-      <div className="guest-scrollable">
-        <div className="guest-divider" />
-        <div className="guest-header-flex">
-          <div className="mascot-image-container">
-            <img src="/aero-images/teddy_guide.webp" className={"mascot-bordered-image"} />
-          </div>
-          <div className="guest-banner" style={{ height: "auto" }}>
-            <div className="title">Teddy Says:</div>
-            <span>Here you can view messages left by other users by scrolling down. You can also leave a message for the page creator or just leave your mark! Fill the form below and hit submit to get your message in the book.</span>
-            <div className="guest-input-container">
-              <input
-                className={sent ? "text-input disabled" : "text-input"}
-                placeholder="Name"
-                type="name"
-                name="name"
-                value={name}
-                onChange={(e) => {
-                  setName(e.target.value);
-                }}
-                disabled={sent}
-              />
-            </div>
-            <div className="guest-input-container">
-              <input
-                className={sent ? "text-input disabled" : "text-input"}
-                placeholder="Country (Optional)"
-                type="country"
-                name="country"
-                value={country}
-                onChange={(e) => {
-                  setCountry(e.target.value);
-                }}
-                disabled={sent}
-              />
-            </div>
-            <div className="guest-input-container">
-              <input
-                className={sent ? "text-input disabled" : "text-input"}
-                placeholder="Website (Optional)"
-                type="website"
-                name="website"
-                value={website}
-                onChange={(e) => {
-                  setWebsite(e.target.value);
-                }}
-                disabled={sent}
-              />
-            </div>
-            <div className="guest-input-container">
-              <input
-                className={sent ? "text-input disabled" : "text-input"}
-                placeholder="If you could give a piece of advice to everyone in the world, what would it be? (Optional)"
-                type="quote"
-                name="quote"
-                value={quote}
-                onChange={(e) => {
-                  setQuote(e.target.value);
-                }}
-                maxLength={200}
-                disabled={sent}
-                style={{ maxWidth: "97%", minWidth: "97%", height: "2rem", maxHeight: "8rem" }}
-              />
-            </div>
-            <div className="guest-input-container">
-              <textarea
-                className={sent ? "text-input disabled" : "text-input"}
-                placeholder="Message"
-                type="message"
-                name="message"
-                value={message}
-                onChange={(e) => {
-                  setMessage(e.target.value);
-                }}
-                disabled={sent}
-                maxLength={300}
-                style={{ maxWidth: "97%", minWidth: "97%", height: "2rem", maxHeight: "8rem" }}
-              />
+      <Helmet>
+        <title>Guest Book | Frutiger Aero Hub</title>
+
+        <meta name="description" content="Leave a message in the Frutiger Aero Hub guest book or read entries from other visitors in this nostalgic web experience." />
+
+        <link rel="canonical" href="https://frutiger-aero.online/guestbook" />
+
+        {/* og stuff */}
+        <meta property="og:title" content="Guest Book | Frutiger Aero Hub" />
+        <meta property="og:description" content="A Frutiger Aero inspired guest book where users can leave messages and explore community entries." />
+        <meta property="og:image" content="https://frutiger-aero.online/og/OpenGraph.jpg" />
+        <meta property="og:url" content="https://frutiger-aero.online/guestbook" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Frutiger Aero Hub" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Guest Book | Frutiger Aero Hub" />
+        <meta name="twitter:description" content="A Frutiger Aero inspired guest book where users can leave messages and explore community entries." />
+        <meta name="twitter:image" content="https://frutiger-aero.online/og/OpenGraph.jpg" />
+
+        <meta name="robots" content="index, follow" />
+        <meta name="theme-color" content="#7fd1ff" />
+
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            name: "Guest Book",
+            description: "Leave a message in the Frutiger Aero Hub guest book or read entries from other visitors in this nostalgic web experience.",
+            url: "https://frutiger-aero.online/guestbook",
+            publisher: {
+              "@type": "Organization",
+              name: "Frutiger Aero Hub",
+            },
+          })}
+        </script>
+      </Helmet>
+      <div role="main">
+        <div className="main-guest-title" role="heading" aria-level="1">
+          Guest Book
+        </div>
+
+        <div className="guest-scrollable">
+          <div className="guest-divider" />
+
+          <div className="guest-header-flex">
+            <div className="mascot-image-container" aria-hidden="true">
+              <img src="/aero-images/teddy_guide.webp" className="mascot-bordered-image" alt="" />
             </div>
 
-            <div className={sent ? "submit-button disabled" : "submit-button"} onClick={sent ? () => showCooldown() : submitMessage}>
-              <img src="icons/forward.png" className="icon" />
-              <span>Submit</span>
+            <div className="guest-banner" style={{ height: "auto" }}>
+              <div className="title" role="heading" aria-level="2">
+                Teddy Says:
+              </div>
+
+              <span>Here you can view messages left by other users by scrolling down. You can also leave a message for the page creator or just leave your mark! Fill the form below and hit submit to get your message in the book.</span>
+
+              <div className="guest-input-container">
+                <input className={sent ? "text-input disabled" : "text-input"} placeholder="Name" name="name" value={name} onChange={(e) => setName(e.target.value)} disabled={sent} aria-label="Name" />
+              </div>
+
+              <div className="guest-input-container">
+                <input className={sent ? "text-input disabled" : "text-input"} placeholder="Country (Optional)" name="country" value={country} onChange={(e) => setCountry(e.target.value)} disabled={sent} aria-label="Country" />
+              </div>
+
+              <div className="guest-input-container">
+                <input className={sent ? "text-input disabled" : "text-input"} placeholder="Website (Optional)" name="website" value={website} onChange={(e) => setWebsite(e.target.value)} disabled={sent} aria-label="Website" />
+              </div>
+
+              <div className="guest-input-container">
+                <input
+                  className={sent ? "text-input disabled" : "text-input"}
+                  placeholder="If you could give advice..."
+                  name="quote"
+                  value={quote}
+                  onChange={(e) => setQuote(e.target.value)}
+                  maxLength={200}
+                  disabled={sent}
+                  style={{ maxWidth: "97%", minWidth: "97%", height: "2rem", maxHeight: "8rem" }}
+                  aria-label="Advice or quote"
+                />
+              </div>
+
+              <div className="guest-input-container">
+                <textarea
+                  className={sent ? "text-input disabled" : "text-input"}
+                  placeholder="Message"
+                  name="message"
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  disabled={sent}
+                  maxLength={300}
+                  style={{ maxWidth: "97%", minWidth: "97%", height: "2rem", maxHeight: "8rem" }}
+                  aria-label="Message"
+                />
+              </div>
+
+              <div className={sent ? "submit-button disabled" : "submit-button"} onClick={sent ? () => showCooldown() : submitMessage} role="button" tabIndex={0}>
+                <img src="icons/forward.webp" className="icon" alt="" />
+                <span>Submit</span>
+              </div>
             </div>
           </div>
+
+          <div className="guest-divider" />
+
+          {loading ? (
+            <div>Loading Messages...</div>
+          ) : (
+            <div className="messages">
+              {[...messages].reverse().map((msg, i) => (
+                <div className="message" key={i}>
+                  <div className="timestamp">{new Date(msg.created_at).toLocaleString()}</div>
+
+                  {msg.name && (
+                    <div>
+                      <span className="title">Name:</span> {msg.name}
+                    </div>
+                  )}
+
+                  {msg.country && (
+                    <div>
+                      <span className="title">Country:</span> {msg.country}
+                    </div>
+                  )}
+
+                  {msg.website && (
+                    <div>
+                      <span className="title">Website:</span> {msg.website}
+                    </div>
+                  )}
+
+                  {msg.quote && (
+                    <div>
+                      <span className="title">Advice/Quote:</span> {msg.quote}
+                    </div>
+                  )}
+
+                  {msg.message && (
+                    <div>
+                      <span className="title">Message:</span> {msg.message}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          )}
         </div>
-        <div className="guest-divider" />
-        {loading ? (
-          <div>Loading Messages...</div>
-        ) : (
-          <div className="messages">
-            {[...messages].reverse().map((msg) => (
-              <div className="message">
-                <div className="timestamp">{new Date(msg.created_at).toLocaleString()}</div>
-                {msg.name ? (
-                  <div>
-                    <span className="title">Name:</span> {msg.name}
-                  </div>
-                ) : (
-                  <></>
-                )}
-                {msg.country ? (
-                  <div>
-                    <span className="title">Country:</span> {msg.country}
-                  </div>
-                ) : (
-                  <></>
-                )}
-                {msg.website ? (
-                  <div>
-                    <span className="title">Website:</span> {msg.website}
-                  </div>
-                ) : (
-                  <></>
-                )}
-                {msg.quote ? (
-                  <div>
-                    <span className="title">Advice/Quote:</span> {msg.quote}
-                  </div>
-                ) : (
-                  <></>
-                )}
-                {msg.message ? (
-                  <div>
-                    <span className="title">Message:</span> {msg.message}
-                  </div>
-                ) : (
-                  <></>
-                )}
-              </div>
-            ))}
-          </div>
-        )}
       </div>
     </>
   );

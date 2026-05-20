@@ -8,3 +8,13 @@ a:hover {
   text-decoration: none;
   font-weight: inherit;
 }
+#root {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+}

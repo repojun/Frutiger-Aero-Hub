@@ -15,6 +15,7 @@
   text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.75), 0px 0px 12px rgb(255, 255, 255, 1);
   position: relative;
   padding-bottom: 2.75rem;
+
   span {
     font-size: 3.5rem;
   }
@@ -33,6 +34,7 @@
   align-items: center;
   justify-content: center;
   margin-top: 1rem;
+
   .text-input {
     background: rgba(180, 255, 248, 0.05);
     box-shadow: inset 0px 0px 20px rgba(148, 246, 255, 0.2), 0px 0px 10px 0px rgba(0, 0, 0, 0.05), 0px 0px 10px 0px rgba(255, 255, 255, 0.2);
@@ -189,6 +191,9 @@
   column-gap: 0.5rem;
   width: 100%;
   padding-bottom: 1rem;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
   .guest-banner {
     position: relative;
     text-shadow: 0px 1px 3px rgba(0, 0, 0, 1), 0px 0px 12px white, 0px 0px 18px white;
@@ -214,7 +219,9 @@
     -webkit-user-select: none;
     display: flex;
     flex-direction: column;
-
+    @media (max-width: 768px) {
+      width: 18rem;
+    }
     .title {
       font-weight: 500;
       margin-bottom: 0.25rem;
@@ -275,6 +282,9 @@
     border-radius: 1rem;
     position: relative;
     text-align: left;
+    @media (max-width: 768px) {
+      width: 18rem;
+    }
     .title {
       font-weight: 500;
     }
@@ -284,6 +294,11 @@
       padding-top: 0.5rem;
       position: absolute;
       right: 1rem;
+      @media (max-width: 768px) {
+        opacity: 0.5;
+        padding-top: 0.3rem;
+        font-size: 0.75rem;
+      }
     }
     &::after {
       content: "";

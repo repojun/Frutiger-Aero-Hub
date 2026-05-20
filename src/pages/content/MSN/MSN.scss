@@ -57,6 +57,9 @@
   font-size: 2rem;
   overflow: hidden;
   -webkit-user-select: none;
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
 
   img {
     width: 2.5rem;
@@ -107,6 +110,7 @@
 .msn-settings {
   @extend .msn-button;
   width: 2rem;
+
   img {
     width: 3rem;
     padding-top: 0.25rem;
@@ -117,6 +121,7 @@
 
   &:hover {
     transform: translateY(-0px);
+    cursor: not-allowed;
   }
 }
 

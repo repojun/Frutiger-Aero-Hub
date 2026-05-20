@@ -3,6 +3,7 @@ import "./Weather.scss";
 import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { SoundPlayer } from "../../../assets/components/SoundPlayer/SoundPlayer";
+import { Helmet } from "react-helmet-async";
 
 export default function Weather() {
   const WEATHER_CACHE_KEY = "weather_cache";
@@ -152,6 +153,45 @@ export default function Weather() {
 
   return (
     <>
+      <Helmet>
+        <title>Weather Tab | Frutiger Aero Hub</title>
+
+        <meta name="description" content="An interactive Frutiger Aero inspired weather interface with real-time weather data, animated UI, and nostalgic digital design." />
+
+        <link rel="canonical" href="https://frutiger-aero.online/weather" />
+
+        {/* og stuff */}
+        <meta property="og:title" content="Weather Tab | Frutiger Aero Hub" />
+        <meta property="og:description" content="A Frutiger Aero inspired weather interface with real-time conditions and animated UI." />
+        <meta property="og:image" content="https://frutiger-aero.online/og/OpenGraph.jpg" />
+        <meta property="og:url" content="https://frutiger-aero.online/weather" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Frutiger Aero Hub" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Weather Tab | Frutiger Aero Hub" />
+        <meta name="twitter:description" content="A Frutiger Aero inspired weather interface with real-time conditions and animated UI." />
+        <meta name="twitter:image" content="https://frutiger-aero.online/og/OpenGraph.jpg" />
+
+        <meta name="robots" content="index, follow" />
+        <meta name="theme-color" content="#7fd1ff" />
+
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            name: "Weather Tab",
+            url: "https://frutiger-aero.online/weather",
+            description: "An interactive Frutiger Aero inspired weather interface with real-time weather data, animated UI, and nostalgic digital design.",
+            applicationCategory: "WeatherApplication",
+            operatingSystem: "All",
+            publisher: {
+              "@type": "Organization",
+              name: "Frutiger Aero Hub",
+            },
+          })}
+        </script>
+      </Helmet>
       <AnimatePresence>
         {modal && (
           <motion.div className="weather-modal-container" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.15 }}>
@@ -199,7 +239,7 @@ export default function Weather() {
                     editLocation();
                   }}
                 >
-                  <img src="icons/forward.png" className="icon" />
+                  <img src="icons/forward.webp" className="icon" />
                   Confirm
                 </div>
               </div>

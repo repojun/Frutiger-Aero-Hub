@@ -1,3 +1,11 @@
+.modal-wrapper {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(var(--app-scale));
+  z-index: 10;
+}
+
 .mainWindow {
   padding-bottom: 10px;
   height: 275px;
@@ -14,7 +22,10 @@
   border-top-right-radius: 1.5rem;
   will-change: transform, opacity, filter;
   text-shadow: 0px 1px 3px rgba(0, 0, 0, 1), 0px 0px 12px rgb(255, 255, 255, 0.5);
-
+  @media (max-width: 768px) {
+    width: 25rem !important;
+    font-size: 0.5rem !important;
+  }
   &.open {
     animation: open 0.5s ease-in-out forwards;
   }
@@ -37,6 +48,9 @@
   padding-left: 10px;
   text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.7);
   user-select: none;
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
 }
 
 .closeButton {
@@ -55,6 +69,9 @@
   background: rgba(231, 255, 253, 0) !important;
   border-left: 1px solid rgba(231, 255, 253, 0.7) !important;
   transition: 0.2s;
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
 
   &:hover {
     background: rgba(231, 255, 253, 0.5) !important;
@@ -129,8 +146,14 @@
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   text-align: center;
+  padding-top: 1rem;
+  row-gap: 2rem;
   p {
     margin-bottom: -0.25rem;
+    @media (max-width: 768px) {
+      font-size: 1.5rem;
+      padding-top: 0rem;
+    }
   }
 }
 

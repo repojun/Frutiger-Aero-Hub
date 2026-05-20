@@ -2,6 +2,8 @@ import "./MSN.scss";
 import { useState, useRef } from "react";
 import Space from "../../../assets/components/ChangeHue/Space/Space";
 import { SoundPlayer } from "../../../assets/components/SoundPlayer/SoundPlayer";
+import { Helmet } from "react-helmet-async";
+
 export default function MSN() {
   const msn = ["/icons/msnRed.webp", "/icons/msnGreen.webp", "/icons/msnPink.webp", "/icons/msnBlue.webp"];
   const msnSound = ["/msnbuddy1.mp3", "/msnbuddy2.mp3", "/msnbuddy3.mp3"];
@@ -67,17 +69,56 @@ export default function MSN() {
   const settingsModal = () => {
     console.log("hey");
   };
-  
+
   return (
     <>
+      <Helmet>
+        <title>MSN Buddies | Frutiger Aero Hub</title>
+
+        <meta name="description" content="An interactive MSN-inspired Frutiger Aero mini application featuring spawnable MSN buddies." />
+
+        <link rel="canonical" href="https://frutiger-aero.online/msn" />
+
+        {/* OG stuff */}
+        <meta property="og:title" content="MSN Experience | Frutiger Aero Hub" />
+        <meta property="og:description" content="A nostalgic MSN-inspired Frutiger Aero interactive UI experience." />
+        <meta property="og:image" content="https://frutiger-aero.online/og/OpenGraph.jpg" />
+        <meta property="og:url" content="https://frutiger-aero.online/msn" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Frutiger Aero Hub" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="MSN Buddies | Frutiger Aero Hub" />
+        <meta name="twitter:description" content="A nostalgic MSN-inspired Frutiger Aero interactive UI experience." />
+        <meta name="twitter:image" content="https://frutiger-aero.online/og/OpenGraph.jpg" />
+
+        <meta name="robots" content="index, follow" />
+        <meta name="theme-color" content="#7fd1ff" />
+
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            name: "MSN Buddies",
+            applicationCategory: "WebApplication",
+            url: "https://frutiger-aero.online/msn",
+            description: "An interactive MSN-inspired Frutiger Aero mini application featuring spawnable MSN buddies.",
+            operatingSystem: "All",
+            publisher: {
+              "@type": "Organization",
+              name: "Frutiger Aero Hub",
+            },
+          })}
+        </script>
+      </Helmet>
       <div style={{ top: 0, left: 0, position: "absolute" }}>{msnArray}</div>
       <div className="msn-container">
         <div onClick={handleBuddyClick} className="msn-button">
-          <img src="icons/information.png"></img>
+          <img src="icons/information.webp"></img>
           <div>Spawn a Friend!</div>
         </div>
         <div onClick={settingsModal} className="msn-settings">
-          <img src="icons/settings.png"></img>
+          <img src="icons/settings.webp"></img>
         </div>
       </div>
     </>
