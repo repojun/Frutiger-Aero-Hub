@@ -92,10 +92,8 @@ export default function Home() {
         </div>
 
         <p>
-        <span className="welcome-span">Welcome to the Frutiger Aero Hub! </span>
-        {" "}
-          This is a new website for Frutiger Aero fans & creators, it contains collections of mini apps to use, resources & archives which you can view in the <span className="tab-span">Tabs</span> above. It will also act as a hub for other users to share their own Frutiger Aero
-          projects. Teddy the Aero mascot will guide you through the page {"<3"}
+          <span className="welcome-span">Welcome to the Frutiger Aero Hub! </span> This is a new website for Frutiger Aero fans & creators, it contains collections of mini apps to use, resources & archives which you can view in the <span className="tab-span">Tabs</span> above. It
+          will also act as a hub for other users to share their own Frutiger Aero projects. Teddy the Aero mascot will guide you through the page {"<3"}
         </p>
 
         <p>The site has been developed with my custom design style with plenty of fun features and easter eggs (you can view some on the side bar buttons). It's going to act as my final tribute to the aesthetic and my FA inspired design style.</p>
@@ -106,31 +104,6 @@ export default function Home() {
       <div className="divider"></div>
 
       <nav className="button-grid">
-        <a className="large-button" href="https://www.reddit.com/r/FrutigerAero/" target="_blank" rel="noopener noreferrer">
-          <img src="/icons/aeroorbNakedAsf.webp" className="icon" alt="" />
-          <div className="text">
-            <div>r/FrutigerAero Subreddit</div>
-            <div className="metric">150k+ Members</div>
-          </div>
-        </a>
-
-        <a className="large-button" href="https://frutigeraeroarchive.org/" target="_blank" rel="noopener noreferrer">
-          <img
-            src="/icons/frutigerAeroArchive.webp"
-            className="icon"
-            alt=""
-            style={{
-              width: "3rem",
-              paddingRight: "1rem",
-              paddingLeft: ".75rem",
-            }}
-          />
-          <div className="text">
-            <div>Frutiger Aero Archive</div>
-            <div className="metric">An amazing Aero archive site</div>
-          </div>
-        </a>
-
         <a className="large-button" href="https://www.github.com/" target="_blank" rel="noopener noreferrer">
           <img src="/icons/github.webp" className="icon" alt="" />
           <div className="text">
@@ -138,7 +111,6 @@ export default function Home() {
             <div className="metric">Please Favourite It!</div>
           </div>
         </a>
-
         <a className="large-button" href="https://www.craftedbyarjun.com/" target="_blank" rel="noopener noreferrer">
           <img
             src="/icons/user.webp"
@@ -155,7 +127,36 @@ export default function Home() {
             <div className="metric">200k+ Views</div>
           </div>
         </a>
-
+        <div className="large-button disable">
+          <img src="/icons/cartIcon.webp" className="icon" alt="" />
+          <div className="text">
+            <div>Frutiger Shop</div>
+            <div className="metric">Coming Soon!</div>
+          </div>
+        </div>
+        <a className="large-button" href="https://www.reddit.com/r/FrutigerAero/" target="_blank" rel="noopener noreferrer">
+          <img src="/icons/aeroorbNakedAsf.webp" className="icon" alt="" />
+          <div className="text">
+            <div>r/FrutigerAero Subreddit</div>
+            <div className="metric">100k+ Members</div>
+          </div>
+        </a>
+        <a className="large-button" href="https://frutigeraeroarchive.org/" target="_blank" rel="noopener noreferrer">
+          <img
+            src="/icons/frutigerAeroArchive.webp"
+            className="icon"
+            alt=""
+            style={{
+              width: "3rem",
+              paddingRight: "1rem",
+              paddingLeft: ".75rem",
+            }}
+          />
+          <div className="text">
+            <div>Frutiger Aero Archive</div>
+            <div className="metric">An amazing Aero archive site</div>
+          </div>
+        </a>
         <a className="large-button" href="https://www.craftedbyarjun.com/home" target="_blank" rel="noopener noreferrer">
           <img
             src="/icons/login.webp"
@@ -172,14 +173,6 @@ export default function Home() {
             <div className="metric">A cool aero browser</div>
           </div>
         </a>
-
-        <div className="large-button disable">
-          <img src="/icons/cartIcon.webp" className="icon" alt="" />
-          <div className="text">
-            <div>Frutiger Shop</div>
-            <div className="metric">Coming Soon!</div>
-          </div>
-        </div>
       </nav>
     </>
   );
