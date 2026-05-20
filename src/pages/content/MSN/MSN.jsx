@@ -82,7 +82,7 @@ export default function MSN() {
         {/* OG stuff */}
         <meta property="og:title" content="MSN Experience | Frutiger Aero Hub" />
         <meta property="og:description" content="A nostalgic MSN-inspired Frutiger Aero interactive UI experience." />
-        <meta property="og:image" content="https://frutiger-aero.online/og/OpenGraph.jpg" />
+        <meta property="og:image" content="https://frutiger-aero.online/og/OpenGraph.png" />
         <meta property="og:url" content="https://frutiger-aero.online/msn" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Frutiger Aero Hub" />
@@ -90,7 +90,7 @@ export default function MSN() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="MSN Buddies | Frutiger Aero Hub" />
         <meta name="twitter:description" content="A nostalgic MSN-inspired Frutiger Aero interactive UI experience." />
-        <meta name="twitter:image" content="https://frutiger-aero.online/og/OpenGraph.jpg" />
+        <meta name="twitter:image" content="https://frutiger-aero.online/og/OpenGraph.png" />
 
         <meta name="robots" content="index, follow" />
         <meta name="theme-color" content="#7fd1ff" />

@@ -23,7 +23,7 @@ export default function MiniApp() {
         {/* og stuff */}
         <meta property="og:title" content={miniApp.name} />
         <meta property="og:description" content="An interactive Frutiger Aero mini app experience inside the Frutiger Aero Hub." />
-        <meta property="og:image" content="https://frutiger-aero.online/og/OpenGraph.jpg" />
+        <meta property="og:image" content="https://frutiger-aero.online/og/OpenGraph.png" />
         <meta property="og:url" content={`https://frutiger-aero.online/apps/${miniApp.slug}`} />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Frutiger Aero Hub" />
@@ -31,7 +31,7 @@ export default function MiniApp() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={miniApp.name} />
         <meta name="twitter:description" content="An interactive Frutiger Aero mini app experience inside the Frutiger Aero Hub." />
-        <meta name="twitter:image" content="https://frutiger-aero.online/og/OpenGraph.jpg" />
+        <meta name="twitter:image" content="https://frutiger-aero.online/og/OpenGraph.png" />
 
         <meta name="robots" content="index, follow" />
         <meta name="theme-color" content="#7fd1ff" />

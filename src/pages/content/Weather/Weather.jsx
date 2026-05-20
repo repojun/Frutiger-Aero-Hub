@@ -163,7 +163,7 @@ export default function Weather() {
         {/* og stuff */}
         <meta property="og:title" content="Weather Tab | Frutiger Aero Hub" />
         <meta property="og:description" content="A Frutiger Aero inspired weather interface with real-time conditions and animated UI." />
-        <meta property="og:image" content="https://frutiger-aero.online/og/OpenGraph.jpg" />
+        <meta property="og:image" content="https://frutiger-aero.online/og/OpenGraph.png" />
         <meta property="og:url" content="https://frutiger-aero.online/weather" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Frutiger Aero Hub" />
@@ -171,7 +171,7 @@ export default function Weather() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Weather Tab | Frutiger Aero Hub" />
         <meta name="twitter:description" content="A Frutiger Aero inspired weather interface with real-time conditions and animated UI." />
-        <meta name="twitter:image" content="https://frutiger-aero.online/og/OpenGraph.jpg" />
+        <meta name="twitter:image" content="https://frutiger-aero.online/og/OpenGraph.png" />
 
         <meta name="robots" content="index, follow" />
         <meta name="theme-color" content="#7fd1ff" />

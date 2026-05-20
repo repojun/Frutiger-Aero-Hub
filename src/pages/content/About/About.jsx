@@ -223,7 +223,7 @@ export default function About() {
         {/* open graph */}
         <meta property="og:title" content="What is Frutiger Aero?" />
         <meta property="og:description" content="An explanation of the Frutiger Aero aesthetic, its visuals, and its influence on UI and internet design culture." />
-        <meta property="og:image" content="https://frutiger-aero.online/og/OpenGraph.jpg" />
+        <meta property="og:image" content="https://frutiger-aero.online/og/OpenGraph.png" />
         <meta property="og:url" content="https://frutiger-aero.online/about" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Frutiger Aero Hub" />
@@ -232,7 +232,7 @@ export default function About() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="What is Frutiger Aero?" />
         <meta name="twitter:description" content="An explanation of the Frutiger Aero aesthetic, its visuals, and its influence on UI and internet design culture." />
-        <meta name="twitter:image" content="https://frutiger-aero.online/og/OpenGraph.jpg" />
+        <meta name="twitter:image" content="https://frutiger-aero.online/og/OpenGraph.png" />
 
         <script type="application/ld+json">
           {JSON.stringify({

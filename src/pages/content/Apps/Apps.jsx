@@ -20,7 +20,7 @@ export default function Apps() {
         {/* open graph */}
         <meta property="og:title" content="Mini Apps | Frutiger Aero Hub" />
         <meta property="og:description" content="A collection of interactive mini apps inspired by Frutiger Aero aesthetics and nostalgic web design." />
-        <meta property="og:image" content="https://frutiger-aero.online/og/OpenGraph.jpg" />
+        <meta property="og:image" content="https://frutiger-aero.online/og/OpenGraph.png" />
         <meta property="og:url" content="https://frutiger-aero.online/apps" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Frutiger Aero Hub" />
@@ -28,7 +28,7 @@ export default function Apps() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Mini Apps | Frutiger Aero Hub" />
         <meta name="twitter:description" content="A collection of interactive mini apps inspired by Frutiger Aero aesthetics and nostalgic web design." />
-        <meta name="twitter:image" content="https://frutiger-aero.online/og/OpenGraph.jpg" />
+        <meta name="twitter:image" content="https://frutiger-aero.online/og/OpenGraph.png" />
 
         <script type="application/ld+json">
           {JSON.stringify({

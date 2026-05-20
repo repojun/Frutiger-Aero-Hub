@@ -23,7 +23,7 @@ export default function Project() {
         {/* og stuff */}
         <meta property="og:title" content={project.name} />
         <meta property="og:description" content="A featured project from the Frutiger Aero Hub showcasing Frutiger Aero inspired UI design and digital aesthetics." />
-        <meta property="og:image" content="https://frutiger-aero.online/og/OpenGraph.jpg" />
+        <meta property="og:image" content="https://frutiger-aero.online/og/OpenGraph.png" />
         <meta property="og:url" content={`https://frutiger-aero.online/project/${project.slug}`} />
         <meta property="og:type" content="article" />
         <meta property="og:site_name" content="Frutiger Aero Hub" />
@@ -31,7 +31,7 @@ export default function Project() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={project.name} />
         <meta name="twitter:description" content="A featured project from the Frutiger Aero Hub showcasing Frutiger Aero inspired UI design and digital aesthetics." />
-        <meta name="twitter:image" content="https://frutiger-aero.online/og/OpenGraph.jpg" />
+        <meta name="twitter:image" content="https://frutiger-aero.online/og/OpenGraph.png" />
 
         <meta name="robots" content="index, follow" />
         <meta name="theme-color" content="#7fd1ff" />

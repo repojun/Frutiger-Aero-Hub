@@ -127,7 +127,7 @@ export default function GuestBook() {
         {/* og stuff */}
         <meta property="og:title" content="Guest Book | Frutiger Aero Hub" />
         <meta property="og:description" content="A Frutiger Aero inspired guest book where users can leave messages and explore community entries." />
-        <meta property="og:image" content="https://frutiger-aero.online/og/OpenGraph.jpg" />
+        <meta property="og:image" content="https://frutiger-aero.online/og/OpenGraph.png" />
         <meta property="og:url" content="https://frutiger-aero.online/guestbook" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Frutiger Aero Hub" />
@@ -135,7 +135,7 @@ export default function GuestBook() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Guest Book | Frutiger Aero Hub" />
         <meta name="twitter:description" content="A Frutiger Aero inspired guest book where users can leave messages and explore community entries." />
-        <meta name="twitter:image" content="https://frutiger-aero.online/og/OpenGraph.jpg" />
+        <meta name="twitter:image" content="https://frutiger-aero.online/og/OpenGraph.png" />
 
         <meta name="robots" content="index, follow" />
         <meta name="theme-color" content="#7fd1ff" />

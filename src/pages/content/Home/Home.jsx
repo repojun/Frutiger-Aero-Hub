@@ -40,13 +40,13 @@ export default function Home() {
         <meta property="og:description" content="The Frutiger Aero Hub is an archive and interactive site exploring the Frutiger Aero aesthetic, UI design, mini apps, and nostalgic 2010s internet culture." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://frutiger-aero.online/" />
-        <meta property="og:image" content="https://frutiger-aero.online/og/OpenGraph.jpg" />
+        <meta property="og:image" content="https://frutiger-aero.online/og/OpenGraph.png" />
         <meta property="og:site_name" content="Frutiger Aero Hub" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Frutiger Aero Hub" />
         <meta name="twitter:description" content="The Frutiger Aero Hub is an archive and interactive site exploring the Frutiger Aero aesthetic, UI design, mini apps, and nostalgic 2010s internet culture." />
-        <meta name="twitter:image" content="https://frutiger-aero.online/og/OpenGraph.jpg" />
+        <meta name="twitter:image" content="https://frutiger-aero.online/og/OpenGraph.png" />
 
         <meta name="robots" content="index, follow" />
         <meta name="theme-color" content="#7fd1ff" />
