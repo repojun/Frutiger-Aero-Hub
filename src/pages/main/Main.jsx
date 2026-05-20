@@ -181,7 +181,7 @@ export default function Main({ children }) {
               </div>
             </div>
 
-            <div className="side-bar-welcome">FrutigerOS v1.06b</div>
+            <div className="side-bar-welcome">FrutigerOS Beta</div>
             <div className="side-divider"></div>
             <div className="button-container">
               <Link className="skeuButton" to={"/"}>
