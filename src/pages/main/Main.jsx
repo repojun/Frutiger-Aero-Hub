@@ -150,7 +150,7 @@ export default function Main({ children }) {
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "WebSite",
-            name: "Frutiger Aero Hub",
+            name: "The Frutiger Aero Hub | Nostalgic Web Aesthetic & Resources",
             url: "https://frutiger-aero.online/",
           })}
         </script>
