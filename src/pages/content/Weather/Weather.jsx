@@ -35,7 +35,7 @@ export default function Weather() {
       case text.includes("sunny") || text.includes("clear"):
         return isNight ? "Moon_Phase_Full.ico" : "Sunny.ico";
       case text.includes("partly cloudy"):
-        return isNight ? "Moon_Phase_Full.ico" : "Snow_Occasional.ico";
+        return isNight ? "Moon_Phase_Full.ico" : "Sun_Occasional.png";
       case text.includes("cloudy") || text.includes("overcast"):
         return isNight ? "Moon_Phase_Full.ico" : "Overcast.ico";
       case text.includes("mist"):
