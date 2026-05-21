@@ -142,12 +142,38 @@
   flex-direction: column;
   position: relative;
   font-weight: 400;
-  font-size: 2rem;
+  font-size: 1.5rem !important;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
-  text-align: center;
+  text-align: left;
   padding-top: 1rem;
   row-gap: 2rem;
+
+  .user-span {
+    display: inline-block;
+    background: linear-gradient(90deg, #ffffff 30%, #5dff80 50%, #ffffff 70%);
+    background-size: 300% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    text-shadow: none;
+    color: transparent;
+    font-weight: 500;
+    animation: wave 5s ease-in-out infinite;
+  }
+  @keyframes wave {
+    0% {
+      background-position: 0% center;
+    }
+    50% {
+      background-position: 100% center;
+    }
+    100% {
+      background-position: 0% center;
+    }
+  }
+  ul {
+    margin-top: -1rem;
+  }
   p {
     margin-bottom: -0.25rem;
     @media (max-width: 768px) {

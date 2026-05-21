@@ -4,6 +4,7 @@ import ReactMarkdown from "react-markdown";
 import { useState, useEffect } from "react";
 import { addWaitlist } from "../../../api/email";
 import { showErrorToast, showToast } from "../Toast/Toast";
+import rehypeRaw from "rehype-raw";
 
 const RedditModal = ({ modal, windowAnimation, toggleModal, modalTitle = "Music Player", modalImage, type, buttonArray, subButtonClick, width, height, switchHue, description }) => {
   if (!modal) return null;
@@ -70,7 +71,7 @@ const RedditModal = ({ modal, windowAnimation, toggleModal, modalTitle = "Music 
               fontSize: "2rem",
             }}
           >
-            <ReactMarkdown>{description}</ReactMarkdown>
+            <ReactMarkdown rehypePlugins={[rehypeRaw]}>{description}</ReactMarkdown>
           </div>
         ) : (
           <></>

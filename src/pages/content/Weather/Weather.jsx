@@ -40,7 +40,7 @@ export default function Weather() {
         return isNight ? "Moon_Phase_Full.ico" : "Overcast.ico";
       case text.includes("mist"):
         return "Moon_Phase_Full.ico";
-      case text.includes("rain"):
+      case text.includes("rain") || text.includes("drizzle"):
         return isNight ? "Night_Rain.ico" : "rain.png";
       default:
         return isNight ? "Moon_Phase_Full.ico" : "default.ico";
