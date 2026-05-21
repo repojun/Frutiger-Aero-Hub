@@ -63,7 +63,7 @@ So, I thought why not spend a little bit of time to create my own application. I
 I spent countless hours adding various features, that have gone way above the original plan because I wanted to create something that's actually useful for users and not just a half baked application.
 
 `,
-    link: "https://example.com/app2",
+    link: "https://frutigeraeroarchive.org/",
     image: "/projects/aeroarchive.webp",
   },
   {

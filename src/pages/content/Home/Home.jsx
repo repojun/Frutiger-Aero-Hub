@@ -104,7 +104,7 @@ export default function Home() {
       <div className="divider"></div>
 
       <nav className="button-grid">
-        <a className="large-button" href="https://www.github.com/" target="_blank" rel="noopener noreferrer">
+        <a className="large-button" href="https://github.com/repojun/Frutiger-Aero-Hub" target="_blank" rel="noopener noreferrer">
           <img src="/icons/github.webp" className="icon" alt="" />
           <div className="text">
             <div>Github Repo</div>

@@ -13,6 +13,10 @@ export default function Main({ children }) {
   const location = useLocation();
   const divRef = useRef(null);
   const [open, setOpen] = useState(false);
+  const [splash, setSplash] = useState(() => {
+    return !localStorage.getItem("hasSeenSplash");
+  });
+  const [splashAnim, setSplashAnim] = useState(false);
 
   // setting id up
   useEffect(() => {
@@ -171,6 +175,34 @@ export default function Main({ children }) {
           switchHue={changeHue}
         />
         <Space />
+        {splash ? (
+          <div className={splashAnim ? "splash-bg fadeout" : "splash-bg"}>
+            <div
+              style={{
+                position: "absolute",
+                inset: 0,
+                backgroundColor: "black",
+                zIndex: -1,
+              }}
+            />
+            <div className="login-container">
+              <img src="/aero-images/login.png" />
+              <div
+                className="login-button"
+                onClick={() => {
+                  setSplashAnim(true);
+                  SoundPlayer("startup", 0.3);
+                  localStorage.setItem("hasSeenSplash", "true");
+                }}
+              >
+                <span>Enter The Promised Future</span>
+                <img src="icons/forward.webp" className="iconGo" alt="" />
+              </div>
+            </div>
+          </div>
+        ) : (
+          <></>
+        )}
         <div className="circle" />
         <div className="circle2" />
         <div className="body-container">
