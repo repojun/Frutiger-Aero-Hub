@@ -19,6 +19,9 @@ Also, try figure out how to get your score up!
     id: "google",
     name: "Aero Search Page",
     author: "Bahpu",
+    category: "Website",
+    date: "icantremember...",
+
     description: `
 This is my Aero Search Page, its just a nice theme to browse with and use as a homescreen for your browser. 
 
@@ -33,6 +36,8 @@ It just acts as a wrapper (even tho its not really a wrapper) for google, brave 
     id: "reddit-design",
     name: "Reddit Design",
     author: "Bahpu",
+    category: "Website",
+    date: "icantremember...",
     description: `
 This was my take on turning the Frutiger Aero Reddit page into an actual Frutiger Aero theme. 
 
@@ -47,20 +52,12 @@ I decided to make it interactable so its more entertaining to use, I was hoping 
   {
     id: "aero-archive",
     name: "Frutiger Aero Archive",
+    category: "Website",
+    date: "N/A",
+    author: "Daniele",
     description: `
-When I first started self hosting, I wanted to be able to monitor all my applications and servers.
-
-So, I spent a while testing various different paid and self hosted monitoring services, but always felt like something was missing.
-
-The application that came closest to all my requirements was **Uptime-Kuma**, but it still lacked a lot of things I wanted:
-
-- UI felt cluttered (especially on mobile)
-- Customisation at the time was pretty much none existent for status pages
-- I wanted an application that would support multiple users with custom permissions.
-
-So, I thought why not spend a little bit of time to create my own application. Initially I wanted to spend around a month, but some how 2+ years later I'm still here developing new features. 
-
-I spent countless hours adding various features, that have gone way above the original plan because I wanted to create something that's actually useful for users and not just a half baked application.
+ A digital museum and tribute to old 2000s aesthetics, notably Frutiger Aero which it is named after and is primarily representing, but also other styles such as Y2K, Vectordelia (also called Frutiger Metro), and others. On this site you will find large collections of wallpapers, music from a variety of styles popular during the era, old videos, flash games, PNG images to make your own collages, 
+ a huge list of customization software, and many more goodies.
 
 `,
     link: "https://frutigeraeroarchive.org/",

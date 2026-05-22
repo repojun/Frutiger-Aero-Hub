@@ -10,5 +10,5 @@ Special thanks to these goats for testing:
 - <a href="https://github.com/ksjaay" target="_blank">KSJaay</a>
 - <a href="https://www.tiktok.com/@ckromeos" target="_blank">Romeo</a>
 - <a href="https://voicesync.modsync.app/" target="_blank">Cxla</a>
-- hedgehogg
+- <a>hedgehogg</a>
 `;
