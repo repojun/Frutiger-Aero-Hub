@@ -91,14 +91,16 @@ export default function Home() {
           </figure>
         </div>
 
+        <p className="mobile-warning">PSSST hey mobile user! This site is much better on PC and is intended to be used on PC! I did spend a long time making it work on mobile though so dont worry {"<3"}, but if you get the chance check it out on ur laptop or sumn</p>
+
         <p>
-          <span className="welcome-span">Welcome to the Frutiger Aero Hub™! </span> This is a new website for Frutiger Aero fans & creators, it contains collections of mini apps to use, resources & archives which you can view in the <span className="tab-span">Tabs</span> above. It
-          will also act as a hub for other users to share their own Frutiger Aero projects. Teddy the Aero mascot will guide you through the page {"<3"}
+          <span className="welcome-span">Welcome to the Frutiger Aero Hub™! </span> This is a new website for Frutiger Aero fans & creators, it contains collections of mini apps to use, resources & archives which you can view in the <span className="tab-span">Tabs</span> above.
+          It will also act as a hub for other users to share their own Frutiger Aero projects. Teddy the Aero mascot will guide you through the page {"<3"}
         </p>
 
         <p>The site has been developed with my custom design style with plenty of fun features and easter eggs (you can view some on the side bar buttons). It's going to act as my final tribute to the aesthetic and my FA inspired design style.</p>
 
-        <p>I have opened this site very recently and plan to iteratively add more resources and tabs overtime, please contact me (arjun@frutiger-aero.online) if you have any suggestions or pieces of media to share!</p>
+        <p>I have opened this site very recently and plan to iteratively add more resources and tabs overtime, its in BETA so please contact me (arjun@frutiger-aero.online) if you have any suggestions or pieces of media to share!</p>
       </main>
 
       <div className="divider"></div>

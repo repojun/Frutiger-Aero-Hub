@@ -102,8 +102,6 @@
   }
 }
 
-
-
 .tab {
   display: flex;
   justify-content: center;
@@ -219,6 +217,13 @@
   }
 }
 
+.mobile-warning {
+  display: none;
+  @media (max-width: 768px) {
+    display: block;
+  }
+}
+
 .welcome-span {
   display: inline-block;
 
@@ -243,4 +248,3 @@
     background-position: 0% center;
   }
 }
-
