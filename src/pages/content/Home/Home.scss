@@ -180,6 +180,10 @@
     opacity: 1;
     overflow: hidden;
     z-index: 999;
+
+    &:hover {
+      cursor: pointer;
+    }
     &.fade-out {
       opacity: 0;
     }

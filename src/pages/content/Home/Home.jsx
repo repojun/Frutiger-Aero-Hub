@@ -87,7 +87,15 @@ export default function Home() {
             </div>
 
             <img src="/aero-images/bordered.webp" className="mascot-overlay" />
-            <img src={currentImage} className={fade ? "mascot-bordered-image" : "mascot-bordered-image fade-out"} />
+            <img
+              src={currentImage}
+              className={fade ? "mascot-bordered-image" : "mascot-bordered-image fade-out"}
+              onClick={() => {
+                if (fade) {
+                  SoundPlayer("yap", 0.5);
+                }
+              }}
+            />
           </figure>
         </div>
 

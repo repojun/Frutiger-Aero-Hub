@@ -41,6 +41,7 @@ export const miniApps = [
     image: "/apps/tekken.webp",
     url: "https://www.retrogames.cc/embed/40238-tekken-3.html",
   },
+
 ].map((project) => ({
   ...project,
   slug: project.name.toLowerCase().replace(/\s+/g, "-"),
