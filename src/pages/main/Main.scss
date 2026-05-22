@@ -285,7 +285,13 @@ body {
   border-radius: 45px;
   border: 1px solid #fff;
   -webkit-box-reflect: below 0.5rem linear-gradient(transparent 80%, rgba(0, 0, 0, 0.4));
-
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  img {
+    -webkit-user-drag: none;
+    user-drag: none;
+  }
   @media (max-width: 768px) {
     display: none;
   }

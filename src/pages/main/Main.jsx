@@ -309,7 +309,9 @@ export default function Main({ children }) {
               </div>
             </div>
             <div className="side-divider"></div>
-            <div className="subtext">Website Created By Arjun</div>
+            <a className="subtext" href="https://www.craftedbyarjun.com/" target="_blank" rel="noopener noreferrer">
+              Website Created By Arjun
+            </a>
           </div>
           <div className="box-wrapper">
             <div className="tabs">
