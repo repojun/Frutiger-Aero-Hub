@@ -7,6 +7,7 @@ export default function Home() {
   const [currentImage, setCurrentImage] = useState("/aero-images/bordered2.webp");
   const [fade, setFade] = useState(true);
   const [speech, setSpeech] = useState(false);
+  const [teddy, setTeddy] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -15,6 +16,7 @@ export default function Home() {
       setTimeout(() => {
         setCurrentImage("/aero-images/teddy_guide.webp");
         setFade(true);
+        setTeddy(true);
       }, 500);
 
       setTimeout(() => {
@@ -91,7 +93,7 @@ export default function Home() {
               src={currentImage}
               className={fade ? "mascot-bordered-image" : "mascot-bordered-image fade-out"}
               onClick={() => {
-                if (fade) {
+                if (teddy) {
                   SoundPlayer("yap", 0.5);
                 }
               }}
