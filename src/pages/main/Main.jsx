@@ -225,9 +225,9 @@ export default function Main({ children }) {
                 <img className="icon" src="/icons/profile.webp" />
                 <div className="skeuButtonBody">My Portfolio</div>
               </a>
-              <a className="skeuButton" href="https://www.craftedbyarjun.com/reddit" target="_blank" rel="noopener noreferrer">
-                <img className="icon" src="/icons/aeroorbNakedAsf.webp" />
-                <div className="skeuButtonBody">Reddit Design</div>
+              <a className="skeuButton" href="https://www.instagram.com/xpromised_futurex/" target="_blank" rel="noopener noreferrer">
+                <img className="icon" src="/icons/instagram.webp" />
+                <div className="skeuButtonBody">Aero Insta</div>
               </a>
               <div
                 className="skeuButton"
