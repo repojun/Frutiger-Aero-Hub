@@ -160,7 +160,6 @@ export default function Weather() {
 
         <link rel="canonical" href="https://frutiger-aero.online/weather" />
 
-        {/* og stuff */}
         <meta property="og:title" content="Weather Tab | Frutiger Aero Hub" />
         <meta property="og:description" content="A Frutiger Aero inspired weather interface with real-time conditions and animated UI." />
         <meta property="og:image" content="https://frutiger-aero.online/og/OpenGraph.png" />
@@ -180,6 +179,7 @@ export default function Weather() {
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "WebApplication",
+            "@id": "https://frutiger-aero.online/weather#webapp",
             name: "Weather Tab",
             url: "https://frutiger-aero.online/weather",
             description: "An interactive Frutiger Aero inspired weather interface with real-time weather data, animated UI, and nostalgic digital design.",
@@ -187,7 +187,11 @@ export default function Weather() {
             operatingSystem: "All",
             publisher: {
               "@type": "Organization",
+              "@id": "https://frutiger-aero.online/#website",
               name: "Frutiger Aero Hub",
+            },
+            isPartOf: {
+              "@id": "https://frutiger-aero.online/#website",
             },
           })}
         </script>

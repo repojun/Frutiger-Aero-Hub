@@ -11,13 +11,14 @@ export default function Apps() {
         <title>Mini Apps | Frutiger Aero Hub</title>
 
         <meta name="description" content="Explore a collection of Frutiger Aero inspired mini apps and interactive tools inside the Frutiger Aero Hub." />
+
         <link rel="canonical" href="https://frutiger-aero.online/apps" />
+
         <meta name="robots" content="index, follow" />
         <meta name="theme-color" content="#7fd1ff" />
         <meta name="author" content="Frutiger Aero Hub" />
         <meta name="keywords" content="frutiger aero apps, mini apps, retro ui tools, interactive web apps, nostalgic web design, frutiger aero hub" />
 
-        {/* open graph */}
         <meta property="og:title" content="Mini Apps | Frutiger Aero Hub" />
         <meta property="og:description" content="A collection of interactive mini apps inspired by Frutiger Aero aesthetics and nostalgic web design." />
         <meta property="og:image" content="https://frutiger-aero.online/og/OpenGraph.png" />
@@ -34,11 +35,16 @@ export default function Apps() {
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "CollectionPage",
+            "@id": "https://frutiger-aero.online/apps#webpage",
             name: "Mini Apps",
             description: "A collection of Frutiger Aero inspired mini apps and interactive tools inside the Frutiger Aero Hub.",
             url: "https://frutiger-aero.online/apps",
+            isPartOf: {
+              "@id": "https://frutiger-aero.online/#website",
+            },
             publisher: {
               "@type": "Organization",
+              "@id": "https://frutiger-aero.online/#website",
               name: "Frutiger Aero Hub",
             },
           })}

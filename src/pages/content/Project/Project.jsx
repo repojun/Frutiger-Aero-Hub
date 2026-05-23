@@ -20,7 +20,6 @@ export default function Project() {
 
         <link rel="canonical" href={`https://frutiger-aero.online/project/${project.slug}`} />
 
-        {/* og stuff */}
         <meta property="og:title" content={project.name} />
         <meta property="og:description" content="A featured project from the Frutiger Aero Hub showcasing Frutiger Aero inspired UI design and digital aesthetics." />
         <meta property="og:image" content="https://frutiger-aero.online/og/OpenGraph.png" />
@@ -40,11 +39,16 @@ export default function Project() {
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "CreativeWork",
+            "@id": `https://frutiger-aero.online/project/${project.slug}#work`,
             name: project.name,
             url: `https://frutiger-aero.online/project/${project.slug}`,
             description: `${project.name} is a featured project in the Frutiger Aero Hub, showcasing Frutiger Aero inspired UI design, aesthetics, and creative digital work.`,
+            isPartOf: {
+              "@id": "https://frutiger-aero.online/#website",
+            },
             publisher: {
               "@type": "Organization",
+              "@id": "https://frutiger-aero.online/#website",
               name: "Frutiger Aero Hub",
             },
           })}

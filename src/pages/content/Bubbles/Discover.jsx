@@ -13,7 +13,6 @@ export default function Discover() {
 
         <link rel="canonical" href="https://frutiger-aero.online/discover" />
 
-        {/* og stuff */}
         <meta property="og:title" content="Discover Aero Content" />
         <meta property="og:description" content="A curated collection of Frutiger Aero inspired content, tools, and creative digital projects." />
         <meta property="og:image" content="https://frutiger-aero.online/og/OpenGraph.png" />
@@ -33,11 +32,16 @@ export default function Discover() {
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "CollectionPage",
+            "@id": "https://frutiger-aero.online/discover#webpage",
             name: "Discover Aero Content",
             description: "A curated collection of Frutiger Aero inspired content, tools, and creative digital projects.",
             url: "https://frutiger-aero.online/discover",
+            isPartOf: {
+              "@id": "https://frutiger-aero.online/#website",
+            },
             publisher: {
               "@type": "Organization",
+              "@id": "https://frutiger-aero.online/#website",
               name: "Frutiger Aero Hub",
             },
           })}

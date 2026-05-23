@@ -60,7 +60,7 @@ export default function GuestBook() {
     try {
       const nextPage = page + 1;
 
-      // using new get maessages function 
+      // using new get maessages function
       const { data, error } = await getMessages(limit, nextPage * limit);
 
       if (error) throw error;
@@ -153,7 +153,6 @@ export default function GuestBook() {
 
         <link rel="canonical" href="https://frutiger-aero.online/guestbook" />
 
-        {/* og stuff */}
         <meta property="og:title" content="Guest Book | Frutiger Aero Hub" />
         <meta property="og:description" content="A Frutiger Aero inspired guest book where users can leave messages and explore community entries." />
         <meta property="og:image" content="https://frutiger-aero.online/og/OpenGraph.png" />
@@ -173,11 +172,16 @@ export default function GuestBook() {
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "WebPage",
+            "@id": "https://frutiger-aero.online/guestbook#webpage",
             name: "Guest Book",
             description: "Leave a message in the Frutiger Aero Hub guest book or read entries from other visitors in this nostalgic web experience.",
             url: "https://frutiger-aero.online/guestbook",
+            isPartOf: {
+              "@id": "https://frutiger-aero.online/#website",
+            },
             publisher: {
               "@type": "Organization",
+              "@id": "https://frutiger-aero.online/#website",
               name: "Frutiger Aero Hub",
             },
           })}

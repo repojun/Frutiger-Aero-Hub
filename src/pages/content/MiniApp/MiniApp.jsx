@@ -20,7 +20,6 @@ export default function MiniApp() {
 
         <link rel="canonical" href={`https://frutiger-aero.online/apps/${miniApp.slug}`} />
 
-        {/* og stuff */}
         <meta property="og:title" content={miniApp.name} />
         <meta property="og:description" content="An interactive Frutiger Aero mini app experience inside the Frutiger Aero Hub." />
         <meta property="og:image" content="https://frutiger-aero.online/og/OpenGraph.png" />
@@ -40,13 +39,18 @@ export default function MiniApp() {
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "SoftwareApplication",
+            "@id": `https://frutiger-aero.online/apps/${miniApp.slug}#webapp`,
             name: miniApp.name,
             applicationCategory: "WebApplication",
             url: `https://frutiger-aero.online/apps/${miniApp.slug}`,
             description: `${miniApp.name} is a Frutiger Aero inspired mini app experience embedded inside the Frutiger Aero Hub.`,
             operatingSystem: "All",
+            isPartOf: {
+              "@id": "https://frutiger-aero.online/#website",
+            },
             publisher: {
               "@type": "Organization",
+              "@id": "https://frutiger-aero.online/#website",
               name: "Frutiger Aero Hub",
             },
           })}

@@ -30,7 +30,6 @@ export default function Resources() {
 
         <link rel="canonical" href="https://frutiger-aero.online/resources" />
 
-        {/* og stuff */}
         <meta property="og:title" content="Frutiger Aero Resources" />
         <meta property="og:description" content="A curated collection of Frutiger Aero inspired resources including media, icons, and design assets." />
         <meta property="og:image" content="https://frutiger-aero.online/og/OpenGraph.png" />
@@ -50,11 +49,16 @@ export default function Resources() {
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "CollectionPage",
+            "@id": "https://frutiger-aero.online/resources#webpage",
             name: "Resources",
             url: "https://frutiger-aero.online/resources",
             description: "Browse curated Frutiger Aero resources including images, icons, sounds, and media inspired by nostalgic digital design and internet culture.",
+            isPartOf: {
+              "@id": "https://frutiger-aero.online/#website",
+            },
             publisher: {
               "@type": "Organization",
+              "@id": "https://frutiger-aero.online/#website",
               name: "Frutiger Aero Hub",
             },
           })}

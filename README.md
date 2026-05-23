@@ -6,7 +6,7 @@
 
 This site is in beta right now, there will be many issues, unfinished features, and a lack of resources etc.
 
-I understand some of you may want to look through the source code to learn some things, I will try my best to update the comments in a meaningful, teaching way. 
+I understand some of you may want to look through the source code to learn some things, I will try my best to update the comments in a meaningful, teaching way. I like to use words like "we" etc as a guide/lesson so hopefully that'll help.
 
 ---
 

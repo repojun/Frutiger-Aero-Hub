@@ -33,11 +33,11 @@ export default function Home() {
         <title>The Frutiger Aero Hub | Nostalgic Web Aesthetic & Resources</title>
 
         <meta name="description" content="The Frutiger Aero Hub is an archive and interactive site exploring the Frutiger Aero aesthetic, UI design, mini apps, and nostalgic 2010s internet culture." />
+
         <meta name="keywords" content="frutiger aero, aero aesthetic, y2k web design, nostalgic web design, ui archive" />
 
         <link rel="canonical" href="https://frutiger-aero.online/" />
 
-        {/* og stuff */}
         <meta property="og:title" content="Frutiger Aero Hub" />
         <meta property="og:description" content="The Frutiger Aero Hub is an archive and interactive site exploring the Frutiger Aero aesthetic, UI design, mini apps, and nostalgic 2010s internet culture." />
         <meta property="og:type" content="website" />
@@ -57,11 +57,13 @@ export default function Home() {
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "WebSite",
+            "@id": "https://frutiger-aero.online/#website",
             name: "Frutiger Aero Hub",
             url: "https://frutiger-aero.online/",
             description: "The Frutiger Aero Hub is an archive and interactive site exploring the Frutiger Aero aesthetic, UI design, mini apps, and nostalgic 2010s internet culture.",
             publisher: {
               "@type": "Organization",
+              "@id": "https://frutiger-aero.online/#website",
               name: "Frutiger Aero Hub",
             },
           })}
