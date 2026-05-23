@@ -36,7 +36,7 @@ export default function Main({ children }) {
   const [modalDescription, setModalDescription] = useState("");
   const [modalLink, setModalLink] = useState("");
   const [currentArray, setCurrentArray] = useState([]);
-  const audioRef = useRef(new Audio("/lotuswaters.mp3"));
+  const audioRef = useRef(new Audio(""));
 
   // tabs to handle the link changes, can see further in app.jsx, better for SEO
   const tabs = [
