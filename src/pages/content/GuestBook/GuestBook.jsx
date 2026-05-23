@@ -12,6 +12,9 @@ export default function GuestBook() {
   const [website, setWebsite] = useState("");
   const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [hasMore, setHasMore] = useState(true);
+  const [page, setPage] = useState(0);
+  const limit = 5;
 
   const CACHE_KEY = "messages_cache";
 
@@ -19,22 +22,26 @@ export default function GuestBook() {
     try {
       // see if the messages exist already
       const cachedMessages = localStorage.getItem(CACHE_KEY);
+
       if (cachedMessages) {
         const parsed = JSON.parse(cachedMessages);
 
         // see if cache cooldown is still within 5 minutes
         if (Date.now() - parsed.timestamp < 5 * 60 * 1000) {
           setMessages(parsed.data);
-          return; // this return breaks the loop and uses cache instead of wasting API calls
+          return; // stop here and use cache instead
         } else {
           localStorage.removeItem(CACHE_KEY);
         }
       }
 
-      const { data, error } = await getMessages();
+      // fetch only first 5 messgaes instead of whole thing, initialised limit as 5 above
+      const { data, error } = await getMessages(limit, 0);
+
       if (error) throw error;
+
       setMessages(data);
-      // save to cache
+      // save first page to cache
       localStorage.setItem(
         CACHE_KEY,
         JSON.stringify({
@@ -46,6 +53,28 @@ export default function GuestBook() {
       console.log(err);
     } finally {
       setLoading(false);
+    }
+  };
+
+  const loadMore = async () => {
+    try {
+      const nextPage = page + 1;
+
+      // using new get maessages function 
+      const { data, error } = await getMessages(limit, nextPage * limit);
+
+      if (error) throw error;
+
+      // append new messages instead of replacing them
+      setMessages((prev) => [...prev, ...data]);
+      setPage(nextPage);
+
+      // if less than 5 returned, no more messages exist so dont display the button
+      if (data.length < limit) {
+        setHasMore(false);
+      }
+    } catch (err) {
+      console.log(err);
     }
   };
 
@@ -227,7 +256,8 @@ export default function GuestBook() {
             <div>Loading Messages...</div>
           ) : (
             <div className="messages">
-              {[...messages].reverse().map((msg, i) => (
+              {/* only doing certain amount of messages per page to save calls / data transfer */}
+              {messages.map((msg, i) => (
                 <div className="message" key={i}>
                   <div className="timestamp">{new Date(msg.created_at).toLocaleString()}</div>
 
@@ -262,6 +292,13 @@ export default function GuestBook() {
                   )}
                 </div>
               ))}
+              {hasMore && (
+                <div className="submit-button" onClick={loadMore} style={{ width: "10rem" }}>
+                  <img src="icons/forward.webp" className="icon" alt="Load More Button" />
+
+                  <span>Load More</span>
+                </div>
+              )}
             </div>
           )}
         </div>
