@@ -294,6 +294,11 @@ export default function GuestBook() {
                       <span className="title">Message:</span> {msg.message}
                     </div>
                   )}
+                  {msg.reply && (
+                    <div>
+                      <span className="reply">Reply from Bahpu:</span> <span className="reply-message">"{msg.reply}"</span>
+                    </div>
+                  )}
                 </div>
               ))}
               {hasMore && (
