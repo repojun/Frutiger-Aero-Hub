@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import { addWaitlist } from "../../../api/email";
 import { showErrorToast, showToast } from "../Toast/Toast";
 import rehypeRaw from "rehype-raw";
+import { SoundPlayer } from "../SoundPlayer/SoundPlayer";
 
 const RedditModal = ({ modal, windowAnimation, toggleModal, modalTitle = "Music Player", modalImage, type, buttonArray, subButtonClick, width, height, switchHue, description }) => {
   if (!modal) return null;
@@ -118,6 +119,7 @@ const RedditModal = ({ modal, windowAnimation, toggleModal, modalTitle = "Music 
                   // Need to change subButtonClick so it has more relevant name
                   if (type === "themeButton") {
                     switchHue(button.hue);
+                    SoundPlayer("click");
                   } else if (type === "musicButton") {
                     subButtonClick(button);
                   } else if (type === "backgroundButton") {
