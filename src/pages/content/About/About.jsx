@@ -171,7 +171,7 @@ export default function About() {
         <div className="main-about-text">
           <div className="initial-banner">
             <div className="bordered-image-container">
-              <img src={"/aero-images/bordered.webp"} className={"overlay"} alt="carousel" />
+              <img src={"/aero-images/bordered.webp"} className={"bordered-overlay"} alt="carousel" />
               <img src={`/aero-images/${images[currentImage]}`} className={"bordered-image " + (fade ? "fade-in" : "fade-out")} alt="carousel" />
             </div>
             <Markdown>{contentSep}</Markdown>
