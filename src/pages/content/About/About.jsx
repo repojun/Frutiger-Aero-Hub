@@ -82,14 +82,25 @@ export default function About() {
                 <div>
                   <img className="current-image" src={currentImageModal} />
                 </div>
-                <div
-                  className="submit-button"
-                  style={{ height: "3rem", width: "8rem" }}
-                  onClick={() => {
-                    setModal(false);
-                  }}
-                >
-                  Close
+                <div style={{ display: "flex", columnGap: "2rem" }}>
+                  <div
+                    className="submit-button"
+                    style={{ height: "3rem", width: "8rem" }}
+                    onClick={() => {
+                      setModal(false);
+                    }}
+                  >
+                    Close
+                  </div>
+                  <div
+                    className="submit-button"
+                    style={{ height: "3rem", width: "8rem" }}
+                    onClick={() => {
+                      window.open(currentImageModal, "_blank", "noopener,noreferrer");
+                    }}
+                  >
+                    Open
+                  </div>
                 </div>
               </div>
             </motion.div>
