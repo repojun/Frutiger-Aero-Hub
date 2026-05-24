@@ -5,6 +5,7 @@ import rehypeRaw from "rehype-raw";
 import { Helmet } from "react-helmet-async";
 import { contentSep, content, content2 } from "../../../assets/components/Content/About";
 import { AnimatePresence, motion } from "framer-motion";
+import { SoundPlayer } from "../../../assets/components/SoundPlayer/SoundPlayer";
 
 export default function About() {
   const [currentImage, setCurrentImage] = useState(0);
@@ -14,6 +15,7 @@ export default function About() {
   const [imageAlt, setImageAlt] = useState("");
 
   const toggleModal = (alt, src) => {
+    SoundPlayer("click");
     setModal(!modal);
     setCurrentImageModal(src);
     console.log(src);
@@ -74,7 +76,13 @@ export default function About() {
               <div className="title-bar">
                 <div>{imageAlt}</div>
 
-                <div className="close-button" onClick={() => setModal(false)}>
+                <div
+                  className="close-button"
+                  onClick={() => {
+                    setModal(false);
+                    SoundPlayer("click");
+                  }}
+                >
                   <div>X</div>
                 </div>
               </div>
@@ -87,6 +95,7 @@ export default function About() {
                     className="submit-button"
                     style={{ height: "3rem", width: "8rem" }}
                     onClick={() => {
+                      SoundPlayer("click");
                       setModal(false);
                     }}
                   >
@@ -96,6 +105,8 @@ export default function About() {
                     className="submit-button"
                     style={{ height: "3rem", width: "8rem" }}
                     onClick={() => {
+                      SoundPlayer("click");
+
                       window.open(currentImageModal, "_blank", "noopener,noreferrer");
                     }}
                   >
