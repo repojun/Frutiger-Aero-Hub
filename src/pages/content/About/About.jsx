@@ -4,11 +4,22 @@ import ReactMarkdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
 import { Helmet } from "react-helmet-async";
 import { contentSep, content, content2 } from "../../../assets/components/Content/About";
+import { AnimatePresence, motion } from "framer-motion";
 
 export default function About() {
   const [currentImage, setCurrentImage] = useState(0);
-  const [fade, setFade] = useState("false");
+  const [fade, setFade] = useState("false"); // why the hell did i use string for boolean here LMAO... imma leave this here bc its funny, i must've been tired (Never do this...)
+  const [modal, setModal] = useState(false);
+  const [currentImageModal, setCurrentImageModal] = useState("");
+  const [imageAlt, setImageAlt] = useState("");
 
+  const toggleModal = (alt, src) => {
+    setModal(!modal);
+    setCurrentImageModal(src);
+    console.log(src);
+    setImageAlt(alt);
+    console.log(modal);
+  };
   // normally you should  put this into a separate component folder/file but for me in this case, it works nicer, i dont have to use this anywhere else other than this file
   const Markdown = ({ children }) => {
     return (
@@ -16,17 +27,7 @@ export default function About() {
         <ReactMarkdown
           rehypePlugins={[rehypeRaw]}
           components={{
-            img: ({ src, alt }) => (
-              <img
-                src={src}
-                alt={alt}
-                className="markdown-img"
-                style={{ cursor: "pointer" }}
-                onClick={() => {
-                  console.log("clicked image:", src); // gonna add modal here instead soon
-                }}
-              />
-            ),
+            img: ({ src, alt }) => <img src={src} alt={alt} className="markdown-img" onClick={() => toggleModal(alt, src)} />,
           }}
         >
           {children}
@@ -57,6 +58,44 @@ export default function About() {
   }, [images]);
   return (
     <>
+      <AnimatePresence>
+        {modal && (
+          <motion.div className="about-modal-container" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.15 }}>
+            <motion.div
+              className="about-modal-body"
+              initial={{ scale: 0.2, opacity: 0 }}
+              animate={{ scale: [0.2, 1.1, 1], opacity: 1 }}
+              exit={{ scale: 0.95, opacity: 0 }}
+              transition={{
+                duration: 0.35,
+                ease: "easeOut",
+              }}
+            >
+              <div className="title-bar">
+                <div>{imageAlt}</div>
+
+                <div className="close-button" onClick={() => setModal(false)}>
+                  <div>X</div>
+                </div>
+              </div>
+              <div className="about-flex">
+                <div>
+                  <img className="current-image" src={currentImageModal} />
+                </div>
+                <div
+                  className="submit-button"
+                  style={{ height: "3rem", width: "8rem" }}
+                  onClick={() => {
+                    setModal(false);
+                  }}
+                >
+                  Close
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
       <Helmet>
         <title>What is Frutiger Aero? | Frutiger Aero Hub</title>
 

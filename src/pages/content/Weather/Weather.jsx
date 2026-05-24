@@ -209,7 +209,6 @@ export default function Weather() {
                 ease: "easeOut",
               }}
             >
-              {" "}
               <div className="title-bar">
                 <div>Enter a new location</div>
 

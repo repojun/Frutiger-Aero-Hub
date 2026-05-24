@@ -7,7 +7,7 @@ import { showErrorToast, showToast } from "../Toast/Toast";
 import rehypeRaw from "rehype-raw";
 import { SoundPlayer } from "../SoundPlayer/SoundPlayer";
 
-const RedditModal = ({ modal, windowAnimation, toggleModal, modalTitle = "Music Player", modalImage, type, buttonArray, subButtonClick, width, height, switchHue, description }) => {
+const RedditModal = ({ modal, windowAnimation, toggleModal, modalTitle = "Music Player", modalImage, type, buttonArray, subButtonClick, width, height, switchHue, description, currentImage }) => {
   if (!modal) return null;
   const [disabled, setDisabled] = useState(false);
   const [email, setEmail] = useState("");
@@ -75,6 +75,7 @@ const RedditModal = ({ modal, windowAnimation, toggleModal, modalTitle = "Music 
               }}
             >
               <ReactMarkdown rehypePlugins={[rehypeRaw]}>{description}</ReactMarkdown>
+              {currentImage}
             </div>
           ) : (
             <></>
