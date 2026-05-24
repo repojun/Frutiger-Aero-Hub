@@ -42,6 +42,8 @@ export const miniApps = [
     url: "https://www.retrogames.cc/embed/40238-tekken-3.html",
   },
 
+  // https://www.addictinggames.com/embed/html5-games/20543 -- bloons
+
 ].map((project) => ({
   ...project,
   slug: project.name.toLowerCase().replace(/\s+/g, "-"),

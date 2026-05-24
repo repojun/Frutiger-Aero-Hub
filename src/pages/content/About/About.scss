@@ -91,6 +91,11 @@
 }
 
 .markdown {
+  .markdown-img {
+    &:hover {
+      cursor: pointer;
+    }
+  }
   .images-grid {
     @extend .examples-grid;
     padding-top: 1rem;
