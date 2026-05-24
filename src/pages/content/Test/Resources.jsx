@@ -3,11 +3,12 @@ import { Helmet } from "react-helmet-async";
 
 export default function Resources() {
   const resources = [
-    { name: "200+ Frutiger Aero Images", description: "what the title says lol (Google Drive)", link: "https://drive.google.com/drive/folders/1bMyrqg_B2PGQqMVVU980Rx89uTC0CC5T", icon: "/icons/wallpaper.webp" },
+    { name: "200+ HQ Frutiger Aero Images/Wallpapers", description: "what the title says lol (Google Drive)", link: "https://drive.google.com/drive/folders/1bMyrqg_B2PGQqMVVU980Rx89uTC0CC5T", icon: "/icons/wallpaper.webp" },
     { name: "Frutiger Aero Images Pack", description: "An archived Frutiger Aero gallery (Archive)", link: "https://archive.ph/5ymqr", icon: "/icons/wallpaper.webp" },
     { name: "Black Sheep Stock Photography 1", description: "An old collection of frutiger aero like images (Archive)", link: "https://archive.org/details/BSSP-V1", icon: "/icons/wallpaper.webp" },
     { name: "Black Sheep Stock Photography 2", description: "PT2: An old collection of frutiger aero like images (Archive)", link: "https://archive.org/details/BSSP-V2 Black Sheep Stock Photography Volume 2", icon: "/icons/wallpaper.webp" },
     { name: "Ultimate Windows Wallpaper Pack", description: "Almost all old school Windows Wallpapers (Deviant Art)", link: "https://www.deviantart.com/windowsaesthetics/art/Ultimate-Windows-Wallpaper-Pack-942163195", icon: "/icons/wallpaper.webp" },
+    { name: "Dell Aero themes for Windows 7", description: "Dell's Windows 7 laptop wallpapers", link: "https://www.dell.com/community/en/conversations/windows-general/dell-aero-themes-windows-7/647f367bf4ccf8a8ded2ea8c", icon: "/icons/wallpaper.webp" },
     { name: "Crystal Icons Pack (Used for this site)", description: "An amazing glossy icons pack by Everaldo Coelho, I use them regularly (Soft Icons)", link: "https://www.softicons.com/designers/everaldo-coelho", icon: "/icons/globe2.webp" },
     { name: "Softicons", description: "Contains an archive of 2000+ icon packs, many of which are Aero and glossy (Soft Icons)", link: "https://www.softicons.com/", icon: "/icons/globe2.webp" },
     { name: "Windows 7 Icons", description: "All Windows 7 Icons (Virtual Customs)", link: "https://virtualcustoms.net/showthread.php/40369-Original-Windows-7-Icons", icon: "/icons/globe2.webp" },
@@ -26,7 +27,7 @@ export default function Resources() {
       <Helmet>
         <title>Resources | Frutiger Aero Hub</title>
 
-        <meta name="description" content="Browse curated Frutiger Aero resources including images, icons, sounds, and media inspired by nostalgic digital design and internet culture." />
+        <meta name="description" content="Browse curated Frutiger Aero resources including backgrounds, wallpapers, images, icons, sounds, and media inspired by nostalgic digital design and internet culture." />
 
         <link rel="canonical" href="https://frutiger-aero.online/resources" />
 
@@ -78,8 +79,8 @@ export default function Resources() {
         <div className="resource-banner">
           <div className="title">Teddy Says:</div>
           <span>
-            On this page, you can view the collection of Frutiger Aero Hub resources for you to use. It's full of images, videos, gifs, icons, sounds and more from the era. We don't own all of these, so they may be subject to copyright laws, but it should generally be okay to use
-            for your personal projects. There are even resources made by the creator of the hub! It is constantly updated, so be sure to check back later!
+            On this page, you can view the collection of Frutiger Aero Hub resources for you to use. It's full of backgrounds, wallpapers, images, videos, icons and more from the era. We don't own all of these, so they may be subject to copyright laws, but it should
+            generally be okay to use for your personal projects. There are even resources made by the creator of the hub! It is constantly updated, so be sure to check back later!
           </span>
         </div>
       </div>

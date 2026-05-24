@@ -71,9 +71,9 @@ export default function Main({ children }) {
 
   const themeArray = useMemo(
     () => [
-      { id: 1, label: "Default", icon: "/icons/pallette.webp", hue: 50 },
+      { id: 1, label: "Default", icon: "/icons/pallette.webp", hue: 0 },
       { id: 2, label: "Elixir", icon: "/icons/pallette.webp", hue: 70 },
-      { id: 3, label: "Cool Breeze", icon: "/icons/pallette.webp", hue: 0 },
+      { id: 3, label: "Cool Breeze", icon: "/icons/pallette.webp", hue: 50 },
       { id: 4, label: "Eco", icon: "/icons/pallette.webp", hue: 320 },
       { id: 5, label: "Mystic", icon: "/icons/pallette.webp", hue: 85 },
       { id: 6, label: "Autumn", icon: "/icons/pallette.webp", hue: 170 },
