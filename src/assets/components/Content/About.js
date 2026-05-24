@@ -75,7 +75,7 @@ export const content2 = `# History Of Frutiger Aero
     <img src="/aero-images/longhorndemo2.webp" />
    </div>
 
-  ## Windows Vista (2007)
+   ## **Windows Vista (2007)**
 
    Due to the previously mentioned ambitious features, Longhorn was scaled back a lot and became what we know today as **Windows Vista**, released in 2007. Vista still featured the aero glass windows, glow effects, animated UI elements etc but from the early concept videos its 
    clear to see that it definitely lacked the peaks of Longhorn's ambition. 
