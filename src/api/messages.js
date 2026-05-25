@@ -10,14 +10,21 @@ export const getMessages = async (limit = 5, offset = 0) => {
 
 export const addMessage = async (message, website, country, name, quote) => {
   const anonId = localStorage.getItem("temp_id");
-  return await supabase.from("guestbook").insert([
-    {
-      message,
-      name,
-      website: website ?? null,
-      country: country ?? null,
-      quote: quote ?? null,
-      anon_id: anonId,
+
+  const res = await fetch("/api/guestbook", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
     },
-  ]);
+    body: JSON.stringify({
+      message,
+      website,
+      country,
+      name,
+      quote,
+      anon_id: anonId,
+    }),
+  });
+
+  return await res.json();
 };
