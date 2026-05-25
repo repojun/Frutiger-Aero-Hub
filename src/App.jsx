@@ -16,6 +16,7 @@ import GuestBook from "./pages/content/GuestBook/GuestBook";
 import Apps from "./pages/content/Apps/Apps";
 import Project from "./pages/content/Project/Project";
 import MiniApp from "./pages/content/MiniApp/MiniApp";
+import PrivacyPolicy from "./pages/content/Privacy/Privacy";
 
 const PageFade = ({ children }) => (
   <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.2 }} style={{ position: "relative" }}>
@@ -28,22 +29,18 @@ function App() {
   const location = useLocation();
   useEffect(() => {
     const isMobile = () => window.innerWidth <= 768;
-  
+
     const updateScale = () => {
       if (isMobile()) return;
-  
-      const scale = Math.min(
-        window.innerWidth / 1440,
-        window.innerHeight / 900,
-        1
-      );
-  
+
+      const scale = Math.min(window.innerWidth / 1440, window.innerHeight / 900, 1);
+
       document.documentElement.style.setProperty("--app-scale", scale);
     };
-  
+
     updateScale();
     window.addEventListener("resize", updateScale);
-  
+
     return () => window.removeEventListener("resize", updateScale);
   }, []);
   return (
@@ -53,6 +50,14 @@ function App() {
       <Main>
         <AnimatePresence mode="wait">
           <Routes location={location} key={location.pathname}>
+            <Route
+              path="/privacy"
+              element={
+                <PageFade>
+                  <PrivacyPolicy />
+                </PageFade>
+              }
+            />
             <Route
               path="/"
               element={
