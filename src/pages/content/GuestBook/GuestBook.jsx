@@ -80,7 +80,7 @@ export default function GuestBook() {
 
   const submitMessage = async () => {
     // need to add something here to show th euser that the message was created
-    if ((message, name)) {
+    if (message && name) {
       try {
         const { error } = await addMessage(message, website, country, name, quote);
         if (error) throw error;
@@ -94,7 +94,7 @@ export default function GuestBook() {
           created_at: new Date().toISOString(),
         };
 
-        setMessages((prev) => [...prev, messageWithTimestamp]); // adding here isntead of reloading
+        setMessages((prev) => [messageWithTimestamp, ...prev]); // adding here isntead of reloading, need to make it append now bc we get the messages differently
       } catch (err) {
         console.log(err);
       } finally {
