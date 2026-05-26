@@ -24,7 +24,8 @@
     "react-snowfall": "^2.4.0",
     "react-toastify": "^11.0.5",
     "rehype-raw": "^7.0.0",
-    "vite-plugin-prerender": "^1.0.8"
+    "vite-plugin-prerender": "^1.0.8",
+    "vite-plugin-ssr": "^0.4.142"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",

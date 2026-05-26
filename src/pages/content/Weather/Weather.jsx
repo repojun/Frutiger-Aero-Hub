@@ -23,6 +23,17 @@ export default function Weather() {
   const condition = weather?.current;
   const USE_DATA = true;
 
+  // get weather initially and then also update it every 5 minutes (user feature request)
+  useEffect(() => {
+    getWeather();
+
+    const interval = setInterval(() => {
+      getWeather();
+    }, 5 * 60 * 1000); // this is 5 mins
+
+    return () => clearInterval(interval);
+  }, [location]);
+
   // use this to get the weather icon, checks if the condition text matches whatever weatherapi throws back & also changes the icon to a moon depending on the time
   const getWeatherIcon = (conditionText, timeString) => {
     const text = (conditionText || "").toLowerCase();
@@ -46,9 +57,6 @@ export default function Weather() {
         return isNight ? "Moon_Phase_Full.ico" : "default.ico";
     }
   };
-  useEffect(() => {
-    getWeather();
-  }, [location]);
 
   const getWeather = async () => {
     try {
