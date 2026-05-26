@@ -140,7 +140,7 @@ export default function Weather() {
   const handlePrev = () => setPage((prev) => Math.max(prev - 1, 0));
   const handleNext = () => setPage((prev) => Math.min(prev + 1, totalPages - 1));
 
-  if (!weather & !error)
+  if (!weather && !error)
     return (
       <>
         <div className="main-title">
