@@ -7,13 +7,23 @@ import { Helmet } from "react-helmet-async";
 
 export default function Weather() {
   const WEATHER_CACHE_KEY = "weather_cache";
-  const [location, setLocation] = useState(() => {
+
+  // getting weather prefrences
+  const getCached = () => {
     try {
-      return JSON.parse(localStorage.getItem(WEATHER_CACHE_KEY))?.location || "London";
+      return JSON.parse(localStorage.getItem(WEATHER_CACHE_KEY)) || {};
     } catch {
-      return "London";
+      return {};
     }
-  });
+  };
+
+  const cached = getCached();
+  // celsius (C) or Fahrenheit (F)
+  const [weatherMetric, setWeatherMetric] = useState(() => cached.weatherMetric || "C");
+  // MPH (M) or KMH (K)
+  const [speedMetric, setSpeedMetric] = useState(() => cached.speedMetric || "M");
+  // location, or default to London
+  const [location, setLocation] = useState(() => cached.location || "London");
 
   const [pendingLocation, setPendingLocation] = useState(location);
   const [weather, setWeather] = useState(null);
@@ -33,30 +43,6 @@ export default function Weather() {
 
     return () => clearInterval(interval);
   }, [location]);
-
-  // use this to get the weather icon, checks if the condition text matches whatever weatherapi throws back & also changes the icon to a moon depending on the time
-  const getWeatherIcon = (conditionText, timeString) => {
-    const text = (conditionText || "").toLowerCase();
-    const time = timeString?.split(" ")[1] || "12:00"; // gets the time n date (like 2026-02-03 12:00) then splits it by space, then gets the time only
-    const hour = parseInt(time.slice(0, 2), 10); // convert time to numbers by taking the first two
-    const isNight = hour < 6 || hour >= 20; // check if its night, if its night/dark roughly then use a moon icon instead
-
-    // must figure out why the patial rain arent working
-    switch (true) {
-      case text.includes("sunny") || text.includes("clear"):
-        return isNight ? "Moon_Phase_Full.ico" : "Sunny.ico";
-      case text.includes("partly cloudy"):
-        return isNight ? "Moon_Phase_Full.ico" : "Sun_Occasional.webp";
-      case text.includes("cloudy") || text.includes("overcast"):
-        return isNight ? "Moon_Phase_Full.ico" : "Overcast.ico";
-      case text.includes("mist"):
-        return "Moon_Phase_Full.ico";
-      case text.includes("rain") || text.includes("drizzle"):
-        return isNight ? "Night_Rain.ico" : "rain.png";
-      default:
-        return isNight ? "Moon_Phase_Full.ico" : "default.ico";
-    }
-  };
 
   const getWeather = async () => {
     try {
@@ -95,6 +81,8 @@ export default function Weather() {
             data,
             location,
             timestamp: Date.now(),
+            speedMetric,
+            weatherMetric,
           })
         );
       } else {
@@ -124,9 +112,45 @@ export default function Weather() {
     }
   };
 
+  // use this to get the weather icon, checks if the condition text matches whatever weatherapi throws back & also changes the icon to a moon depending on the time
+  const getWeatherIcon = (conditionText, timeString) => {
+    const text = (conditionText || "").toLowerCase();
+    const time = timeString?.split(" ")[1] || "12:00"; // gets the time n date (like 2026-02-03 12:00) then splits it by space, then gets the time only
+    const hour = parseInt(time.slice(0, 2), 10); // convert time to numbers by taking the first two
+    const isNight = hour < 6 || hour >= 20; // check if its night, if its night/dark roughly then use a moon icon instead
+
+    // must figure out why the patial rain arent working
+    switch (true) {
+      case text.includes("sunny") || text.includes("clear"):
+        return isNight ? "Moon_Phase_Full.ico" : "Sunny.ico";
+      case text.includes("partly cloudy"):
+        return isNight ? "Moon_Phase_Full.ico" : "Sun_Occasional.webp";
+      case text.includes("cloudy") || text.includes("overcast"):
+        return isNight ? "Moon_Phase_Full.ico" : "Overcast.ico";
+      case text.includes("mist"):
+        return "Moon_Phase_Full.ico";
+      case text.includes("rain") || text.includes("drizzle"):
+        return isNight ? "Night_Rain.ico" : "rain.png";
+      default:
+        return isNight ? "Moon_Phase_Full.ico" : "default.ico";
+    }
+  };
+
   const editLocation = () => {
     SoundPlayer("clickxp_r", 0.6, "mp3");
     setModal(!modal);
+
+    const existing = JSON.parse(localStorage.getItem(WEATHER_CACHE_KEY)) || {};
+    const updated = {
+      ...existing,
+      location: pendingLocation,
+      speedMetric,
+      weatherMetric,
+    };
+
+    localStorage.setItem(WEATHER_CACHE_KEY, JSON.stringify(updated));
+
+    setLocation(pendingLocation);
   };
 
   const [page, setPage] = useState(1);
@@ -242,6 +266,22 @@ export default function Weather() {
                   }}
                 />
 
+                <div className="weather-button-container">
+                  <div className={speedMetric == "M" ? "weather-button" : "weather-button off"} onClick={() => setSpeedMetric("M")}>
+                    Mp/h
+                  </div>
+                  <div className={speedMetric == "K" ? "weather-button" : "weather-button off"} onClick={() => setSpeedMetric("K")}>
+                    Km/h
+                  </div>
+                </div>
+                <div className="weather-button-container">
+                  <div className={weatherMetric == "C" ? "weather-button" : "weather-button off"} onClick={() => setWeatherMetric("C")}>
+                    Celsius
+                  </div>
+                  <div className={weatherMetric == "F" ? "weather-button" : "weather-button off"} onClick={() => setWeatherMetric("F")}>
+                    Fahrenheit
+                  </div>
+                </div>
                 <div
                   className="submit-button"
                   style={{ height: "3rem", width: "8rem" }}
@@ -281,21 +321,22 @@ export default function Weather() {
 
                 {!error && weather?.current?.temp_c && (
                   <>
-                    <p className="celsius">{weather?.current?.temp_c}°C</p>
+                    <p className="celsius">{weatherMetric === "C" ? `${weather?.current?.temp_c}°C` : `${weather?.current?.temp_f}°F`}</p>
 
                     <p className="condition">{weather?.current?.condition?.text}</p>
 
-                    <p className="feels-like">Feels like {weather?.current?.feelslike_c}°C</p>
+                    <p className="feels-like">Feels like {weatherMetric === "C" ? `${weather?.current?.feelslike_c}°C` : `${weather?.current?.feelslike_f}°F`}</p>
                   </>
                 )}
               </div>
             </div>
-
+            {/* very messy implementation, but it'll do for now
+            note to self: should turn this into component/function */}
             {!error && weather?.current?.temp_c && (
               <div className="metrics-grid">
                 <div>
                   <div className="metric-title">Wind</div>
-                  <div className="metric-stat">{condition?.wind_mph}mp/h</div>
+                  <div className="metric-stat">{speedMetric === "M" ? `${condition?.wind_mph} mp/h` : `${condition?.wind_kph} km/h`}</div>
                 </div>
 
                 <div>
@@ -305,7 +346,7 @@ export default function Weather() {
 
                 <div>
                   <div className="metric-title">Heat Index</div>
-                  <div className="metric-stat">{condition?.heatindex_c}°C</div>
+                  <div className="metric-stat">{weatherMetric === "C" ? `${condition?.heatindex_c}°C` : `${condition?.heatindex_f}°F`}</div>
                 </div>
 
                 <div>
@@ -315,12 +356,12 @@ export default function Weather() {
 
                 <div>
                   <div className="metric-title">Gust</div>
-                  <div className="metric-stat">{condition?.gust_mph}mp/h</div>
+                  <div className="metric-stat">{speedMetric === "M" ? `${condition?.gust_mph} mp/h` : `${condition?.gust_kph} km/h`}</div>
                 </div>
 
                 <div>
                   <div className="metric-title">Visibility</div>
-                  <div className="metric-stat">{condition?.vis_km}km</div>
+                  <div className="metric-stat">{condition?.vis_km} km</div>
                 </div>
 
                 <div>
@@ -330,7 +371,7 @@ export default function Weather() {
 
                 <div>
                   <div className="metric-title">Precipitation</div>
-                  <div className="metric-stat">{condition?.precip_mm}mm</div>
+                  <div className="metric-stat">{condition?.precip_mm} mm</div>
                 </div>
               </div>
             )}
@@ -344,7 +385,7 @@ export default function Weather() {
 
               {currentHours.map((hour) => (
                 <div key={hour.time_epoch} className="weather-card">
-                  <div>{Math.round(hour.temp_c)}°C</div>
+                  <div>{weatherMetric === "C" ? `${Math.round(hour.temp_c)}°C` : `${Math.round(hour.temp_f)}°F`}</div>
 
                   <img src={`/icons/weather/${getWeatherIcon(hour?.condition?.text, hour?.time)}`} alt={hour?.condition?.text} className="forecast-icon" />
 

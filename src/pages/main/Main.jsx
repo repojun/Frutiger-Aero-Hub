@@ -10,6 +10,7 @@ import { shopContent } from "../../assets/components/Content/Shop";
 import { Helmet } from "react-helmet-async";
 
 export default function Main({ children }) {
+  const [sidebar, setSidebar] = useState(true);
   const location = useLocation();
   const divRef = useRef(null);
   const [open, setOpen] = useState(false);
@@ -207,113 +208,116 @@ export default function Main({ children }) {
         <div className="circle" />
         <div className="circle2" />
         <div className="body-container">
-          <div className="side-bar">
-            <div className="store-icon-container">
-              <div className="store-icon">
-                <img src="/icons/globe.webp"></img>
+          {sidebar && (
+            <div className="side-bar">
+              <div className="store-icon-container">
+                <div className="store-icon">
+                  <img src="/icons/globe.webp"></img>
+                </div>
               </div>
-            </div>
 
-            <div className="side-bar-welcome">FrutigerOS Beta</div>
-            <div className="side-divider"></div>
-            <div className="button-container">
-              <Link className="skeuButton" to={"/"}>
-                <img className="icon" src="/icons/login.webp" />
-                <div className="skeuButtonBody">Home</div>
-              </Link>
-              <a className="skeuButton" href="https://www.craftedbyarjun.com/" target="_blank" rel="noopener noreferrer">
-                <img className="icon" src="/icons/profile.webp" />
-                <div className="skeuButtonBody">My Portfolio</div>
+              <div className="side-bar-welcome">FrutigerOS Beta</div>
+              <div className="side-divider"></div>
+              <div className="button-container">
+                <Link className="skeuButton" to={"/"}>
+                  <img className="icon" src="/icons/login.webp" />
+                  <div className="skeuButtonBody">Home</div>
+                </Link>
+                <a className="skeuButton" href="https://www.craftedbyarjun.com/" target="_blank" rel="noopener noreferrer">
+                  <img className="icon" src="/icons/profile.webp" />
+                  <div className="skeuButtonBody">My Portfolio</div>
+                </a>
+                <a className="skeuButton" href="https://www.instagram.com/xpromised_futurex/" target="_blank" rel="noopener noreferrer">
+                  <img className="icon" src="/icons/instagram.webp" />
+                  <div className="skeuButtonBody">Aero Insta</div>
+                </a>
+                <div
+                  className="skeuButton"
+                  onClick={() => {
+                    if (modal) {
+                      console.log("nothing to see here.");
+                    } else {
+                      toggleModal({
+                        title: "Frutiger Shop - Coming Soon!",
+                        image: "",
+                        type: "Credits",
+                        description: shopContent,
+                        array: [],
+                      });
+                    }
+                  }}
+                >
+                  <img className="icon" src="/icons/cartIcon.webp" />
+                  <div className="skeuButtonBody">Shop</div>
+                </div>
+              </div>
+              <div className="side-divider"></div>
+
+              <div className="grid">
+                <div
+                  className="button"
+                  onClick={() => {
+                    if (modal) {
+                      console.log("nothing to see here.");
+                    } else {
+                      toggleModal({
+                        title: "About",
+                        image: "",
+                        description: about,
+                        link: "https://www.craftedbyarjun.com/",
+                        type: "About",
+                        array: [],
+                      });
+                    }
+                  }}
+                >
+                  <img className="icon" style={{ width: "3.3rem" }} src="/icons/information.webp" />
+                </div>
+                <div
+                  className="button"
+                  onClick={() => {
+                    if (modal) {
+                      console.log("nothing to see here.");
+                    } else {
+                      toggleModal({ title: "Music", type: "musicButton", array: musicArray });
+                    }
+                  }}
+                >
+                  <img className="icon" style={{ width: "3.6rem" }} src="/icons/musica.webp" />
+                </div>
+                <div
+                  className="button"
+                  onClick={() => {
+                    if (modal) {
+                      console.log("nothing to see here.");
+                    } else {
+                      toggleModal({ title: "Themes (EXPERIMENTAL HUE CHANGER) ", type: "themeButton", array: themeArray });
+                    }
+                  }}
+                >
+                  <img className="icon" src="/icons/pallette.webp" style={{ width: "3.5rem" }} />
+                </div>
+
+                <div
+                  className="button"
+                  onClick={() => {
+                    if (modal) {
+                      console.log("nothing to see here.");
+                    } else {
+                      toggleModal({ title: "Backgrounds", type: "backgroundButton", array: backgroundArray });
+                    }
+                  }}
+                >
+                  <img className="icon" style={{ width: "3.7rem" }} src="/icons/wallpaper.webp" />
+                </div>
+              </div>
+              <div className="side-divider"></div>
+              <a className="subtext" href="https://www.craftedbyarjun.com/" target="_blank" rel="noopener noreferrer">
+                Website Created By Arjun
               </a>
-              <a className="skeuButton" href="https://www.instagram.com/xpromised_futurex/" target="_blank" rel="noopener noreferrer">
-                <img className="icon" src="/icons/instagram.webp" />
-                <div className="skeuButtonBody">Aero Insta</div>
-              </a>
-              <div
-                className="skeuButton"
-                onClick={() => {
-                  if (modal) {
-                    console.log("nothing to see here.");
-                  } else {
-                    toggleModal({
-                      title: "Frutiger Shop - Coming Soon!",
-                      image: "",
-                      type: "Credits",
-                      description: shopContent,
-                      array: [],
-                    });
-                  }
-                }}
-              >
-                <img className="icon" src="/icons/cartIcon.webp" />
-                <div className="skeuButtonBody">Shop</div>
-              </div>
             </div>
-            <div className="side-divider"></div>
+          )}
 
-            <div className="grid">
-              <div
-                className="button"
-                onClick={() => {
-                  if (modal) {
-                    console.log("nothing to see here.");
-                  } else {
-                    toggleModal({
-                      title: "About",
-                      image: "",
-                      description: about,
-                      link: "https://www.craftedbyarjun.com/",
-                      type: "About",
-                      array: [],
-                    });
-                  }
-                }}
-              >
-                <img className="icon" style={{ width: "3.3rem" }} src="/icons/information.webp" />
-              </div>
-              <div
-                className="button"
-                onClick={() => {
-                  if (modal) {
-                    console.log("nothing to see here.");
-                  } else {
-                    toggleModal({ title: "Music", type: "musicButton", array: musicArray });
-                  }
-                }}
-              >
-                <img className="icon" style={{ width: "3.6rem" }} src="/icons/musica.webp" />
-              </div>
-              <div
-                className="button"
-                onClick={() => {
-                  if (modal) {
-                    console.log("nothing to see here.");
-                  } else {
-                    toggleModal({ title: "Themes (EXPERIMENTAL HUE CHANGER) ", type: "themeButton", array: themeArray });
-                  }
-                }}
-              >
-                <img className="icon" src="/icons/pallette.webp" style={{ width: "3.5rem" }} />
-              </div>
-
-              <div
-                className="button"
-                onClick={() => {
-                  if (modal) {
-                    console.log("nothing to see here.");
-                  } else {
-                    toggleModal({ title: "Backgrounds", type: "backgroundButton", array: backgroundArray });
-                  }
-                }}
-              >
-                <img className="icon" style={{ width: "3.7rem" }} src="/icons/wallpaper.webp" />
-              </div>
-            </div>
-            <div className="side-divider"></div>
-            <a className="subtext" href="https://www.craftedbyarjun.com/" target="_blank" rel="noopener noreferrer">
-              Website Created By Arjun
-            </a>
-          </div>
           <div className="box-wrapper">
             <div className="tabs">
               {tabs.map((tab) => (
@@ -375,6 +379,9 @@ export default function Main({ children }) {
             </div>
 
             <div className="main-box">
+              <div className="close-bar" onClick={() => setSidebar(!sidebar)}>
+                Toggle Sidebar
+              </div>
               <div style={{ minHeight: "0" }}>{children}</div>
             </div>
           </div>

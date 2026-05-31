@@ -558,6 +558,14 @@ body {
   z-index: 1;
   box-sizing: border-box;
   overflow: hidden;
+
+  .close-bar {
+    display: none;
+    position: absolute;
+    left: 2%;
+    top: 1%;
+    font-size: 1rem;
+  }
   @media (max-width: 768px) {
     width: 40rem;
     max-width: 90vw;
