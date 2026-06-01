@@ -136,21 +136,28 @@ export default function Weather() {
     }
   };
 
+  useEffect(() => {
+    const existing = JSON.parse(localStorage.getItem(WEATHER_CACHE_KEY)) || {};
+
+    localStorage.setItem(
+      WEATHER_CACHE_KEY,
+      JSON.stringify({
+        ...existing,
+        location,
+        speedMetric,
+        weatherMetric,
+      })
+    );
+  }, [location, speedMetric, weatherMetric]);
+
   const editLocation = () => {
     SoundPlayer("clickxp_r", 0.6, "mp3");
-    setModal(!modal);
 
-    const existing = JSON.parse(localStorage.getItem(WEATHER_CACHE_KEY)) || {};
-    const updated = {
-      ...existing,
-      location: pendingLocation,
-      speedMetric,
-      weatherMetric,
-    };
-
-    localStorage.setItem(WEATHER_CACHE_KEY, JSON.stringify(updated));
+    setModal((prev) => !prev);
+    console.log(pendingLocation)
 
     setLocation(pendingLocation);
+    console.log(pendingLocation)
   };
 
   const [page, setPage] = useState(1);
@@ -286,7 +293,6 @@ export default function Weather() {
                   className="submit-button"
                   style={{ height: "3rem", width: "8rem" }}
                   onClick={() => {
-                    setLocation(pendingLocation);
                     editLocation();
                   }}
                 >
