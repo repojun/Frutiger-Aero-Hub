@@ -60,6 +60,50 @@ export default function About() {
   }, [images]);
   return (
     <>
+      <Helmet>
+        <title>What is Frutiger Aero? | Frutiger Aero Hub</title>
+
+        <meta name="description" content="Learn what the Frutiger Aero aesthetic is, including its visual style, examples, and influence on nostalgic UI and internet design culture." />
+
+        <link rel="canonical" href="https://frutiger-aero.online/about" />
+
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="Frutiger Aero Hub" />
+        <meta name="theme-color" content="#7fd1ff" />
+
+        <meta name="keywords" content="frutiger aero, frutiger aero aesthetic, web design history, ui design, skeuomorphism, 2000s internet, glass design, aqua ui, nostalgic ui design" />
+
+        <meta property="og:title" content="What is Frutiger Aero?" />
+        <meta property="og:description" content="An explanation of the Frutiger Aero aesthetic, its visuals, and its influence on UI and internet design culture." />
+        <meta property="og:image" content="https://frutiger-aero.online/og/OpenGraph.png" />
+        <meta property="og:url" content="https://frutiger-aero.online/about" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Frutiger Aero Hub" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="What is Frutiger Aero?" />
+        <meta name="twitter:description" content="An explanation of the Frutiger Aero aesthetic, its visuals, and its influence on UI and internet design culture." />
+        <meta name="twitter:image" content="https://frutiger-aero.online/og/OpenGraph.png" />
+
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "@id": "https://frutiger-aero.online/about#webpage",
+            name: "What is Frutiger Aero?",
+            description: "Learn what the Frutiger Aero aesthetic is, including its visual style, examples, and influence on nostalgic UI and internet design culture.",
+            url: "https://frutiger-aero.online/about",
+            isPartOf: {
+              "@id": "https://frutiger-aero.online/#website",
+            },
+            publisher: {
+              "@type": "Organization",
+              "@id": "https://frutiger-aero.online/#website",
+              name: "Frutiger Aero Hub",
+            },
+          })}
+        </script>
+      </Helmet>
       <AnimatePresence>
         {modal && (
           <motion.div className="about-modal-container" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.15 }}>
@@ -118,53 +162,9 @@ export default function About() {
           </motion.div>
         )}
       </AnimatePresence>
-      <Helmet>
-        <title>What is Frutiger Aero? | Frutiger Aero Hub</title>
-
-        <meta name="description" content="Learn what the Frutiger Aero aesthetic is, including its visual style, examples, and influence on nostalgic UI and internet design culture." />
-
-        <link rel="canonical" href="https://frutiger-aero.online/about" />
-
-        <meta name="robots" content="index, follow" />
-        <meta name="author" content="Frutiger Aero Hub" />
-        <meta name="theme-color" content="#7fd1ff" />
-
-        <meta name="keywords" content="frutiger aero, frutiger aero aesthetic, web design history, ui design, skeuomorphism, 2000s internet, glass design, aqua ui, nostalgic ui design" />
-
-        <meta property="og:title" content="What is Frutiger Aero?" />
-        <meta property="og:description" content="An explanation of the Frutiger Aero aesthetic, its visuals, and its influence on UI and internet design culture." />
-        <meta property="og:image" content="https://frutiger-aero.online/og/OpenGraph.png" />
-        <meta property="og:url" content="https://frutiger-aero.online/about" />
-        <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Frutiger Aero Hub" />
-
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="What is Frutiger Aero?" />
-        <meta name="twitter:description" content="An explanation of the Frutiger Aero aesthetic, its visuals, and its influence on UI and internet design culture." />
-        <meta name="twitter:image" content="https://frutiger-aero.online/og/OpenGraph.png" />
-
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "WebPage",
-            "@id": "https://frutiger-aero.online/about#webpage",
-            name: "What is Frutiger Aero?",
-            description: "Learn what the Frutiger Aero aesthetic is, including its visual style, examples, and influence on nostalgic UI and internet design culture.",
-            url: "https://frutiger-aero.online/about",
-            isPartOf: {
-              "@id": "https://frutiger-aero.online/#website",
-            },
-            publisher: {
-              "@type": "Organization",
-              "@id": "https://frutiger-aero.online/#website",
-              name: "Frutiger Aero Hub",
-            },
-          })}
-        </script>
-      </Helmet>
 
       <div className="main-title">
-        <span>What is Frutiger Aero?</span>
+        <h1>What is Frutiger Aero?</h1>
       </div>
       <div className="divider"></div>
       <div className="scrollable">
