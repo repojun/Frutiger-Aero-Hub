@@ -66,7 +66,7 @@ export default function Resources() {
         </script>
       </Helmet>
       <div className="main-title">
-        <span>Resources</span>
+        <h1>Resources</h1>
       </div>
       <div className="divider"></div>
       <div className="resource-header-flex">
@@ -79,8 +79,8 @@ export default function Resources() {
         <div className="resource-banner">
           <div className="title">Teddy Says:</div>
           <span>
-            On this page, you can view the collection of Frutiger Aero Hub resources for you to use. It's full of backgrounds, wallpapers, images, videos, icons and more from the era. We don't own all of these, so they may be subject to copyright laws, but it should
-            generally be okay to use for your personal projects. There are even resources made by the creator of the hub! It is constantly updated, so be sure to check back later!
+            On this page, you can view the collection of Frutiger Aero Hub resources for you to use. It's full of backgrounds, wallpapers, images, videos, icons and more from the era. We don't own all of these, so they may be subject to copyright laws, but it should generally be
+            okay to use for your personal projects. There are even resources made by the creator of the hub! It is constantly updated, so be sure to check back later!
           </span>
         </div>
       </div>

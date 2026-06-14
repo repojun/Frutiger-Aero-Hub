@@ -306,7 +306,7 @@ export default function Weather() {
       </AnimatePresence>
 
       <div className="main-title">
-        <span>Weather Tab</span>
+        <h1>Weather Tab</h1>
       </div>
 
       <div className="divider"></div>

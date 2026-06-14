@@ -56,7 +56,7 @@ export default function MiniApp() {
           })}
         </script>
       </Helmet>
-      <div className="main-title-project">
+      <h1 className="main-title-project">
         <Link
           className="back-button"
           to="/apps"
@@ -69,7 +69,7 @@ export default function MiniApp() {
           &nbsp;Back
         </Link>
         {miniApp.name}
-      </div>
+      </h1>
       <div className="divider"></div>
       <div className="iframe-wrapper">
         <iframe src={miniApp.url} width="900" height="600" frameborder="0"></iframe>{" "}

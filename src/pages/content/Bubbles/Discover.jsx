@@ -48,7 +48,7 @@ export default function Discover() {
         </script>
       </Helmet>
       <div className="main-title">
-        <span>Discover Aero Content</span>
+        <h1>Discover Aero Content</h1>
       </div>
       <div className="divider"></div>
       <div className="resource-header-flex">
