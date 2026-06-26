@@ -1,6 +1,6 @@
 import "./GuestBook.scss";
 import { useEffect, useState } from "react";
-import { getMessages, addMessage } from "../../../api/messages";
+import { getMessages, addMessage, getMessageCount } from "../../../api/messages";
 import { showErrorToast, showToast } from "../../../assets/components/Toast/Toast";
 import { Helmet } from "react-helmet-async";
 export default function GuestBook() {
@@ -14,6 +14,7 @@ export default function GuestBook() {
   const [loading, setLoading] = useState(true);
   const [hasMore, setHasMore] = useState(true);
   const [page, setPage] = useState(0);
+  const [messageCount, setMessageCount] = useState(0);
   const limit = 5;
 
   const CACHE_KEY = "messages_cache";
@@ -95,6 +96,7 @@ export default function GuestBook() {
         };
 
         setMessages((prev) => [messageWithTimestamp, ...prev]); // adding here isntead of reloading, need to make it append now bc we get the messages differently
+        setMessageCount((prev) => prev + 1);
       } catch (err) {
         console.log(err);
       } finally {
@@ -142,6 +144,7 @@ export default function GuestBook() {
 
   useEffect(() => {
     loadMessages();
+    setMessageCount(getMessageCount());
   }, []);
 
   return (
@@ -191,7 +194,6 @@ export default function GuestBook() {
         <div className="main-guest-title" role="heading" aria-level="1">
           Guest Book
         </div>
-
         <div className="guest-scrollable">
           <div className="guest-divider" />
 
@@ -259,58 +261,63 @@ export default function GuestBook() {
           <div className="guest-divider" />
 
           {loading ? (
-            <div>Loading Messages...</div>
+            <div style={{ marginTop: "-1.5rem" }}>Loading Messages...</div>
           ) : (
-            <div className="messages">
-              {/* only doing certain amount of messages per page to save calls / data transfer */}
-              {messages.map((msg, i) => (
-                <div className="message" key={i}>
-                  <div className="timestamp">{new Date(msg.created_at).toLocaleString()}</div>
+            <>
+              <div className="message-count">
+                There are currently <span>{messageCount}</span> messages!
+              </div>
+              <div className="messages">
+                {/* only doing certain amount of messages per page to save calls / data transfer */}
+                {messages.map((msg, i) => (
+                  <div className="message" key={i}>
+                    <div className="timestamp">{new Date(msg.created_at).toLocaleString()}</div>
 
-                  {msg.name && (
-                    <div>
-                      <span className="title">Name:</span> {msg.name}
-                    </div>
-                  )}
+                    {msg.name && (
+                      <div>
+                        <span className="title">Name:</span> {msg.name}
+                      </div>
+                    )}
 
-                  {msg.country && (
-                    <div>
-                      <span className="title">Country:</span> {msg.country}
-                    </div>
-                  )}
+                    {msg.country && (
+                      <div>
+                        <span className="title">Country:</span> {msg.country}
+                      </div>
+                    )}
 
-                  {msg.website && (
-                    <div>
-                      <span className="title">Website:</span> {msg.website}
-                    </div>
-                  )}
+                    {msg.website && (
+                      <div>
+                        <span className="title">Website:</span> {msg.website}
+                      </div>
+                    )}
 
-                  {msg.quote && (
-                    <div>
-                      <span className="title">Advice/Quote:</span> {msg.quote}
-                    </div>
-                  )}
+                    {msg.quote && (
+                      <div>
+                        <span className="title">Advice/Quote:</span> {msg.quote}
+                      </div>
+                    )}
 
-                  {msg.message && (
-                    <div>
-                      <span className="title">Message:</span> {msg.message}
-                    </div>
-                  )}
-                  {msg.reply && (
-                    <div>
-                      <span className="reply">Reply from Bahpu:</span> <span className="reply-message">"{msg.reply}"</span>
-                    </div>
-                  )}
-                </div>
-              ))}
-              {hasMore && (
-                <div className="submit-button" onClick={loadMore} style={{ width: "10rem" }}>
-                  <img src="icons/forward.webp" className="icon" alt="Load More Button" />
+                    {msg.message && (
+                      <div>
+                        <span className="title">Message:</span> {msg.message}
+                      </div>
+                    )}
+                    {msg.reply && (
+                      <div>
+                        <span className="reply">Reply from Bahpu:</span> <span className="reply-message">"{msg.reply}"</span>
+                      </div>
+                    )}
+                  </div>
+                ))}
+                {hasMore && (
+                  <div className="submit-button" onClick={loadMore} style={{ width: "10rem" }}>
+                    <img src="icons/forward.webp" className="icon" alt="Load More Button" />
 
-                  <span>Load More</span>
-                </div>
-              )}
-            </div>
+                    <span>Load More</span>
+                  </div>
+                )}
+              </div>
+            </>
           )}
         </div>
       </div>

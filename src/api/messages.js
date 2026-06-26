@@ -28,3 +28,11 @@ export const addMessage = async (message, website, country, name, quote) => {
 
   return await res.json();
 };
+
+export const getMessageCount = async () => {
+  const { count, error } = await supabase.from("guestbook").select("*", { count: "exact", head: true });
+
+  if (error) throw error;
+
+  return count;
+};

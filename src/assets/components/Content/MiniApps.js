@@ -43,7 +43,6 @@ export const miniApps = [
   },
 
   // https://www.addictinggames.com/embed/html5-games/20543 -- bloons
-
 ].map((project) => ({
   ...project,
   slug: project.name.toLowerCase().replace(/\s+/g, "-"),
