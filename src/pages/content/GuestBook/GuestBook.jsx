@@ -143,8 +143,14 @@ export default function GuestBook() {
   }, []);
 
   useEffect(() => {
-    loadMessages();
-    setMessageCount(getMessageCount());
+    const init = async () => {
+      await loadMessages();
+
+      const count = await getMessageCount();
+      setMessageCount(count ?? 0);
+    };
+
+    init();
   }, []);
 
   return (
