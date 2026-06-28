@@ -24,6 +24,12 @@ export const miniApps = [
     url: "https://winxp.vercel.app/",
   },
   {
+    id: "win7",
+    name: "Windows 7 Simulator",
+    image: "/apps/win7.webp",
+    url: "https://nainemom.github.io/win7/",
+  },
+  {
     id: "pointerpointer",
     name: "Pointer Pointer",
     image: "/apps/pointer.webp",
