@@ -94,14 +94,15 @@ export default function GuestBook() {
           quote,
           created_at: new Date().toISOString(),
         };
+        setSent(true);
 
         setMessages((prev) => [messageWithTimestamp, ...prev]); // adding here isntead of reloading, need to make it append now bc we get the messages differently
         setMessageCount((prev) => prev + 1);
       } catch (err) {
         console.log(err);
+        setSent(false);
       } finally {
         showToast("Message Submitted!");
-        setSent(true);
         localStorage.setItem("messageSentAt", Date.now().toString());
       }
     } else {
