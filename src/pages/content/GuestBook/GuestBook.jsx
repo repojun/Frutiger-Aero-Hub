@@ -80,6 +80,7 @@ export default function GuestBook() {
   };
 
   const submitMessage = async () => {
+    setSent(true);
     // need to add something here to show th euser that the message was created
     if (message && name) {
       try {
@@ -98,15 +99,16 @@ export default function GuestBook() {
 
         setMessages((prev) => [messageWithTimestamp, ...prev]); // adding here isntead of reloading, need to make it append now bc we get the messages differently
         setMessageCount((prev) => prev + 1);
+        showToast("Message Submitted!");
       } catch (err) {
-        console.log(err);
+        showErrorToast("An error occured :(");
         setSent(false);
       } finally {
-        showToast("Message Submitted!");
         localStorage.setItem("messageSentAt", Date.now().toString());
       }
     } else {
       showErrorToast("Fill all required fields!");
+      setSent(false);
     }
   };
 
