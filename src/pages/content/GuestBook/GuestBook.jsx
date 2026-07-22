@@ -314,7 +314,7 @@ export default function GuestBook() {
 
                     {msg.referralSource && (
                       <div>
-                        <span className="title">Referral::</span> {msg.referralSource}
+                        <span className="title">Referral:</span> {msg.referralSource}
                       </div>
                     )}
 
