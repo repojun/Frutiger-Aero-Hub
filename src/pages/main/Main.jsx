@@ -9,7 +9,7 @@ import { about } from "../../assets/components/Content/About";
 import { shopContent } from "../../assets/components/Content/Shop";
 import { Helmet } from "react-helmet-async";
 
-export default function Main({ children }) {
+export default function Main({ children, type = "default" }) {
   const [sidebar, setSidebar] = useState(true);
   const location = useLocation();
   const divRef = useRef(null);

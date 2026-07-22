@@ -8,6 +8,7 @@ export default function GuestBook() {
   const [quote, setQuote] = useState("");
   const [message, setMessage] = useState("");
   const [country, setCountry] = useState("");
+  const [referralSource, setReferralSource] = useState("");
   const [name, setName] = useState("");
   const [website, setWebsite] = useState("");
   const [sent, setSent] = useState(false);
@@ -84,7 +85,7 @@ export default function GuestBook() {
     // need to add something here to show th euser that the message was created
     if (message && name) {
       try {
-        const { error } = await addMessage(message, website, country, name, quote);
+        const { error } = await addMessage(message, website, country, name, quote, referralSource);
         if (error) throw error;
 
         const messageWithTimestamp = {
@@ -93,6 +94,7 @@ export default function GuestBook() {
           country,
           name,
           quote,
+          referralSource,
           created_at: new Date().toISOString(),
         };
         setSent(true);
@@ -231,11 +233,21 @@ export default function GuestBook() {
               <div className="guest-input-container">
                 <input className={sent ? "text-input disabled" : "text-input"} placeholder="Website (Optional)" name="website" value={website} onChange={(e) => setWebsite(e.target.value)} disabled={sent} aria-label="Website" />
               </div>
-
               <div className="guest-input-container">
                 <input
                   className={sent ? "text-input disabled" : "text-input"}
-                  placeholder="If you could give advice to the world..."
+                  placeholder="How did you discover this website? (optional)"
+                  name="referralSource"
+                  value={referralSource}
+                  onChange={(e) => setReferralSource(e.target.value)}
+                  disabled={sent}
+                  aria-label="referralSource"
+                />
+              </div>
+              <div className="guest-input-container">
+                <input
+                  className={sent ? "text-input disabled" : "text-input"}
+                  placeholder="If you could give advice to the world... (optional)"
                   name="quote"
                   value={quote}
                   onChange={(e) => setQuote(e.target.value)}
@@ -297,6 +309,12 @@ export default function GuestBook() {
                     {msg.website && (
                       <div>
                         <span className="title">Website:</span> {msg.website}
+                      </div>
+                    )}
+
+                    {msg.referralSource && (
+                      <div>
+                        <span className="title">Referral::</span> {msg.referralSource}
                       </div>
                     )}
 

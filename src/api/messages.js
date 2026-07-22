@@ -8,7 +8,7 @@ export const getMessages = async (limit = 5, offset = 0) => {
     .range(offset, offset + limit - 1); // "only give me rows from Index X to Index Y", in this case, 0 -> 4, on the front end it will keep increasing the "limit" for every new page
 };
 
-export const addMessage = async (message, website, country, name, quote) => {
+export const addMessage = async (message, website, country, name, quote, referralSource) => {
   const anonId = localStorage.getItem("temp_id");
 
   const res = await fetch("/api/guestbook", {
@@ -22,6 +22,7 @@ export const addMessage = async (message, website, country, name, quote) => {
       country,
       name,
       quote,
+      referral_source: referralSource,
       anon_id: anonId,
     }),
   });
