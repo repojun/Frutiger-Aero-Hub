@@ -83,7 +83,7 @@ export default function GuestBook() {
   const submitMessage = async () => {
     setSent(true);
     // need to add something here to show th euser that the message was created
-    if (message && name) {
+    if (message && name && referralSource) {
       try {
         const { error } = await addMessage(message, website, country, name, quote, referralSource);
         if (error) throw error;
@@ -234,15 +234,7 @@ export default function GuestBook() {
                 <input className={sent ? "text-input disabled" : "text-input"} placeholder="Website (Optional)" name="website" value={website} onChange={(e) => setWebsite(e.target.value)} disabled={sent} aria-label="Website" />
               </div>
               <div className="guest-input-container">
-                <input
-                  className={sent ? "text-input disabled" : "text-input"}
-                  placeholder="How did you discover this website? (optional)"
-                  name="referralSource"
-                  value={referralSource}
-                  onChange={(e) => setReferralSource(e.target.value)}
-                  disabled={sent}
-                  aria-label="referralSource"
-                />
+                <input className={sent ? "text-input disabled" : "text-input"} placeholder="How did you find this website?" name="referralSource" value={referralSource} onChange={(e) => setReferralSource(e.target.value)} disabled={sent} aria-label="referralSource" />
               </div>
               <div className="guest-input-container">
                 <input
