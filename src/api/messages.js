@@ -4,6 +4,7 @@ export const getMessages = async (limit = 5, offset = 0) => {
   return await supabase
     .from("guestbook")
     .select("*") // get everything
+    .neq("hidden", true) // hide rows where hidden is "true"; null/false are included in our messages
     .order("created_at", { ascending: false }) // newest messages first
     .range(offset, offset + limit - 1); // "only give me rows from Index X to Index Y", in this case, 0 -> 4, on the front end it will keep increasing the "limit" for every new page
 };
