@@ -9,8 +9,10 @@ export const getMessages = async (limit = 5, offset = 0) => {
     .range(offset, offset + limit - 1); // "only give me rows from Index X to Index Y", in this case, 0 -> 4, on the front end it will keep increasing the "limit" for every new page
 };
 
-export const addMessage = async (message, website, country, name, quote, referralSource) => {
+export const addMessage = async (message, website, country, name, quote, referral_source) => {
   const anonId = localStorage.getItem("temp_id");
+
+  console.log("Referral source before sending:", referral_source);
 
   const res = await fetch("/api/guestbook", {
     method: "POST",
@@ -23,12 +25,14 @@ export const addMessage = async (message, website, country, name, quote, referra
       country,
       name,
       quote,
-      referral_source: referralSource,
+      referral_source,
       anon_id: anonId,
     }),
   });
 
-  return await res.json();
+  const text = await res.text();
+  console.log("API response body:", text);
+  return text ? JSON.parse(text) : {};
 };
 
 export const getMessageCount = async () => {

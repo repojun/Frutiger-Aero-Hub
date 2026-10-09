@@ -8,7 +8,7 @@ export default function GuestBook() {
   const [quote, setQuote] = useState("");
   const [message, setMessage] = useState("");
   const [country, setCountry] = useState("");
-  const [referralSource, setReferralSource] = useState("");
+  const [referral_source, setreferral_source] = useState("");
   const [name, setName] = useState("");
   const [website, setWebsite] = useState("");
   const [sent, setSent] = useState(false);
@@ -83,9 +83,9 @@ export default function GuestBook() {
   const submitMessage = async () => {
     setSent(true);
     // need to add something here to show th euser that the message was created
-    if (message && name && referralSource) {
+    if (message && name && referral_source) {
       try {
-        const { error } = await addMessage(message, website, country, name, quote, referralSource);
+        const { error } = await addMessage(message, website, country, name, quote, referral_source);
         if (error) throw error;
 
         const messageWithTimestamp = {
@@ -94,7 +94,7 @@ export default function GuestBook() {
           country,
           name,
           quote,
-          referralSource,
+          referral_source,
           created_at: new Date().toISOString(),
         };
         setSent(true);
@@ -234,7 +234,7 @@ export default function GuestBook() {
                 <input className={sent ? "text-input disabled" : "text-input"} placeholder="Website (Optional)" name="website" value={website} onChange={(e) => setWebsite(e.target.value)} disabled={sent} aria-label="Website" />
               </div>
               <div className="guest-input-container">
-                <input className={sent ? "text-input disabled" : "text-input"} placeholder="How did you find this website?" name="referralSource" value={referralSource} onChange={(e) => setReferralSource(e.target.value)} disabled={sent} aria-label="referralSource" />
+                <input className={sent ? "text-input disabled" : "text-input"} placeholder="How did you find this website?" name="referral_source" value={referral_source} onChange={(e) => setreferral_source(e.target.value)} disabled={sent} aria-label="referral_source" />
               </div>
               <div className="guest-input-container">
                 <input
@@ -304,9 +304,9 @@ export default function GuestBook() {
                       </div>
                     )}
 
-                    {msg.referralSource && (
+                    {msg.referral_source && (
                       <div>
-                        <span className="title">Referral:</span> {msg.referralSource}
+                        <span className="title">Referral:</span> {msg.referral_source}
                       </div>
                     )}
 
