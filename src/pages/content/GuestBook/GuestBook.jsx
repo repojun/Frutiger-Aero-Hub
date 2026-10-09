@@ -234,7 +234,7 @@ export default function GuestBook() {
                 <input className={sent ? "text-input disabled" : "text-input"} placeholder="Website (Optional)" name="website" value={website} onChange={(e) => setWebsite(e.target.value)} disabled={sent} aria-label="Website" />
               </div>
               <div className="guest-input-container">
-                <input className={sent ? "text-input disabled" : "text-input"} placeholder="How did you find this website?" name="referral_source" value={referral_source} onChange={(e) => setreferral_source(e.target.value)} disabled={sent} aria-label="referral_source" />
+                <input className={sent ? "text-input disabled" : "text-input"} placeholder="How did you find this website? (e.g Reddit, Google Searching, A friend)" name="referral_source" value={referral_source} onChange={(e) => setreferral_source(e.target.value)} disabled={sent} aria-label="referral_source" />
               </div>
               <div className="guest-input-container">
                 <input
