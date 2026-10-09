@@ -25,7 +25,7 @@ export const addMessage = async (message, website, country, name, quote, referra
       country,
       name,
       quote,
-      referral_source,
+      referral_source: referral_source,
       anon_id: anonId,
     }),
   });

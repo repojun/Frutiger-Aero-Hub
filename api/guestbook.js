@@ -10,7 +10,7 @@ export default async function handler(req, res) {
   // real visitor IP (Cloudflare first)
   const ip = req.headers["cf-connecting-ip"] || req.headers["x-forwarded-for"]?.split(",")[0] || "unknown";
 
-  const { message, website, country, name, quote, anon_id } = req.body;
+  const { message, website, country, name, quote, anon_id, refferal_source } = req.body;
 
   const { data, error } = await supabase
     .from("guestbook")
@@ -21,6 +21,7 @@ export default async function handler(req, res) {
         country: country ?? null,
         name,
         quote: quote ?? null,
+        refferal_source,
         anon_id,
         ip,
       },
