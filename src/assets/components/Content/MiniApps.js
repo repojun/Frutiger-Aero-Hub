@@ -1,5 +1,11 @@
 export const miniApps = [
   {
+    id:"minecraftroulette",
+    name:"Minecraft Roulette",
+    image:"/apps/minecraftroulette.webp",
+    url:"https://dangertesting.com/immike_wing/minecraft-roulette"
+  },
+  {
     id: "minesweeper",
     name: "Minesweeper",
     image: "/apps/minesweeper.webp",
