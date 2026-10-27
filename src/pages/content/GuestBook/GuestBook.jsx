@@ -218,7 +218,10 @@ export default function GuestBook() {
                 Teddy Says:
               </div>
 
-              <span>Here you can view messages left by other users by scrolling down. You can also leave a message for the page creator or just leave your mark! Fill the form below and hit submit to get your message in the book. I will try to reply to as many as I can!</span>
+              <span>
+                Here you can view messages left by other users by scrolling down. You can also leave a message for the page creator or just leave your mark! Fill the form below and hit submit to get your message in the book. I will try to reply to as many as I can! You can also
+                email <b>tytal124@gmail.com </b>for private inquiries.
+              </span>
               <span style={{ fontWeight: "400", paddingTop: ".5rem", paddingBottom: ".5rem", cursor: "pointer", width: "9rem" }} onClick={() => window.open("/privacy", "_blank")}>
                 Privacy Policy
               </span>
@@ -234,7 +237,15 @@ export default function GuestBook() {
                 <input className={sent ? "text-input disabled" : "text-input"} placeholder="Website (Optional)" name="website" value={website} onChange={(e) => setWebsite(e.target.value)} disabled={sent} aria-label="Website" />
               </div>
               <div className="guest-input-container">
-                <input className={sent ? "text-input disabled" : "text-input"} placeholder="How did you find this website? (e.g Reddit, Google Searching, A friend)" name="referral_source" value={referral_source} onChange={(e) => setreferral_source(e.target.value)} disabled={sent} aria-label="referral_source" />
+                <input
+                  className={sent ? "text-input disabled" : "text-input"}
+                  placeholder="How did you find this website? (e.g Reddit, Google Searching, A friend)"
+                  name="referral_source"
+                  value={referral_source}
+                  onChange={(e) => setreferral_source(e.target.value)}
+                  disabled={sent}
+                  aria-label="referral_source"
+                />
               </div>
               <div className="guest-input-container">
                 <input
