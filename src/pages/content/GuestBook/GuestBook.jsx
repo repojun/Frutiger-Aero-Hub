@@ -234,7 +234,7 @@ export default function GuestBook() {
               </div>
 
               <div className="guest-input-container">
-                <input className={sent ? "text-input disabled" : "text-input"} placeholder="Website (Optional)" name="website" value={website} onChange={(e) => setWebsite(e.target.value)} disabled={sent} aria-label="Website" />
+                <input className={sent ? "text-input disabled" : "text-input"} placeholder="Your Personal Website (Optional)" name="website" value={website} onChange={(e) => setWebsite(e.target.value)} disabled={sent} aria-label="Website" />
               </div>
               <div className="guest-input-container">
                 <input
