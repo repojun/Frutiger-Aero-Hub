@@ -250,7 +250,7 @@ export default function GuestBook() {
               <div className="guest-input-container">
                 <input
                   className={sent ? "text-input disabled" : "text-input"}
-                  placeholder="If you could give advice to the world... (optional)"
+                  placeholder="If you could give advice to the world... (Optional)"
                   name="quote"
                   value={quote}
                   onChange={(e) => setQuote(e.target.value)}
