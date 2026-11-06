@@ -112,7 +112,9 @@ export default function Home() {
 
         <p>The site has been developed with my custom design style with plenty of fun features and easter eggs (you can view some on the side bar buttons). It's going to act as my final tribute to the aesthetic and my FA inspired design style.</p>
 
-        <p>I have opened this site very recently and plan to iteratively add more resources and tabs overtime, its in BETA so please contact me (arjun@frutiger-aero.online) if you have any suggestions or pieces of media to share!</p>
+        <p>
+          I plan to iteratively add more resources and tabs overtime, so please contact me (arjun@frutiger-aero.online) if you have any suggestions or pieces of media to share! <span className="rainbow-span">NEW PAGES COMING SOON! Email me suggestions!</span>
+        </p>
       </main>
 
       <div className="divider"></div>

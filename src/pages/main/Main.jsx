@@ -320,7 +320,7 @@ export default function Main({ children, type = "default" }) {
 
           <div className="box-wrapper">
             <div className="tabs">
-              {tabs.map((tab) => (
+              {tabs.slice(0, 8).map((tab) => (
                 <Link
                   key={tab.path}
                   to={tab.path}
@@ -333,7 +333,28 @@ export default function Main({ children, type = "default" }) {
                   <div>{tab.name}</div>
                 </Link>
               ))}
+              <div className="tab-group">
+                <div
+                  className="tab-arrow disabled"
+                  onClick={() => {
+                    console.log("left code");
+                    SoundPlayer("clickxp_r", 0.6, "mp3");
+                  }}
+                >
+                  <img className="icon" src={"/icons/backward.png"} />
+                </div>
+                <div
+                  className="tab-arrow disabled"
+                  onClick={() => {
+                    console.log("right code");
+                    SoundPlayer("clickxp_r", 0.6, "mp3");
+                  }}
+                >
+                  <img className="icon" src={"/icons/forward.png"} />
+                </div>
+              </div>
             </div>
+
             <div
               className="shop-button-wrapper"
               onClick={() => {
