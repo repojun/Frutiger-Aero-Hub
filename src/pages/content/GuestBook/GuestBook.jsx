@@ -219,8 +219,7 @@ export default function GuestBook() {
               </div>
 
               <span>
-                Here you can view messages left by other users by scrolling down. You can also leave a message for the page creator or just leave your mark! Fill the form below and hit submit to get your message in the book. I will try to reply to as many as I can! You can also
-                email <b>tytal124@gmail.com </b>for private inquiries.
+                Here you can submit a message for the page creator or just leave your mark! You can also view messages left by other users by scrolling down. I will try to reply to as many as I can! You can also email <b>tytal124@gmail.com </b>for private inquiries.
               </span>
               <span style={{ fontWeight: "400", paddingTop: ".5rem", paddingBottom: ".5rem", cursor: "pointer", width: "9rem" }} onClick={() => window.open("/privacy", "_blank")}>
                 Privacy Policy
