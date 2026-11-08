@@ -124,6 +124,23 @@ I highly recommend checking out his work, it's the best I have ever seen in this
     category: "Wallpapers",
     date: "N/A",
   },
+  {
+    id: "latchlayout",
+    name: "LatchLayout",
+    author: "Wyatt Stanczyk",
+    category: "Windows App",
+    date: "08/11/26",
+    description: `
+I built LatchLayout to bring a workspace together by holding one keyboard key or mouse button. You choose the applications, browser profile and URLs, then pick a display and a full, half or quarter-screen layout for each window.
+
+The interface brings some Aero gloss back to a practical Windows utility: blue and periwinkle gradients, glossy buttons, softly shaded panels and a live placement preview. It's built with C# and WinForms, and the source is free under the MIT license.
+
+The current Windows 11 x64 release is an unsigned preview. The repository includes screenshots, the download, test results and known limitations. Closing the editor keeps the optional listener in the tray; Quit stops it completely.
+`,
+    link: "https://github.com/stanczykwyatt/latchlayout",
+    image: "/projects/latchlayout.png",
+    creator: true,
+  },
 ].map((project) => ({
   ...project,
   slug: project.id,
