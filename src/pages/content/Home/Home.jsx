@@ -30,7 +30,7 @@ export default function Home() {
   return (
     <>
       <Helmet>
-        <title>The Frutiger Aero Hub | Nostalgic Web Aesthetic & Resources</title>
+        <title>The Frutiger Aero Hub | History, Wallpapers & Aesthetic</title>
 
         <meta name="description" content="The Frutiger Aero Hub is an archive and interactive site exploring the Frutiger Aero aesthetic, UI design, mini apps, and nostalgic 2010s internet culture." />
 
@@ -113,7 +113,8 @@ export default function Home() {
         <p>The site has been developed with my custom design style with plenty of fun features and easter eggs (you can view some on the side bar buttons). It's going to act as my final tribute to the aesthetic and my FA inspired design style.</p>
 
         <p>
-          I plan to iteratively add more resources and tabs overtime, so please contact us at our temporary email (thefrutigeraerohub@gmail.com) if you have any suggestions or pieces of media to share! <span className="rainbow-span">NEW PAGES COMING SOON! Email me suggestions!</span>
+          I plan to iteratively add more resources and tabs overtime, so please contact us at our temporary email (thefrutigeraerohub@gmail.com) if you have any suggestions or pieces of media to share!{" "}
+          <span className="rainbow-span">NEW PAGES COMING SOON! Email me suggestions!</span>
         </p>
       </main>
 
